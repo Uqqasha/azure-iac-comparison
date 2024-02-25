@@ -1,0 +1,456 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "ownerObjectId": {
+            "type": "string",
+            "metadata": {
+                "description": "The Object ID of Azure CLI signed in User."
+            }
+        },
+        "armClientObjectId": {
+            "type": "string",
+            "metadata": {
+                "description": "The Object ID for the service principal."
+            }
+        },
+        "storageAccountSKU": {
+            "type": "string",
+            "metadata": {
+                "description": "Defines the Tier to use for this storage account."
+            }
+        },
+        "storageAccountKind": {
+            "type": "string",
+            "metadata": {
+                "description": "Defines the Kind of account. Valid options are BlobStorage, BlockBlobStorage, FileStorage, Storage and StorageV2."
+            }
+        },
+        "storageContainerName": {
+            "type": "string",
+            "metadata": {
+                "description": "The name of the Container which should be created within the Storage Account."
+            }
+        },
+        "keyVaultSKU": {
+            "type": "string",
+            "metadata": {
+                "description": "The Name of the SKU used for this Key Vault. Possible values are standard and premium."
+            }
+        },
+        "logAnalyticsWorkspaceName": {
+            "type": "string",
+            "metadata": {
+                "description": "The name of the new Log Analytics Workspace to be provisioned."
+            }
+        },
+        "logAnalyticsWorkspaceSKU": {
+            "type": "string",
+            "metadata": {
+                "description": "Specifies the SKU of the Log Analytics Workspace. Possible values are Free, PerNode, Premium, Standard, Standalone, Unlimited, CapacityReservation, and PerGB2018."
+            }
+        },
+        "logAnalyticsWorkspaceRetentionDays": {
+            "type": "string",
+            "metadata": {
+                "description": "The workspace data retention in days."
+            }
+        },
+        "automationAccountSku": {
+            "type": "string",
+            "metadata": {
+                "description": "The SKU of the account. Possible values are Basic and Free."
+            }
+        },
+        "adminUsername": {
+            "type": "string",
+            "metadata": {
+                "description": "Username of admin user."
+            }
+        },
+        "vnetName": {
+            "type": "string",
+            "metadata": {
+                "description": "The name of the new virtual network to be provisioned."
+            }
+        },
+        "vnetAddressPrefix": {
+            "type": "string",
+            "metadata": {
+                "description": "The address space in CIDR notation for the new virtual network."
+            }
+        },
+        "vnetDnsServers": {
+            "type": "array",
+            "metadata": {
+                "description": "The list of DNS servers IP addresses."
+            }
+        },
+        "subnetsDetails": {
+            "type": "object"
+        },
+        "bastionName": {
+            "type": "string",
+            "metadata": {
+                "description": "The name of Bastion Host."
+            }
+        },
+        "bastionPipSKU": {
+            "type": "string",
+            "metadata": {
+                "description": "The SKU of the Public IP. Accepted values are Basic and Standard."
+            }
+        },
+        "bastionPipAllocation": {
+            "type": "string",
+            "metadata": {
+                "description": "Defines the allocation method for this IP address. Possible values are Static or Dynamic."
+            }
+        },
+        "vmAddsName": {
+            "type": "string",
+            "metadata": {
+                "description": "The name of the VM."
+            }
+        },
+        "vmAddsNicPrivateIpAllocationMethod": {
+            "type": "string",
+            "metadata": {
+                "description": "The private IP address allocation method."
+            }
+        },
+        "vmAddsSize": {
+            "type": "string",
+            "metadata": {
+                "description": "The size of the virtual machine."
+            }
+        },
+        "vmAddsImagePublisher": {
+            "type": "string",
+            "metadata": {
+                "description": "The offer type of the virtual machine image used to create the VM."
+            }
+        },
+        "vmAddsImageOffer": {
+            "type": "string",
+            "metadata": {
+                "description": "The publisher for the virtual machine image used to create the VM."
+            }
+        },
+        "vmAddsImageSku": {
+            "type": "string",
+            "metadata": {
+                "description": "The sku of the virtual machine image used to create the VM."
+            }
+        },
+        "vmAddsImageVersion": {
+            "type": "string",
+            "metadata": {
+                "description": "The version of the virtual machine image used to create the VM."
+            }
+        },
+        "vmAddsStorageAccountCaching": {
+            "type": "string",
+            "metadata": {
+                "description": "The storage replication type to be used for the VMs OS and data disks."
+            }
+        },
+        "vmAddsStorageAccountType": {
+            "type": "string",
+            "metadata": {
+                "description": "The storage replication type to be used for the VMs OS and data disks."
+            }
+        }
+    },
+    "functions": [],
+    "variables": {
+        "storageAccountResourceId": "[resourceId('Microsoft.Storage/storageAccounts', concat('st', uniqueString(resourceGroup().id)))]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2023-01-01",
+            "name": "[concat('st', uniqueString(resourceGroup().id))]",
+            "location": "[resourceGroup().location]",
+            "sku": {
+                "name": "[parameters('storageAccountSKU')]"
+
+            },
+            "kind": "[parameters('storageAccountKind')]"
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+            "apiVersion": "2023-01-01",
+            "name": "[concat(concat('st', uniqueString(resourceGroup().id)), '/default/', parameters('storageContainerName'))]",
+            "dependsOn": [
+                "[concat('st', uniqueString(resourceGroup().id))]"
+            ]
+        },
+        {
+            "type": "Microsoft.OperationalInsights/workspaces",
+            "apiVersion": "2022-10-01",
+            "name": "[parameters('logAnalyticsWorkspaceName')]",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "sku": {
+                    "name": "[parameters('logAnalyticsWorkspaceSKU')]"
+                },
+                "retentionInDays": "[parameters('logAnalyticsWorkspaceRetentionDays')]"
+            }
+        },
+        {
+            "type": "Microsoft.KeyVault/vaults",
+            "apiVersion": "2023-02-01",
+            "name": "[concat('kv-', uniqueString(resourceGroup().id))]",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "tenantId": "[subscription().tenantId]",
+                "sku": {
+                    "family": "A",
+                    "name": "[parameters('keyVaultSKU')]"
+                },
+                "softDeleteRetentionInDays": 7,
+                //"enablePurgeProtection": false,
+                "enableSoftDelete": false,
+                "accessPolicies": [
+                    {
+                        "tenantId": "[subscription().tenantId]",
+                        "objectId": "[parameters('ownerObjectId')]",
+                        "permissions": {
+                            "secrets": ["Get", "List", "Set", "Delete", "Purge"]
+                        }
+                    },
+                    {
+                        "tenantId": "[subscription().tenantId]",
+                        "objectId": "[parameters('armClientObjectId')]",
+                        "permissions": {
+                            "secrets": ["Get", "Set", "Delete", "Purge"]
+                        }
+                    }
+                ]
+            },
+            "resources": [
+                {
+                    "type": "secrets",
+                    "apiVersion": "2023-02-01",
+                    "name": "adminuser",
+                    "dependsOn": [
+                        "[concat('kv-', uniqueString(resourceGroup().id))]"
+                    ],
+                    "properties": {
+                        "value": "[parameters('adminUsername')]"
+                    }
+                },
+                {
+                    "type": "secrets",
+                    "apiVersion": "2023-02-01",
+                    "name": "adminpassword",
+                    "dependsOn": [
+                        "[concat('kv-', uniqueString(resourceGroup().id))]"
+                    ],
+                    "properties": {
+                        "value": "[concat('P-', uniqueString(resourceGroup().id, deployment().name))]"
+                    }
+                },
+                {
+                    "type": "secrets",
+                    "apiVersion": "2023-02-01",
+                    "name": "[concat('st', uniqueString(resourceGroup().id))]",
+                    "dependsOn": [
+                        "[concat('kv-', uniqueString(resourceGroup().id))]"
+                    ],
+                    "properties": {
+                        "value": "[listKeys(variables('storageAccountResourceId'), '2023-01-01').keys[0].value]"
+                    }
+                },
+                {
+                    "type": "secrets",
+                    "apiVersion": "2023-02-01",
+                    "name": "[concat(parameters('logAnalyticsWorkspaceName'), '-ID')]",
+                    "dependsOn": [
+                        "[concat('kv-', uniqueString(resourceGroup().id))]"
+                    ],
+                    "properties": {
+                        "value": "[listKeys(resourceId('Microsoft.OperationalInsights/workspaces/', parameters('logAnalyticsWorkspaceName')), '2022-10-01').primarySharedKey]"
+                    }
+                }
+            ],
+            "dependsOn": [
+                "[resourceId('Microsoft.OperationalInsights/workspaces', parameters('logAnalyticsWorkspaceName'))]"
+            ]
+        },
+        // {
+        //     "type": "Microsoft.Automation/automationAccounts",
+        //     "apiVersion": "2022-08-08",
+        //     "name": "[concat('auto-', uniqueString(resourceGroup().id), '-01')]",
+        //     "location": "[resourceGroup().location]",
+        //     "properties": {
+        //         "sku": {
+        //             "name": "[parameters('automationAccountSku')]"
+        //         }
+        //     }
+        // },
+        {
+            "type": "Microsoft.Network/virtualNetworks",
+            "apiVersion": "2023-04-01",
+            "name": "[parameters('vnetName')]",
+            "location": "[resourceGroup().location]",
+            "tags": {},
+            "properties": {
+                "dhcpOptions": {
+                    "dnsServers": "[parameters('vnetDnsServers')]"
+                },
+                "addressSpace": {
+                  "addressPrefixes": [
+                    "[parameters('vnetAddressPrefix')]"
+                  ]
+                },
+                "copy": [
+                    {
+                        "name": "subnets",
+                        "dependsOn": [
+                            "[resourceId('Microsoft.Network/networkSecurityGroups/', concat('nsg-', parameters('vnetName'), '.', parameters('subnetsDetails').subnets[copyIndex('subnets')].name))]"
+                        ],
+                        "count": "[length(parameters('subnetsDetails').subnets)]",
+                        "input": {
+                            "name": "[parameters('subnetsDetails').subnets[copyIndex('subnets')].name]",
+                            "properties": {
+                                "addressPrefix": "[parameters('subnetsDetails').subnets[copyIndex('subnets')].addressPrefix]",
+                                "privateEndpointNetworkPolicies": "[parameters('subnetsDetails').subnets[copyIndex('subnets')].privateEndpointNetworkPolicies]",
+                                "networkSecurityGroup": {
+                                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups/', concat('nsg-', parameters('vnetName'), '.', parameters('subnetsDetails').subnets[copyIndex('subnets')].name))]"
+                                }
+                            }
+                        }
+                    }
+                ]
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkSecurityGroups', concat('nsg-', parameters('vnetName'), '.', parameters('subnetsDetails').subnets[0].name))]",
+                "[resourceId('Microsoft.Network/networkSecurityGroups', concat('nsg-', parameters('vnetName'), '.', parameters('subnetsDetails').subnets[1].name))]",
+                "[resourceId('Microsoft.Network/networkSecurityGroups', concat('nsg-', parameters('vnetName'), '.', parameters('subnetsDetails').subnets[2].name))]",
+                "[resourceId('Microsoft.Network/networkSecurityGroups', concat('nsg-', parameters('vnetName'), '.', parameters('subnetsDetails').subnets[3].name))]"
+            ]
+        },
+        {
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "apiVersion": "2023-04-01",
+            "location": "[resourceGroup().location]",
+            "name": "[concat('nsg-', parameters('vnetName'), '.', parameters('subnetsDetails').subnets[copyIndex()].name)]",
+            "properties": {
+                "securityRules": "[parameters('subnetsDetails').subnets[copyIndex()].securityRules]"
+            },
+            "copy": {
+                "name": "NSG",
+                "count": "[length(parameters('subnetsDetails').subnets)]"
+            }
+        },
+        {
+            "type": "Microsoft.Network/publicIPAddresses",
+            "apiVersion": "2023-04-01",
+            "name": "[concat('pip-', parameters('bastionName'))]",
+            "location": "[resourceGroup().location]",
+            "sku": {
+                "name": "[parameters('bastionPipSKU')]"
+            },
+            "properties": {
+                "publicIPAllocationMethod": "[parameters('bastionPipAllocation')]"
+            }
+        },
+        {
+            "type": "Microsoft.Network/bastionHosts",
+            "apiVersion": "2023-04-01",
+            "name": "[parameters('bastionName')]",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "[concat('ipc-', parameters('bastionName'))]",
+                        "properties": {
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses',concat('pip-', parameters('bastionName')))]"
+                            },
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vnetName'), 'AzureBastionSubnet')]"
+                            }
+                        }
+                    }
+                ]
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks', parameters('vnetName'))]",
+                "[resourceId('Microsoft.Network/publicIPAddresses', concat('pip-', parameters('bastionName')))]"
+            ]
+        },
+        {
+            "type": "Microsoft.Network/networkInterfaces",
+            "apiVersion": "2023-04-01",
+            "name": "[concat('nic-', parameters('vmAddsName'), '1')]",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "[concat('ipc-', parameters('vmAddsName'), '1')]",
+                        "properties": {
+                            "privateIPAllocationMethod": "[parameters('vmAddsNicPrivateIpAllocationMethod')]",
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vnetName'), 'snet-adds-01')]"
+                            }
+                        } 
+                    }
+                ]
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks', parameters('vnetName'))]"
+            ]
+        },
+        {
+            "type": "Microsoft.Compute/virtualMachines",
+            "apiVersion": "2023-03-01",
+            "name": "[parameters('vmAddsName')]",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "[parameters('vmAddsSize')]"
+                },
+                "osProfile": {
+                    "computerName": "[parameters('vmAddsName')]",
+                    "adminUsername": "[parameters('adminUsername')]",
+                    "adminPassword": "[concat('P-', uniqueString(resourceGroup().id, deployment().name))]",
+                    "windowsConfiguration": {
+                        "enableAutomaticUpdates": false,
+                        "patchSettings": {
+                            "patchMode": "Manual"
+                        }
+                    }
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "[parameters('vmAddsImagePublisher')]",
+                        "offer": "[parameters('vmAddsImageOffer')]",
+                        "sku": "[parameters('vmAddsImageSku')]",
+                        "version": "[parameters('vmAddsImageVersion')]"
+                    },
+                    "osDisk": {
+                        "createOption": "FromImage",
+                        "caching": "[parameters('vmAddsStorageAccountCaching')]",
+                        "managedDisk": {
+                            "storageAccountType": "[parameters('vmAddsStorageAccountType')]"
+                        }
+                    }
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', concat('nic-', parameters('vmAddsName'), '1'))]"
+                        }
+                    ]
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkInterfaces', concat('nic-', parameters('vmAddsName'), '1'))]"
+            ]
+        }
+    ],
+    "outputs": {}
+}

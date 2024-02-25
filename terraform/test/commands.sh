@@ -1,0 +1,2 @@
+cmd_provision="terraform apply --auto-approve --var resource_group_name=RG-${region}-${iac_tool}-${execution} --var location=${region}"
+cmd_unprovision="terraform destroy --auto-approve --var resource_group_name=RG-${region}-${iac_tool}-${execution} --var location=${region}"
