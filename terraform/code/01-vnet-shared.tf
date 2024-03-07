@@ -1,7 +1,3 @@
-data "azurerm_resource_group" "rg" {
-  name = var.resource_group_name
-}
-
 resource "random_string" "azurerm_storage_account_name" {
   length  = 16
   lower   = true
@@ -130,7 +126,7 @@ resource "azurerm_subnet_network_security_group_association" "nsg_subnet_associa
   network_security_group_id = azurerm_network_security_group.network_security_groups[each.key].id
 
   depends_on = [
-    #azurerm_bastion_host.bastion_host_01,
+    azurerm_bastion_host.bastion_host_01,
     azurerm_network_security_rule.network_security_rules
   ]
 }

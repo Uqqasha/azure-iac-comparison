@@ -2,22 +2,22 @@
 DIR=$(pwd)
 
 # IaC Tools
-iac_tools='terraform'
+iac_tools='terraform ARM bicep'
 
 # Provider
 provider='azure'
 
 # Regions
-azure_region='SwedenCentral'
+azure_region='EastUS SwedenCentral SoutheastAsia'
 
 echo -e "------------------------- STARTING TESTS ------------------------- \n"
 
 EXEC_DATE=$(date +%Y-%m-%d-%H-%M-%S)
 mkdir -p ${DIR}/executions/${EXEC_DATE}
 RESULTS=${DIR}/executions/${EXEC_DATE}/results
-echo "| Date                | Operation   |   Tool    | Provider | Region        | Execution | Timestamp  | Duration  | Memory |" > ${RESULTS}
+echo "| Date                    | Operation       |   Tool        | Provider     | Region            |" > ${RESULTS}
 
-test_executions=1
+test_executions=3
 execution=1
 
 while [ $execution -le $test_executions ]; do
