@@ -367,6 +367,12 @@
     },
     "vmAddsStorageAccountType": {
       "value": "Standard_LRS"
+    },
+    "ownerObjectId": {
+      "value": "5e1a0937-9b34-46ca-adde-41e4a5d58f58"
+    },
+    "armClientObjectId": {
+      "value": "c4b9d2d3-0fe4-46e4-a0b0-e8f0ce1bbbde"
     }
   }
 }
