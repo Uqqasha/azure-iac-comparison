@@ -344,113 +344,113 @@
                 "name": "NSG",
                 "count": "[length(parameters('subnetsDetails').subnets)]"
             }
-        },
-        {
-            "type": "Microsoft.Network/publicIPAddresses",
-            "apiVersion": "2023-04-01",
-            "name": "[concat('pip-', parameters('bastionName'))]",
-            "location": "[resourceGroup().location]",
-            "sku": {
-                "name": "[parameters('bastionPipSKU')]"
-            },
-            "properties": {
-                "publicIPAllocationMethod": "[parameters('bastionPipAllocation')]"
-            }
-        },
-        {
-            "type": "Microsoft.Network/bastionHosts",
-            "apiVersion": "2023-04-01",
-            "name": "[parameters('bastionName')]",
-            "location": "[resourceGroup().location]",
-            "properties": {
-                "ipConfigurations": [
-                    {
-                        "name": "[concat('ipc-', parameters('bastionName'))]",
-                        "properties": {
-                            "publicIPAddress": {
-                                "id": "[resourceId('Microsoft.Network/publicIPAddresses',concat('pip-', parameters('bastionName')))]"
-                            },
-                            "subnet": {
-                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vnetName'), 'AzureBastionSubnet')]"
-                            }
-                        }
-                    }
-                ]
-            },
-            "dependsOn": [
-                "[resourceId('Microsoft.Network/virtualNetworks', parameters('vnetName'))]",
-                "[resourceId('Microsoft.Network/publicIPAddresses', concat('pip-', parameters('bastionName')))]"
-            ]
-        },
-        {
-            "type": "Microsoft.Network/networkInterfaces",
-            "apiVersion": "2023-04-01",
-            "name": "[concat('nic-', parameters('vmAddsName'), '1')]",
-            "location": "[resourceGroup().location]",
-            "properties": {
-                "ipConfigurations": [
-                    {
-                        "name": "[concat('ipc-', parameters('vmAddsName'), '1')]",
-                        "properties": {
-                            "privateIPAllocationMethod": "[parameters('vmAddsNicPrivateIpAllocationMethod')]",
-                            "subnet": {
-                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vnetName'), 'snet-adds-01')]"
-                            }
-                        } 
-                    }
-                ]
-            },
-            "dependsOn": [
-                "[resourceId('Microsoft.Network/virtualNetworks', parameters('vnetName'))]"
-            ]
-        },
-        {
-            "type": "Microsoft.Compute/virtualMachines",
-            "apiVersion": "2023-03-01",
-            "name": "[parameters('vmAddsName')]",
-            "location": "[resourceGroup().location]",
-            "properties": {
-                "hardwareProfile": {
-                    "vmSize": "[parameters('vmAddsSize')]"
-                },
-                "osProfile": {
-                    "computerName": "[parameters('vmAddsName')]",
-                    "adminUsername": "[parameters('adminUsername')]",
-                    "adminPassword": "[concat('P-', uniqueString(resourceGroup().id, deployment().name))]",
-                    "windowsConfiguration": {
-                        "enableAutomaticUpdates": false,
-                        "patchSettings": {
-                            "patchMode": "Manual"
-                        }
-                    }
-                },
-                "storageProfile": {
-                    "imageReference": {
-                        "publisher": "[parameters('vmAddsImagePublisher')]",
-                        "offer": "[parameters('vmAddsImageOffer')]",
-                        "sku": "[parameters('vmAddsImageSku')]",
-                        "version": "[parameters('vmAddsImageVersion')]"
-                    },
-                    "osDisk": {
-                        "createOption": "FromImage",
-                        "caching": "[parameters('vmAddsStorageAccountCaching')]",
-                        "managedDisk": {
-                            "storageAccountType": "[parameters('vmAddsStorageAccountType')]"
-                        }
-                    }
-                },
-                "networkProfile": {
-                    "networkInterfaces": [
-                        {
-                            "id": "[resourceId('Microsoft.Network/networkInterfaces', concat('nic-', parameters('vmAddsName'), '1'))]"
-                        }
-                    ]
-                }
-            },
-            "dependsOn": [
-                "[resourceId('Microsoft.Network/networkInterfaces', concat('nic-', parameters('vmAddsName'), '1'))]"
-            ]
         }
+        // {
+        //     "type": "Microsoft.Network/publicIPAddresses",
+        //     "apiVersion": "2023-04-01",
+        //     "name": "[concat('pip-', parameters('bastionName'))]",
+        //     "location": "[resourceGroup().location]",
+        //     "sku": {
+        //         "name": "[parameters('bastionPipSKU')]"
+        //     },
+        //     "properties": {
+        //         "publicIPAllocationMethod": "[parameters('bastionPipAllocation')]"
+        //     }
+        // },
+        // {
+        //     "type": "Microsoft.Network/bastionHosts",
+        //     "apiVersion": "2023-04-01",
+        //     "name": "[parameters('bastionName')]",
+        //     "location": "[resourceGroup().location]",
+        //     "properties": {
+        //         "ipConfigurations": [
+        //             {
+        //                 "name": "[concat('ipc-', parameters('bastionName'))]",
+        //                 "properties": {
+        //                     "publicIPAddress": {
+        //                         "id": "[resourceId('Microsoft.Network/publicIPAddresses',concat('pip-', parameters('bastionName')))]"
+        //                     },
+        //                     "subnet": {
+        //                         "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vnetName'), 'AzureBastionSubnet')]"
+        //                     }
+        //                 }
+        //             }
+        //         ]
+        //     },
+        //     "dependsOn": [
+        //         "[resourceId('Microsoft.Network/virtualNetworks', parameters('vnetName'))]",
+        //         "[resourceId('Microsoft.Network/publicIPAddresses', concat('pip-', parameters('bastionName')))]"
+        //     ]
+        // },
+        // {
+        //     "type": "Microsoft.Network/networkInterfaces",
+        //     "apiVersion": "2023-04-01",
+        //     "name": "[concat('nic-', parameters('vmAddsName'), '1')]",
+        //     "location": "[resourceGroup().location]",
+        //     "properties": {
+        //         "ipConfigurations": [
+        //             {
+        //                 "name": "[concat('ipc-', parameters('vmAddsName'), '1')]",
+        //                 "properties": {
+        //                     "privateIPAllocationMethod": "[parameters('vmAddsNicPrivateIpAllocationMethod')]",
+        //                     "subnet": {
+        //                         "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vnetName'), 'snet-adds-01')]"
+        //                     }
+        //                 } 
+        //             }
+        //         ]
+        //     },
+        //     "dependsOn": [
+        //         "[resourceId('Microsoft.Network/virtualNetworks', parameters('vnetName'))]"
+        //     ]
+        // },
+        // {
+        //     "type": "Microsoft.Compute/virtualMachines",
+        //     "apiVersion": "2023-03-01",
+        //     "name": "[parameters('vmAddsName')]",
+        //     "location": "[resourceGroup().location]",
+        //     "properties": {
+        //         "hardwareProfile": {
+        //             "vmSize": "[parameters('vmAddsSize')]"
+        //         },
+        //         "osProfile": {
+        //             "computerName": "[parameters('vmAddsName')]",
+        //             "adminUsername": "[parameters('adminUsername')]",
+        //             "adminPassword": "[concat('P-', uniqueString(resourceGroup().id, deployment().name))]",
+        //             "windowsConfiguration": {
+        //                 "enableAutomaticUpdates": false,
+        //                 "patchSettings": {
+        //                     "patchMode": "Manual"
+        //                 }
+        //             }
+        //         },
+        //         "storageProfile": {
+        //             "imageReference": {
+        //                 "publisher": "[parameters('vmAddsImagePublisher')]",
+        //                 "offer": "[parameters('vmAddsImageOffer')]",
+        //                 "sku": "[parameters('vmAddsImageSku')]",
+        //                 "version": "[parameters('vmAddsImageVersion')]"
+        //             },
+        //             "osDisk": {
+        //                 "createOption": "FromImage",
+        //                 "caching": "[parameters('vmAddsStorageAccountCaching')]",
+        //                 "managedDisk": {
+        //                     "storageAccountType": "[parameters('vmAddsStorageAccountType')]"
+        //                 }
+        //             }
+        //         },
+        //         "networkProfile": {
+        //             "networkInterfaces": [
+        //                 {
+        //                     "id": "[resourceId('Microsoft.Network/networkInterfaces', concat('nic-', parameters('vmAddsName'), '1'))]"
+        //                 }
+        //             ]
+        //         }
+        //     },
+        //     "dependsOn": [
+        //         "[resourceId('Microsoft.Network/networkInterfaces', concat('nic-', parameters('vmAddsName'), '1'))]"
+        //     ]
+        // }
     ],
     "outputs": {}
 }

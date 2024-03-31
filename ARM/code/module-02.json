@@ -1,0 +1,259 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vnetNameM2": {
+            "type": "string",
+            "metadata": {
+                "description": "The name of the application virtual network."
+            },
+            "defaultValue": "vnet-app-01"
+        },
+        "vnetAddressPrefixM2": {
+            "type": "string",
+            "metadata": {
+                "description": "The address space in CIDR notation for the new application virtual network."
+            },
+            "defaultValue": "10.2.0.0/16"
+        },
+        "subnetsDetails": {
+            "type": "object",
+            "metadata": {
+                "description": "The details of application virtual network subnets."
+            },
+            "defaultValue": {
+                "subnets": [
+                    {
+                        "name": "snet-app-01",
+                        "addressPrefix": "10.2.0.0/24",
+                        "privateEndpointNetworkPolicies": "Disabled",
+                        "securityRules": [
+                            {
+                            "name": "AllowVirtualNetworkInbound",
+                            "properties": {
+                                "direction": "Inbound",
+                                "priority": 100,
+                                "sourceAddressPrefix": "VirtualNetwork",
+                                "destinationAddressPrefix": "VirtualNetwork",
+                                "sourcePortRange": "*",
+                                "destinationPortRanges": [],
+                                "destinationPortRange": "*",
+                                "access": "Allow",
+                                "protocol": "*"
+                            }},
+                            {
+                            "name": "AllowVirtualNetworkOutbound",
+                            "properties": {
+                                "direction": "Outbound",
+                                "priority": 110,
+                                "sourceAddressPrefix": "VirtualNetwork",
+                                "destinationAddressPrefix": "VirtualNetwork",
+                                "sourcePortRange": "*",
+                                "destinationPortRanges": [],
+                                "destinationPortRange": "*",
+                                "access": "Allow",
+                                "protocol": "*"
+                            }},
+                            {
+                            "name": "AllowInternetOutbound",
+                            "properties": {
+                                "direction": "Outbound",
+                                "priority": 120,
+                                "sourceAddressPrefix": "*",
+                                "destinationAddressPrefix": "Internet",
+                                "sourcePortRange": "*",
+                                "destinationPortRanges": [],
+                                "destinationPortRange": "*",
+                                "access": "Allow",
+                                "protocol": "*"
+                            }}
+                        ]
+                    },
+                    {
+                        "name": "snet-db-01",
+                        "addressPrefix": "10.2.1.0/24",
+                        "privateEndpointNetworkPolicies": "Disabled",
+                        "securityRules": [
+                            {
+                            "name": "AllowVirtualNetworkInbound",
+                            "properties": {
+                                "direction": "Inbound",
+                                "priority": 100,
+                                "sourceAddressPrefix": "VirtualNetwork",
+                                "destinationAddressPrefix": "VirtualNetwork",
+                                "sourcePortRange": "*",
+                                "destinationPortRanges": [],
+                                "destinationPortRange": "*",
+                                "access": "Allow",
+                                "protocol": "*"
+                            }},
+                            {
+                            "name": "AllowVirtualNetworkOutbound",
+                            "properties": {
+                                "direction": "Outbound",
+                                "priority": 110,
+                                "sourceAddressPrefix": "VirtualNetwork",
+                                "destinationAddressPrefix": "VirtualNetwork",
+                                "sourcePortRange": "*",
+                                "destinationPortRanges": [],
+                                "destinationPortRange": "*",
+                                "access": "Allow",
+                                "protocol": "*"
+                            }},
+                            {
+                            "name": "AllowInternetOutbound",
+                            "properties": {
+                                "direction": "Outbound",
+                                "priority": 120,
+                                "sourceAddressPrefix": "*",
+                                "destinationAddressPrefix": "Internet",
+                                "sourcePortRange": "*",
+                                "destinationPortRanges": [],
+                                "destinationPortRange": "*",
+                                "access": "Allow",
+                                "protocol": "*"
+                            }}
+                        ]
+                    },
+                    {
+                        "name": "snet-misc-03",
+                        "addressPrefix": "10.2.3.0/24",
+                        "privateEndpointNetworkPolicies": "Disabled",
+                        "securityRules": [
+                            {
+                            "name": "AllowVirtualNetworkInbound",
+                            "properties": {
+                                "direction": "Inbound",
+                                "priority": 100,
+                                "sourceAddressPrefix": "VirtualNetwork",
+                                "destinationAddressPrefix": "VirtualNetwork",
+                                "sourcePortRange": "*",
+                                "destinationPortRanges": [],
+                                "destinationPortRange": "*",
+                                "access": "Allow",
+                                "protocol": "*"
+                            }},
+                            {
+                            "name": "AllowVirtualNetworkOutbound",
+                            "properties": {
+                                "direction": "Outbound",
+                                "priority": 110,
+                                "sourceAddressPrefix": "VirtualNetwork",
+                                "destinationAddressPrefix": "VirtualNetwork",
+                                "sourcePortRange": "*",
+                                "destinationPortRanges": [],
+                                "destinationPortRange": "*",
+                                "access": "Allow",
+                                "protocol": "*"
+                            }},
+                            {
+                            "name": "AllowInternetOutbound",
+                            "properties": {
+                                "direction": "Outbound",
+                                "priority": 120,
+                                "sourceAddressPrefix": "*",
+                                "destinationAddressPrefix": "Internet",
+                                "sourcePortRange": "*",
+                                "destinationPortRanges": [],
+                                "destinationPortRange": "*",
+                                "access": "Allow",
+                                "protocol": "*"
+                            }}
+                        ]
+                    },
+                    {
+                        "name": "snet-privatelink-01",
+                        "addressPrefix": "10.2.2.0/24",
+                        "privateEndpointNetworkPolicies": "Disabled",
+                        "securityRules": [
+                            {
+                            "name": "AllowVirtualNetworkInbound",
+                            "properties": {
+                                "direction": "Inbound",
+                                "priority": 100,
+                                "sourceAddressPrefix": "VirtualNetwork",
+                                "destinationAddressPrefix": "VirtualNetwork",
+                                "sourcePortRange": "*",
+                                "destinationPortRanges": [],
+                                "destinationPortRange": "*",
+                                "access": "Allow",
+                                "protocol": "*"
+                            }},
+                            {
+                            "name": "AllowVirtualNetworkOutbound",
+                            "properties": {
+                                "direction": "Outbound",
+                                "priority": 110,
+                                "sourceAddressPrefix": "VirtualNetwork",
+                                "destinationAddressPrefix": "VirtualNetwork",
+                                "sourcePortRange": "*",
+                                "destinationPortRanges": [],
+                                "destinationPortRange": "*",
+                                "access": "Allow",
+                                "protocol": "*"
+                            }}
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Network/virtualNetworks",
+            "apiVersion": "2023-04-01",
+            "name": "[parameters('vnetNameM2')]",
+            "location": "[resourceGroup().location]",
+            "tags": {},
+            "properties": {
+                "dhcpOptions": {
+                    "dnsServers": ["10.1.1.4", "168.63.129.16"]
+                },
+                "addressSpace": {
+                  "addressPrefixes": [
+                    "[parameters('vnetAddressPrefixM2')]"
+                  ]
+                },
+                "copy": [
+                    {
+                        "name": "subnets",
+                        "dependsOn": [
+                            "[resourceId('Microsoft.Network/networkSecurityGroups/', concat('nsg-', parameters('vnetNameM2'), '.', parameters('subnetsDetails').subnets[copyIndex('subnets')].name))]"
+                        ],
+                        "count": "[length(parameters('subnetsDetails').subnets)]",
+                        "input": {
+                            "name": "[parameters('subnetsDetails').subnets[copyIndex('subnets')].name]",
+                            "properties": {
+                                "addressPrefix": "[parameters('subnetsDetails').subnets[copyIndex('subnets')].addressPrefix]",
+                                "privateEndpointNetworkPolicies": "[parameters('subnetsDetails').subnets[copyIndex('subnets')].privateEndpointNetworkPolicies]",
+                                "networkSecurityGroup": {
+                                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups/', concat('nsg-', parameters('vnetNameM2'), '.', parameters('subnetsDetails').subnets[copyIndex('subnets')].name))]"
+                                }
+                            }
+                        }
+                    }
+                ]
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkSecurityGroups', concat('nsg-', parameters('vnetNameM2'), '.', parameters('subnetsDetails').subnets[0].name))]",
+                "[resourceId('Microsoft.Network/networkSecurityGroups', concat('nsg-', parameters('vnetNameM2'), '.', parameters('subnetsDetails').subnets[1].name))]",
+                "[resourceId('Microsoft.Network/networkSecurityGroups', concat('nsg-', parameters('vnetNameM2'), '.', parameters('subnetsDetails').subnets[2].name))]",
+                "[resourceId('Microsoft.Network/networkSecurityGroups', concat('nsg-', parameters('vnetNameM2'), '.', parameters('subnetsDetails').subnets[3].name))]"
+            ]
+        },
+        {
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "apiVersion": "2023-04-01",
+            "location": "[resourceGroup().location]",
+            "name": "[concat('nsg-', parameters('vnetNameM2'), '.', parameters('subnetsDetails').subnets[copyIndex()].name)]",
+            "properties": {
+                "securityRules": "[parameters('subnetsDetails').subnets[copyIndex()].securityRules]"
+            },
+            "copy": {
+                "name": "NSG",
+                "count": "[length(parameters('subnetsDetails').subnets)]"
+            }
+        }
+    ]
+}
