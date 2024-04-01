@@ -272,7 +272,7 @@
         {
             "apiVersion": "2019-11-01",
             "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
-            "name": "vnet_app_01_to_vnet_shared_01_peering",
+            "name": "[concat(parameters('vnetNameM2'), '/', 'vnet_app_01_to_vnet_shared_01_peering')]",
             "location": "[resourceGroup().location]",
             "dependsOn": [
                 "[resourceId('Microsoft.Network/virtualNetworks', parameters('vnetNameM1'))]",
@@ -290,7 +290,7 @@
         {
             "apiVersion": "2019-11-01",
             "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
-            "name": "vnet_shared_01_to_vnet_app_01_peering",
+            "name": "[concat(parameters('vnetNameM1'), '/', 'vnet_shared_01_to_vnet_app_01_peering')]",
             "location": "[resourceGroup().location]",
             "dependsOn": [
                 "[resourceId('Microsoft.Network/virtualNetworks', parameters('vnetNameM1'))]",
@@ -318,7 +318,7 @@
         {
             "type": "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
             "apiVersion": "2020-06-01",
-            "name": "[concat('pdnslink-', parameters('privateDNSZones')[copyIndex()], '-', parameters('vnetNameM2'))]",
+            "name": "[concat(parameters('privateDNSZones')[copyIndex()], '/', concat('pdnslink-', parameters('privateDNSZones')[copyIndex()], '-', parameters('vnetNameM2')))]",
             "location": "[resourceGroup().location]",
             "properties": {
                 "virtualNetwork": {
