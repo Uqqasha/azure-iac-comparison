@@ -319,8 +319,9 @@
             "name": "[format('{0}/{1}', parameters('privateDNSZones')[copyIndex()], concat('pdnslink-', parameters('privateDNSZones')[copyIndex()], '-', parameters('vnetNameM2')))]",
             "location": "global",
             "properties": {
+                "registrationEnabled": false,
                 "virtualNetwork": {
-                    "id": "[resourceId('Microsoft.Network/virtualNetworks/', parameters('vnetNameM2'))]"
+                    "id": "[resourceId('Microsoft.Network/virtualNetworks', parameters('vnetNameM2'))]"
                 }
             },
             "copy": {
@@ -328,6 +329,7 @@
                 "count": "[length(parameters('privateDNSZones'))]"
             },
             "dependsOn": [
+                "[resourceId('Microsoft.Network/privateDnsZones', parameters('privateDnsZones')[copyIndex()])]",
                 "[resourceId('Microsoft.Network/virtualNetworks/virtualNetworkPeerings', parameters('vnetNameM2'), 'vnet_app_01_to_vnet_shared_01_peering')]",
                 "[resourceId('Microsoft.Network/virtualNetworks/virtualNetworkPeerings', parameters('vnetNameM1'), 'vnet_shared_01_to_vnet_app_01_peering')]"
             ]
@@ -338,8 +340,9 @@
             "name": "[format('{0}/{1}', parameters('privateDNSZones')[copyIndex()], concat('pdnslink-', parameters('privateDNSZones')[copyIndex()], '-', parameters('vnetNameM1')))]",
             "location": "global",
             "properties": {
+                "registrationEnabled": false,
                 "virtualNetwork": {
-                    "id": "[resourceId('Microsoft.Network/virtualNetworks/', parameters('vnetNameM1'))]"
+                    "id": "[resourceId('Microsoft.Network/virtualNetworks', parameters('vnetNameM1'))]"
                 }
             },
             "copy": {
@@ -347,6 +350,7 @@
                 "count": "[length(parameters('privateDNSZones'))]"
             },
             "dependsOn": [
+                "[resourceId('Microsoft.Network/privateDnsZones', parameters('privateDnsZones')[copyIndex()])]",
                 "[resourceId('Microsoft.Network/virtualNetworks/virtualNetworkPeerings', parameters('vnetNameM2'), 'vnet_app_01_to_vnet_shared_01_peering')]",
                 "[resourceId('Microsoft.Network/virtualNetworks/virtualNetworkPeerings', parameters('vnetNameM1'), 'vnet_shared_01_to_vnet_app_01_peering')]"
             ]
