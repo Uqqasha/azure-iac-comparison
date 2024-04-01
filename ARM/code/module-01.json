@@ -452,5 +452,10 @@
         //     ]
         // }
     ],
-    "outputs": {}
+    "outputs": {
+        "vnetNameM1": {
+            "type": "string",
+            "value": "[reference(parameters('vnetName')).name]"
+        }
+    }
 }
