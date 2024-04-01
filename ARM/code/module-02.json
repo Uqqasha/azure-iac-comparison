@@ -318,7 +318,7 @@
         {
             "type": "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
             "apiVersion": "2020-06-01",
-            "name": "[concat(parameters('privateDNSZones')[copyIndex()], '/', concat('pdnslink-', parameters('privateDNSZones')[copyIndex()], '-', parameters('vnetNameM2')))]",
+            "name": "[format('{0}/{1}', parameters('privateDNSZones')[copyIndex()], concat('pdnslink-', parameters('privateDNSZones')[copyIndex()], '-', parameters('vnetNameM2')))]",
             "location": "[resourceGroup().location]",
             "properties": {
                 "virtualNetwork": {
@@ -337,7 +337,7 @@
         {
             "type": "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
             "apiVersion": "2020-06-01",
-            "name": "[concat('pdnslink-', parameters('privateDNSZones')[copyIndex()], '-', parameters('vnetNameM1'))]",
+            "name": "[format('{0}/{1}', parameters('privateDNSZones')[copyIndex()], concat('pdnslink-', parameters('privateDNSZones')[copyIndex()], '-', parameters('vnetNameM1')))]",
             "location": "[resourceGroup().location]",
             "properties": {
                 "virtualNetwork": {
