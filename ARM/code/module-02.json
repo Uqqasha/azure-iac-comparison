@@ -330,8 +330,8 @@
                 "count": "[length(parameters('privateDNSZones'))]"
             },
             "dependsOn": [
-                "[resourceId('Microsoft.Network/virtualNetworks/', parameters('vnetNameM2'), '/virtualNetworkPeerings/', 'vnet_app_01_to_vnet_shared_01_peering')]",
-                "[resourceId('Microsoft.Network/virtualNetworks/', parameters('vnetNameM1'), '/virtualNetworkPeerings/', 'vnet_shared_01_to_vnet_app_01_peering')]"
+                "[resourceId('Microsoft.Network/virtualNetworks/virtualNetworkPeerings', parameters('vnetNameM2'), 'vnet_app_01_to_vnet_shared_01_peering')]",
+                "[resourceId('Microsoft.Network/virtualNetworks/virtualNetworkPeerings', parameters('vnetNameM1'), 'vnet_shared_01_to_vnet_app_01_peering')]"
             ]
         },
         {
@@ -349,8 +349,8 @@
                 "count": "[length(parameters('privateDNSZones'))]"
             },
             "dependsOn": [
-                "[resourceId('Microsoft.Network/virtualNetworks/', parameters('vnetNameM2'), '/virtualNetworkPeerings/', 'vnet_app_01_to_vnet_shared_01_peering')]",
-                "[resourceId('Microsoft.Network/virtualNetworks/', parameters('vnetNameM1'), '/virtualNetworkPeerings/', 'vnet_shared_01_to_vnet_app_01_peering')]"
+                "[resourceId('Microsoft.Network/virtualNetworks/virtualNetworkPeerings', parameters('vnetNameM2'), 'vnet_app_01_to_vnet_shared_01_peering')]",
+                "[resourceId('Microsoft.Network/virtualNetworks/virtualNetworkPeerings', parameters('vnetNameM1'), 'vnet_shared_01_to_vnet_app_01_peering')]"
             ]
         }
     ]
