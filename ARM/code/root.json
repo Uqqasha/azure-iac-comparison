@@ -6,13 +6,15 @@
             "type": "string",
             "metadata": {
                 "description": "description"
-            }
+            },
+            "defaultValue": "[subscription().subscriptionId]"
         },
         "resourceGroupName": {
             "type": "string",
             "metadata": {
                 "description": "description"
-            }
+            },
+            "defaultValue": "[resourceGroup().name]"
         },
         "adminUsername": {
             "type": "string",
