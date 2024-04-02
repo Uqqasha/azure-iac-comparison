@@ -209,6 +209,7 @@
                     "family": "A",
                     "name": "[parameters('keyVaultSKU')]"
                 },
+                "enabledForTemplateDeployment": true,
                 "softDeleteRetentionInDays": 7,
                 //"enablePurgeProtection": false,
                 "enableSoftDelete": false,
@@ -456,6 +457,10 @@
         "vnetNameM1": {
             "type": "string",
             "value": "[parameters('vnetName')]"
+        },
+        "keyVaultId": {
+            "type": "string",
+            "value": "[reference(resourceId('Microsoft.KeyVault/vaults', concat('kv-', uniqueString(resourceGroup().id))), '2023-02-01', 'Full').resourceId]"
         }
     }
 }
