@@ -57,6 +57,9 @@
                     "keyVaultId": {
                         "value": "[reference('module01').outputs.keyVaultId.value]"
                     },
+                    "storageAccountId": {
+                        "value": "[reference('module01').outputs.storageAccountId.value]"
+                    },
                     "adminUsername": {
                         "value": "[parameters('adminUsername')]"
                     },

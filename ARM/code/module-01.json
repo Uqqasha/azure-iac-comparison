@@ -461,6 +461,10 @@
         "keyVaultId": {
             "type": "string",
             "value": "[reference(resourceId('Microsoft.KeyVault/vaults', concat('kv-', uniqueString(resourceGroup().id))), '2023-02-01', 'Full').resourceId]"
+        },
+        "storageAccountId": {
+            "type": "string",
+            "value": "[reference(resourceId('Microsoft.Storage/storageAccounts', concat('st', uniqueString(resourceGroup().id))), '2023-01-01', 'Full').resourceId]"
         }
     }
 }

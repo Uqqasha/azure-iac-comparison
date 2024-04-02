@@ -317,10 +317,28 @@
         },
         "keyVaultId": {
             "type": "string"
+        },
+        "storageAccountId": {
+            "type": "string"
+        },
+        "storageShareName": {
+            "type": "string",
+            "metadata": {
+                "description": "description"
+            },
+            "defaultValue": "myfileshare"
+        },
+        "storageShareQuota": {
+            "type": "int",
+            "metadata": {
+                "description": "description"
+            },
+            "defaultValue": 1024
         }
     },
     "variables": {
-        "keyVaultName": "[last(split(parameters('keyVaultId'), '/'))]"
+        "keyVaultName": "[last(split(parameters('keyVaultId'), '/'))]",
+        "storageAccountName": "[last(split(parameters('storageAccountId'), '/'))]"
     },
     "resources": [
         {
@@ -595,6 +613,9 @@
                     ]
                 }
             },
+            "identity": {
+                "type": "SystemAssigned"
+            },
             "dependsOn": [
                 "[resourceId('Microsoft.Network/networkInterfaces', concat('nic-', parameters('vmJumpboxLinuxName'), '-1'))]"
             ]
@@ -631,6 +652,52 @@
                     ]
                 }
             }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/fileServices/shares",
+            "apiVersion": "2023-01-01",
+            "name": "[concat(variables('storageAccountName'), '/default/', parameters('storageShareName'))]",
+            "properties": {
+                "shareQuota": "[parameters('storageShareQuota')]"
+            }
+        },
+        {
+            "type": "Microsoft.Network/privateEndpoints",
+            "apiVersion": "2023-04-01",
+            "name": "[concat('pend-', variables('storageAccountName'), '-file')]",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "subnet": {
+                    "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vnetNameM2'), 'snet-privatelink-01')]"
+                },
+                "privateLinkServiceConnections": [
+                    {
+                        "name": "azure_files",
+                        "properties": {
+                            "privateLinkServiceId": "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]",
+                            "groupIds": ["file"]
+                        }
+                    }
+                ]
+            },
+            "dependsOn": ["[resourceId('Microsoft.Network/networkSecurityGroups', concat('nsg-', parameters('vnetNameM2'), '.', parameters('subnetsDetails').subnets[3].name))]"]
+        },
+        {
+            "type": "Microsoft.Network/privateDnsZones/A",
+            "apiVersion": "2020-06-01",
+            "name": "[format('{0}/{1}', 'privatelink.file.core.windows.net', variables('storageAccountName'))]",
+            "properties": {
+                "ttl": 300,
+                "aRecords": [
+                {
+                    "ipv4Address": "[first(first(reference(resourceId('Microsoft.Network/privateEndpoints', concat('pend-', variables('storageAccountName'), '-file')), '2023-04-01').customDnsConfigs).ipAddresses)]"
+                }
+                ]
+            },
+            "dependsOn": [
+                "privateDNS",
+                "[resourceId('Microsoft.Network/privateEndpoints', concat('pend-', variables('storageAccountName'), '-file'))]"
+            ] 
         }
     ]
 }
