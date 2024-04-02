@@ -60,7 +60,7 @@
                             "keyVault": {
                                 "id": "[concat('/subscriptions/', parameters('subscriptionId'), '/resourceGroups/', parameters('resourceGroupName'), '/providers/', reference('module01').outputs.keyVaultId.value)]"
                             },
-                            "secretName": ""
+                            "secretName": "adminpassword"
                         }
                     }
                 }
