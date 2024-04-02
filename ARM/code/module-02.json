@@ -680,7 +680,10 @@
                     }
                 ]
             },
-            "dependsOn": ["[resourceId('Microsoft.Network/networkSecurityGroups', concat('nsg-', parameters('vnetNameM2'), '.', parameters('subnetsDetails').subnets[3].name))]"]
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkSecurityGroups', concat('nsg-', parameters('vnetNameM2'), '.', parameters('subnetsDetails').subnets[3].name))]",
+                "[resourceId('Microsoft.Network/virtualNetworks', parameters('vnetNameM2'))]"
+            ]
         },
         {
             "type": "Microsoft.Network/privateDnsZones/A",
