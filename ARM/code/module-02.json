@@ -314,6 +314,13 @@
                 "description": "description"
             },
             "defaultValue": "Standard_LRS"
+        },
+        "keyVaultName": {
+            "type": "string",
+            "metadata": {
+                "description": "description"
+            },
+            "defaultValue": "[last(split( reference('module01').outputs.keyVaultId.value, '/'))]"
         }
     },
     "variables": {},
@@ -593,6 +600,22 @@
             "dependsOn": [
                 "[resourceId('Microsoft.Network/networkInterfaces', concat('nic-', parameters('vmJumpboxLinuxName'), '-1'))]"
             ]
+        },
+        {
+            "type": "Microsoft.KeyVault/vaults/accessPolicies",
+            "name": "[concat(parameters('keyVaultName'), '/add')]",
+            "apiVersion": "2023-02-01",
+            "properties": {
+                "accessPolicies": [
+                  {
+                    "tenantId": "[subscription().tenantId]",
+                    "objectId": "[reference(resourceId('Microsoft.Compute/virtualMachines/', parameters('vmJumpboxLinuxName')), '2023-03-01', 'Full').identity.principalId]",
+                    "permissions": {
+                      "secrets": ["get"]
+                    }
+                  }
+                ]
+            }
         }
     ]
 }
