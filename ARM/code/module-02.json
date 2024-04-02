@@ -315,15 +315,13 @@
             },
             "defaultValue": "Standard_LRS"
         },
-        "keyVaultName": {
-            "type": "string",
-            "metadata": {
-                "description": "description"
-            },
-            "defaultValue": "[last(split( reference('module01').outputs.keyVaultId.value, '/'))]"
+        "keyVaultId": {
+            "type": "string"
         }
     },
-    "variables": {},
+    "variables": {
+        "keyVaultName": "[last(split(parameters('keyVaultId'), '/'))]"
+    },
     "resources": [
         {
             "type": "Microsoft.Network/virtualNetworks",
@@ -616,7 +614,7 @@
                     "resources": [
                         {
                             "type": "Microsoft.KeyVault/vaults/accessPolicies",
-                            "name": "[concat(parameters('keyVaultName'), '/add')]",
+                            "name": "[concat(variables('keyVaultName'), '/add')]",
                             "apiVersion": "2023-02-01",
                             "properties": {
                                 "accessPolicies": [

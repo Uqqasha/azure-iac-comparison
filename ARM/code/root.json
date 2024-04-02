@@ -54,6 +54,9 @@
                     "vnetNameM1": {
                         "value": "[reference('module01').outputs.vnetNameM1.value]"
                     },
+                    "keyVaultId": {
+                        "value": "[reference('module01').outputs.keyVaultId.value]"
+                    },
                     "adminUsername": {
                         "value": "[parameters('adminUsername')]"
                     },
