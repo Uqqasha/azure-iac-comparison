@@ -9,6 +9,18 @@
             },
             "defaultValue": "[subscription().subscriptionId]"
         },
+        "ownerObjectID": {
+            "type": "string",
+            "metadata": {
+                "description": "description"
+            }
+        },
+        "armClientObjectId": {
+            "type": "string",
+            "metadata": {
+                "description": "description"
+            }
+        },
         "resourceGroupName": {
             "type": "string",
             "metadata": {
@@ -16,10 +28,23 @@
             },
             "defaultValue": "[resourceGroup().name]"
         },
+        "location": {
+            "type": "string",
+            "metadata": {
+                "description": "description"
+            },
+            "defaultValue": "[resourceGroup().location]"
+        },
         "adminUsername": {
             "type": "string",
             "metadata": {
                 "description": "Username of admin user."
+            }
+        },
+        "dnsServers": {
+            "type": "array",
+            "metadata": {
+                "description": "The list of DNS servers IP addresses."
             }
         }
     },
@@ -32,12 +57,25 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/Uqqasha/azure-iac-comparison/main/ARM/code/module-01.json",
+                    "uri": "https://raw.githubusercontent.com/Uqqasha/azure-iac-comparison/main/ARM/code/modules/module-01/module-01.json",
                     "contentVersion": "1.0.0.0"
                 },
-                "parametersLink": {
-                    "uri": "https://raw.githubusercontent.com/Uqqasha/azure-iac-comparison/main/ARM/code/module-01.parameters.json",
-                    "contentVersion": "1.0.0.0"
+                "parameters": {
+                    "location": {
+                        "value": "[parameters('location')]"
+                    },
+                    "dnsServers": {
+                        "value": "[parameters('dnsServers')]"
+                    },
+                    "adminUsername": {
+                        "value": "[parameters('adminUsername')]"
+                    },
+                    "parameter1": {
+                        "value": "[parameters('ownerObjectID')]"
+                    },
+                    "armClientObjectId": {
+                        "value": "[parameters('armClientObjectId')]"
+                    }
                 }
             }
         },

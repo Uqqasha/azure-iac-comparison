@@ -4,6 +4,12 @@
     "parameters": {
       "adminUsername": {
         "value": "bootstrapadmin"
+      },
+      "dnsServers": {
+          "value": [
+            "10.1.1.4",
+            "168.63.129.16"
+          ]
       }
     }
 }
