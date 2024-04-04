@@ -64,13 +64,13 @@
                     "location": {
                         "value": "[parameters('location')]"
                     },
-                    "dnsServers": {
+                    "vnetDnsServers": {
                         "value": "[parameters('dnsServers')]"
                     },
                     "adminUsername": {
                         "value": "[parameters('adminUsername')]"
                     },
-                    "parameter1": {
+                    "ownerObjectID": {
                         "value": "[parameters('ownerObjectID')]"
                     },
                     "armClientObjectId": {
