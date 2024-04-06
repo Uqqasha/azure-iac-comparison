@@ -64,19 +64,6 @@
             ]
         },
         {
-            "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2022-09-01",
-            "name": "mySqlFlexibleServerPrivateEndpoint",
-            "dependsOn": [
-                "[resourceId('Microsoft.DBforMySQL/flexibleServers/databases', variables('mySqlFlexibleServerName'), parameters('mySqlDatabaseName'))]"
-            ],
-            "properties": {
-                "mode": "Incremental",
-                "template": {
-                    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-                    "contentVersion": "1.0.0.0",
-                    "resources": [
-                        {
                             "type": "Microsoft.Network/privateEndpoints",
                             "apiVersion": "2023-04-01",
                             "name": "[concat('pend-', variables('mySqlFlexibleServerName'))]",
@@ -94,7 +81,10 @@
                                         }
                                     }
                                 ]
-                            }
+                            },
+                            "dependsOn": [
+                "[resourceId('Microsoft.DBforMySQL/flexibleServers', variables('mySqlFlexibleServerName'))]"
+            ]
                         },
                         {
                             "type": "Microsoft.Network/privateDnsZones/A",
@@ -112,10 +102,59 @@
                                 "[resourceId('Microsoft.Network/privateEndpoints', concat('pend-', variables('mySqlFlexibleServerName')))]"
                             ] 
                         }
-                    ]
-                }
-            }
-        }
+        // {
+        //     "type": "Microsoft.Resources/deployments",
+        //     "apiVersion": "2022-09-01",
+        //     "name": "mySqlFlexibleServerPrivateEndpoint",
+        //     "dependsOn": [
+        //         "[resourceId('Microsoft.DBforMySQL/flexibleServers/databases', variables('mySqlFlexibleServerName'), parameters('mySqlDatabaseName'))]"
+        //     ],
+        //     "properties": {
+        //         "mode": "Incremental",
+        //         "template": {
+        //             "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+        //             "contentVersion": "1.0.0.0",
+        //             "resources": [
+        //                 {
+        //                     "type": "Microsoft.Network/privateEndpoints",
+        //                     "apiVersion": "2023-04-01",
+        //                     "name": "[concat('pend-', variables('mySqlFlexibleServerName'))]",
+        //                     "location": "[parameters('location')]",
+        //                     "properties": {
+        //                         "subnet": {
+        //                             "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vnetNameM2'), 'snet-privatelink-01')]"
+        //                         },
+        //                         "privateLinkServiceConnections": [
+        //                             {
+        //                                 "name": "azure_mysql_flexible_server",
+        //                                 "properties": {
+        //                                     "privateLinkServiceId": "[resourceId('Microsoft.DBforMySQL/flexibleServers', variables('mySqlFlexibleServerName'))]",
+        //                                     "groupIds": ["mysqlServer"]
+        //                                 }
+        //                             }
+        //                         ]
+        //                     }
+        //                 },
+        //                 {
+        //                     "type": "Microsoft.Network/privateDnsZones/A",
+        //                     "apiVersion": "2020-06-01",
+        //                     "name": "[format('{0}/{1}', 'privatelink.mysql.database.azure.com', variables('mySqlFlexibleServerName'))]",
+        //                     "properties": {
+        //                         "ttl": 300,
+        //                         "aRecords": [
+        //                         {
+        //                             "ipv4Address": "[first(first(reference(resourceId('Microsoft.Network/privateEndpoints', concat('pend-', variables('mySqlFlexibleServerName'))), '2023-04-01').customDnsConfigs).ipAddresses)]"
+        //                         }
+        //                         ]
+        //                     },
+        //                     "dependsOn": [
+        //                         "[resourceId('Microsoft.Network/privateEndpoints', concat('pend-', variables('mySqlFlexibleServerName')))]"
+        //                     ] 
+        //                 }
+        //             ]
+        //         }
+        //     }
+        // }
     ],
     "outputs": {}
 }
