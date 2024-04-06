@@ -86,7 +86,7 @@
         },
         {
             "type": "Microsoft.Compute/virtualMachines",
-            "apiVersion": "2023-03-01",
+            "apiVersion": "2023-09-01",
             "name": "[parameters('vmMssqlWinName')]",
             "location": "[parameters('location')]",
             "properties": {
@@ -117,7 +117,21 @@
                         "managedDisk": {
                             "storageAccountType": "[parameters('vmMssqlWinStorageAccountType')]"
                         }
-                    }
+                    },
+                    "copy": [
+                        {
+                            "name": "dataDisks",
+                            "count": "[length(parameters('vmMssqlWinDataDiskConfig').disks)]",
+                            "input": {
+                                "lun": "[parameters('vmMssqlWinDataDiskConfig').disks[copyIndex('dataDisks')].lun]",
+                                "caching": "[parameters('vmMssqlWinDataDiskConfig').disks[copyIndex('dataDisks')].caching]",
+                                "createOption": "Attach",
+                                "managedDisk": {
+                                    "id": "[resourceId('Microsoft.Compute/disks', concat('disk-', parameters('vmMssqlWinName') , parameters('vmMssqlWinDataDiskConfig').disks[copyIndex('dataDisks')].name))]"
+                                }
+                            }
+                        }
+                    ]
                 },
                 "networkProfile": {
                     "networkInterfaces": [
@@ -128,7 +142,8 @@
                 }
             },
             "dependsOn": [
-                "[resourceId('Microsoft.Network/networkInterfaces', concat('nic-', parameters('vmMssqlWinName'), '-1'))]"
+                "[resourceId('Microsoft.Network/networkInterfaces', concat('nic-', parameters('vmMssqlWinName'), '-1'))]",
+                "diskLoop"
             ]
         },
         {
@@ -149,35 +164,7 @@
                 },
                 "diskSizeGB": "[parameters('vmMssqlWinDataDiskConfig').disks[copyIndex('diskLoop')].diskSize]"
             }
-        },
-        {
-            "type": "Microsoft.Compute/virtualMachines",
-            "apiVersion": "2023-03-01",
-            "name": "[parameters('vmMssqlWinName')]",
-            "location": "[parameters('location')]",
-            "properties": {
-                "storageProfile": {
-                    "copy": [
-                        {
-                            "name": "dataDisks",
-                            "count": "[length(parameters('vmMssqlWinDataDiskConfig').disks)]",
-                            "input": {
-                                "lun": "[parameters('vmMssqlWinDataDiskConfig').disks[copyIndex('dataDisks')].lun]",
-                                "caching": "[parameters('vmMssqlWinDataDiskConfig').disks[copyIndex('dataDisks')].caching]",
-                                "createOption": "Attach",
-                                "managedDisk": {
-                                    "id": "[resourceId('Microsoft.Compute/disks', concat('disk-', parameters('vmMssqlWinName') , parameters('vmMssqlWinDataDiskConfig').disks[copyIndex('dataDisks')].name))]"
-                                }
-                            }
-                        }
-                    ]
-                }
-            },
-            "dependsOn": [
-                "diskLoop"
-            ]
         }
-
     ],
     "outputs": {}
 }
