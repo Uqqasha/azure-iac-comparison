@@ -41,6 +41,7 @@
             "type": "Microsoft.Sql/servers/databases",
             "apiVersion": "2021-11-01",
             "name": "[format('{0}/{1}', variables('msSqlServerName'), parameters('msSqlDatabaseName'))]",
+            "location": "[parameters('location')]",
             "properties": {
                 "licenseType": "LicenseIncluded"
             },
