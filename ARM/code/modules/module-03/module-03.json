@@ -20,7 +20,7 @@
         },
         "vmMssqlWinSize": {
             "type": "string",
-            "defaultValue": "Standard_B4ms"
+            "defaultValue": "Standard_B1s"
         },
         "vmMssqlWinImagePublisher": {
             "type": "string",

@@ -229,7 +229,7 @@
             "metadata": {
                 "description": "description"
             },
-            "defaultValue": "Standard_B2s"
+            "defaultValue": "Standard_B1s"
         },
         "vmJumpboxWinImagePublisher": {
             "type": "string",
@@ -377,10 +377,7 @@
                 ]
             },
             "dependsOn": [
-                "[resourceId('Microsoft.Network/networkSecurityGroups', concat('nsg-', parameters('vnetNameM2'), '.', parameters('subnetsDetails').subnets[0].name))]",
-                "[resourceId('Microsoft.Network/networkSecurityGroups', concat('nsg-', parameters('vnetNameM2'), '.', parameters('subnetsDetails').subnets[1].name))]",
-                "[resourceId('Microsoft.Network/networkSecurityGroups', concat('nsg-', parameters('vnetNameM2'), '.', parameters('subnetsDetails').subnets[2].name))]",
-                "[resourceId('Microsoft.Network/networkSecurityGroups', concat('nsg-', parameters('vnetNameM2'), '.', parameters('subnetsDetails').subnets[3].name))]"
+                "NSG"
             ]
         },
         {
@@ -482,75 +479,75 @@
                 "[resourceId('Microsoft.Network/virtualNetworks/virtualNetworkPeerings', parameters('vnetNameM1'), 'vnet_shared_01_to_vnet_app_01_peering')]"
             ]
         },
-        {
-            "type": "Microsoft.Network/networkInterfaces",
-            "apiVersion": "2023-04-01",
-            "name": "[concat('nic-', parameters('vmJumpboxWinName'), '-1')]",
-            "location": "[resourceGroup().location]",
-            "properties": {
-                "ipConfigurations": [
-                    {
-                        "name": "[concat('ipc-', parameters('vmJumpboxWinName'), '-1')]",
-                        "properties": {
-                            "privateIPAllocationMethod": "Dynamic",
-                            "subnet": {
-                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vnetNameM2'), 'snet-app-01')]"
-                            }
-                        } 
-                    }
-                ]
-            },
-            "dependsOn": [
-                "[resourceId('Microsoft.Network/virtualNetworks', parameters('vnetNameM2'))]"
-            ]
-        },
-        {
-            "type": "Microsoft.Compute/virtualMachines",
-            "apiVersion": "2023-03-01",
-            "name": "[parameters('vmJumpboxWinName')]",
-            "location": "[resourceGroup().location]",
-            "properties": {
-                "hardwareProfile": {
-                    "vmSize": "[parameters('vmJumpboxWinSize')]"
-                },
-                "osProfile": {
-                    "computerName": "[parameters('vmJumpboxWinName')]",
-                    "adminUsername": "[parameters('adminUsername')]",
-                    "adminPassword": "[parameters('adminPassword')]",
-                    "windowsConfiguration": {
-                        "enableAutomaticUpdates": false,
-                        "patchSettings": {
-                            "patchMode": "Manual"
-                        }
-                    }
-                },
-                "storageProfile": {
-                    "imageReference": {
-                        "publisher": "[parameters('vmJumpboxWinImagePublisher')]",
-                        "offer": "[parameters('vmJumpboxWinImageOffer')]",
-                        "sku": "[parameters('vmJumpboxWinImageSku')]",
-                        "version": "[parameters('vmJumpboxWinImageVersion')]"
-                    },
-                    "osDisk": {
-                        "createOption": "FromImage",
-                        "caching": "ReadWrite",
-                        "managedDisk": {
-                            "storageAccountType": "[parameters('vmJumpboxWinStorageAccountType')]"
-                        }
-                    }
-                },
-                "networkProfile": {
-                    "networkInterfaces": [
-                        {
-                            "id": "[resourceId('Microsoft.Network/networkInterfaces', concat('nic-', parameters('vmJumpboxWinName'), '-1'))]"
-                        }
-                    ]
-                }
-            },
-            "dependsOn": [
-                "[resourceId('Microsoft.Network/networkInterfaces', concat('nic-', parameters('vmJumpboxWinName'), '-1'))]"
-            ]
-        },
+        // {
+        //     "type": "Microsoft.Network/networkInterfaces",
+        //     "apiVersion": "2023-04-01",
+        //     "name": "[concat('nic-', parameters('vmJumpboxWinName'), '-1')]",
+        //     "location": "[resourceGroup().location]",
+        //     "properties": {
+        //         "ipConfigurations": [
+        //             {
+        //                 "name": "[concat('ipc-', parameters('vmJumpboxWinName'), '-1')]",
+        //                 "properties": {
+        //                     "privateIPAllocationMethod": "Dynamic",
+        //                     "subnet": {
+        //                         "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vnetNameM2'), 'snet-app-01')]"
+        //                     }
+        //                 } 
+        //             }
+        //         ]
+        //     },
+        //     "dependsOn": [
+        //         "[resourceId('Microsoft.Network/virtualNetworks', parameters('vnetNameM2'))]"
+        //     ]
+        // },
+        // {
+        //     "type": "Microsoft.Compute/virtualMachines",
+        //     "apiVersion": "2023-03-01",
+        //     "name": "[parameters('vmJumpboxWinName')]",
+        //     "location": "[resourceGroup().location]",
+        //     "properties": {
+        //         "hardwareProfile": {
+        //             "vmSize": "[parameters('vmJumpboxWinSize')]"
+        //         },
+        //         "osProfile": {
+        //             "computerName": "[parameters('vmJumpboxWinName')]",
+        //             "adminUsername": "[parameters('adminUsername')]",
+        //             "adminPassword": "[parameters('adminPassword')]",
+        //             "windowsConfiguration": {
+        //                 "enableAutomaticUpdates": false,
+        //                 "patchSettings": {
+        //                     "patchMode": "Manual"
+        //                 }
+        //             }
+        //         },
+        //         "storageProfile": {
+        //             "imageReference": {
+        //                 "publisher": "[parameters('vmJumpboxWinImagePublisher')]",
+        //                 "offer": "[parameters('vmJumpboxWinImageOffer')]",
+        //                 "sku": "[parameters('vmJumpboxWinImageSku')]",
+        //                 "version": "[parameters('vmJumpboxWinImageVersion')]"
+        //             },
+        //             "osDisk": {
+        //                 "createOption": "FromImage",
+        //                 "caching": "ReadWrite",
+        //                 "managedDisk": {
+        //                     "storageAccountType": "[parameters('vmJumpboxWinStorageAccountType')]"
+        //                 }
+        //             }
+        //         },
+        //         "networkProfile": {
+        //             "networkInterfaces": [
+        //                 {
+        //                     "id": "[resourceId('Microsoft.Network/networkInterfaces', concat('nic-', parameters('vmJumpboxWinName'), '-1'))]"
+        //                 }
+        //             ]
+        //         }
+        //     },
+        //     "dependsOn": [
+        //         "[resourceId('Microsoft.Network/networkInterfaces', concat('nic-', parameters('vmJumpboxWinName'), '-1'))]"
+        //     ]
+        // },
         {
             "type": "Microsoft.Network/networkInterfaces",
             "apiVersion": "2023-04-01",
