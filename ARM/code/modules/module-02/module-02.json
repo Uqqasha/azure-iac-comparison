@@ -702,5 +702,11 @@
                 "[resourceId('Microsoft.Network/privateEndpoints', concat('pend-', variables('storageAccountName'), '-file'))]"
             ] 
         }
-    ]
+    ],
+    "outputs": {
+        "vnetNameM2": {
+            "type": "string",
+            "value": "[parameters('vnetNameM2')]"
+        }
+    }
 }
