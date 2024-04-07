@@ -95,15 +95,15 @@ resource "azurerm_key_vault_secret" "log_analytics_workspace_01_primary_shared_k
 
 ##### Shared services virtual network, subnets and network security groups #####
 resource "azurerm_virtual_network" "vnet_shared_01" {
-  name                = var.vnet_name
+  name                = var.vnet_name_m1
   location            = var.location
   resource_group_name = var.resource_group_name
-  address_space       = [var.vnet_address_space]
+  address_space       = [var.vnet_address_space_m1]
   dns_servers         = var.vnet_dns_servers 
 }
 
 resource "azurerm_subnet" "vnet_shared_01_subnets" {
-  for_each                                  = local.subnets
+  for_each                                  = local.subnets_M1
   name                                      = each.key
   resource_group_name                       = var.resource_group_name
   virtual_network_name                      = azurerm_virtual_network.vnet_shared_01.name
@@ -111,27 +111,27 @@ resource "azurerm_subnet" "vnet_shared_01_subnets" {
   private_endpoint_network_policies_enabled = each.value.private_endpoint_network_policies_enabled
 }
 
-resource "azurerm_network_security_group" "network_security_groups" {
+resource "azurerm_network_security_group" "network_security_groups_m1" {
   for_each = azurerm_subnet.vnet_shared_01_subnets
 
-  name                = "nsg-${var.vnet_name}.${each.key}"
+  name                = "nsg-${var.vnet_name_m1}.${each.key}"
   location            = var.location
   resource_group_name = var.resource_group_name
 }
 
-resource "azurerm_subnet_network_security_group_association" "nsg_subnet_associations" {
+resource "azurerm_subnet_network_security_group_association" "nsg_subnet_associations_m1" {
   for_each = azurerm_subnet.vnet_shared_01_subnets
 
   subnet_id                 = azurerm_subnet.vnet_shared_01_subnets[each.key].id
-  network_security_group_id = azurerm_network_security_group.network_security_groups[each.key].id
+  network_security_group_id = azurerm_network_security_group.network_security_groups_m1[each.key].id
 
   depends_on = [
-    azurerm_bastion_host.bastion_host_01,
-    azurerm_network_security_rule.network_security_rules
+    # azurerm_bastion_host.bastion_host_01,
+    azurerm_network_security_rule.network_security_rules_m1
   ]
 }
 
-resource "azurerm_network_security_rule" "network_security_rules" {
+resource "azurerm_network_security_rule" "network_security_rules_m1" {
   for_each = {
     for network_security_group_rule in local.network_security_group_rules : "${network_security_group_rule.subnet_name}.${network_security_group_rule.nsgrule_name}" => network_security_group_rule
   }
@@ -142,7 +142,7 @@ resource "azurerm_network_security_rule" "network_security_rules" {
   destination_port_ranges     = length(each.value.destination_port_ranges) > 1 ? each.value.destination_port_ranges : null
   direction                   = each.value.direction
   name                        = each.value.nsgrule_name
-  network_security_group_name = "nsg-${var.vnet_name}.${each.value.subnet_name}"
+  network_security_group_name = "nsg-${var.vnet_name_m1}.${each.value.subnet_name}"
   priority                    = each.value.priority
   protocol                    = each.value.protocol
   resource_group_name         = var.resource_group_name
@@ -151,32 +151,32 @@ resource "azurerm_network_security_rule" "network_security_rules" {
   source_port_ranges          = length(each.value.source_port_ranges) > 1 ? each.value.source_port_ranges : null
 
   depends_on = [
-    azurerm_network_security_group.network_security_groups
+    azurerm_network_security_group.network_security_groups_m1
   ]
 }
 
 ##### Bastion #####
-resource "azurerm_bastion_host" "bastion_host_01" {
-  name                = var.bastion_name
-  location            = var.location
-  resource_group_name = var.resource_group_name
+# resource "azurerm_bastion_host" "bastion_host_01" {
+#   name                = var.bastion_name
+#   location            = var.location
+#   resource_group_name = var.resource_group_name
 
-  ip_configuration {
-    name                 = "ipc-${var.bastion_name}"
-    subnet_id            = azurerm_subnet.vnet_shared_01_subnets["AzureBastionSubnet"].id
-    public_ip_address_id = azurerm_public_ip.bastion_host_01.id
-  }
-}
-# Dedicated public ip for bastion
-resource "azurerm_public_ip" "bastion_host_01" {
-  name                = "pip-${var.bastion_name}"
-  location            = var.location
-  resource_group_name = var.resource_group_name
-  allocation_method   = var.bastion_pip_allocation
-  sku                 = var.bastion_pip_sku
-}
+#   ip_configuration {
+#     name                 = "ipc-${var.bastion_name}"
+#     subnet_id            = azurerm_subnet.vnet_shared_01_subnets["AzureBastionSubnet"].id
+#     public_ip_address_id = azurerm_public_ip.bastion_host_01.id
+#   }
+# }
+# # Dedicated public ip for bastion
+# resource "azurerm_public_ip" "bastion_host_01" {
+#   name                = "pip-${var.bastion_name}"
+#   location            = var.location
+#   resource_group_name = var.resource_group_name
+#   allocation_method   = var.bastion_pip_allocation
+#   sku                 = var.bastion_pip_sku
+# }
 
-##### AD DS Virtual Machine #####
+# ##### AD DS Virtual Machine #####
 resource "azurerm_windows_virtual_machine" "vm_adds" {
   name                     = "vm-${var.vm_adds_name}"
   resource_group_name      = var.resource_group_name
@@ -185,8 +185,8 @@ resource "azurerm_windows_virtual_machine" "vm_adds" {
   admin_username           = azurerm_key_vault_secret.adminuser.value
   admin_password           = azurerm_key_vault_secret.adminpassword.value
   network_interface_ids    = [azurerm_network_interface.vm_adds_nic_01.id]
-  enable_automatic_updates = false
-  patch_mode               = "Manual"
+  enable_automatic_updates = true
+  patch_mode               = "AutomaticByOS"
   # depends_on               = [azurerm_automation_account.automation_account_01]
 
   os_disk {

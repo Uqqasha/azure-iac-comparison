@@ -1,5 +1,5 @@
 locals {
-  subnets = {
+  subnets_M1 = {
     AzureBastionSubnet = {
       address_prefix                            = var.subnet_AzureBastionSubnet_address_prefix
       private_endpoint_network_policies_enabled = false
@@ -159,7 +159,7 @@ locals {
   }
 
   network_security_group_rules = flatten([
-    for subnet_key, subnet in local.subnets : [
+    for subnet_key, subnet in local.subnets_M1 : [
       for nsgrule_key in subnet.nsgrules : {
         subnet_name                = subnet_key
         nsgrule_name               = nsgrule_key
