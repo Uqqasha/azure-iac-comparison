@@ -6,7 +6,7 @@
             "type": "string",
             "defaultValue": "[subscription().subscriptionId]"
         },
-        "ownerObjectID": {
+        "ownerObjectId": {
             "type": "string"
         },
         "armClientObjectId": {
@@ -49,8 +49,8 @@
                     "adminUsername": {
                         "value": "[parameters('adminUsername')]"
                     },
-                    "ownerObjectID": {
-                        "value": "[parameters('ownerObjectID')]"
+                    "ownerObjectId": {
+                        "value": "[parameters('ownerObjectId')]"
                     },
                     "armClientObjectId": {
                         "value": "[parameters('armClientObjectId')]"
