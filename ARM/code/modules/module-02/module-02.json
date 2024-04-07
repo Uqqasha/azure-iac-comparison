@@ -278,7 +278,7 @@
             "metadata": {
                 "description": "description"
             },
-            "defaultValue": "Standard_B2s"
+            "defaultValue": "Standard_B1s"
         },
         "vmJumpboxLinuxImagePublisher": {
             "type": "string",
@@ -479,28 +479,28 @@
                 "[resourceId('Microsoft.Network/virtualNetworks/virtualNetworkPeerings', parameters('vnetNameM1'), 'vnet_shared_01_to_vnet_app_01_peering')]"
             ]
         },
-        // {
-        //     "type": "Microsoft.Network/networkInterfaces",
-        //     "apiVersion": "2023-04-01",
-        //     "name": "[concat('nic-', parameters('vmJumpboxWinName'), '-1')]",
-        //     "location": "[resourceGroup().location]",
-        //     "properties": {
-        //         "ipConfigurations": [
-        //             {
-        //                 "name": "[concat('ipc-', parameters('vmJumpboxWinName'), '-1')]",
-        //                 "properties": {
-        //                     "privateIPAllocationMethod": "Dynamic",
-        //                     "subnet": {
-        //                         "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vnetNameM2'), 'snet-app-01')]"
-        //                     }
-        //                 } 
-        //             }
-        //         ]
-        //     },
-        //     "dependsOn": [
-        //         "[resourceId('Microsoft.Network/virtualNetworks', parameters('vnetNameM2'))]"
-        //     ]
-        // },
+        {
+            "type": "Microsoft.Network/networkInterfaces",
+            "apiVersion": "2023-04-01",
+            "name": "[concat('nic-', parameters('vmJumpboxWinName'), '-1')]",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "[concat('ipc-', parameters('vmJumpboxWinName'), '-1')]",
+                        "properties": {
+                            "privateIPAllocationMethod": "Dynamic",
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vnetNameM2'), 'snet-app-01')]"
+                            }
+                        } 
+                    }
+                ]
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks', parameters('vnetNameM2'))]"
+            ]
+        },
         // {
         //     "type": "Microsoft.Compute/virtualMachines",
         //     "apiVersion": "2023-03-01",
