@@ -1,79 +1,34 @@
-@description('The name of the Azure Region where resources will be provisioned.')
 param location string
-
-@description('Defines the Tier to use for this storage account.')
-param storageAccountSKU string = 'Standard_LRS'
-
-@description('Defines the Kind of account. Valid options are BlobStorage, BlockBlobStorage, FileStorage, Storage and StorageV2.')
-param storageAccountKind string = 'StorageV2'
-
-@description('The name of the Container which should be created within the Storage Account.')
-param storageContainerName string = 'scripts'
-
-@description('The name of the new Log Analytics Workspace to be provisioned.')
-param logAnalyticsWorkspaceName string = 'log-shared-bicep-01'
-
-@description('Specifies the SKU of the Log Analytics Workspace. Possible values are Free, PerNode, Premium, Standard, Standalone, Unlimited, CapacityReservation, and PerGB2018.')
-param logAnalyticsWorkspaceSKU string = 'PerGB2018'
-
-@description('The workspace data retention in days.')
-param logAnalyticsWorkspaceRetentionDays int = 30
-
-@description('The Name of the SKU used for this Key Vault. Possible values are standard and premium.')
-param keyVaultSKU string = 'Standard'
-
-@description('The Object ID of Azure CLI signed in User.')
 param ownerObjectId string
-
-@description('The Object ID for the service principal.')
 param armClientObjectId string
-
-@description('Username of admin user.')
 param adminUsername string
 
-@description('The automation account SKU. Basic or Free.')
+param storageAccountSKU string = 'Standard_LRS'
+param storageAccountKind string = 'StorageV2'
+param storageContainerName string = 'scripts'
+
+param logAnalyticsWorkspaceName string = 'log-shared-bicep-01'
+param logAnalyticsWorkspaceSKU string = 'PerGB2018'
+param logAnalyticsWorkspaceRetentionDays int = 30
+
+param keyVaultSKU string = 'Standard'
 param automationAccountSku string = 'Basic'
 
-@description('The name of the new virtual network to be provisioned.')
 param vnetName string = 'vnet-shared-01'
-
-@description('The address space in CIDR notation for the new virtual network.')
 param vnetAddressPrefix string = '10.1.0.0/16'
 
-@description('The name of Bastion Host.')
 param bastionName string = 'bst-bicep-01'
-
-@description('The SKU of the Public IP. Accepted values are Basic and Standard.')
 param bastionPipSKU string = 'Standard'
-
-@description('Defines the allocation method for this IP address. Possible values are Static or Dynamic.')
 param bastionPipAllocation string = 'Static'
 
-@description('The name of the VM.')
 param vmAddsName string = 'adds1'
-
-@description('The private IP address allocation method.')
 param vmAddsNicPrivateIpAllocationMethod string = 'Dynamic'
-
-@description('The size of the virtual machine.')
-param vmAddsSize string = 'Standard_B2s'
-
-@description('The publisher for the virtual machine image used to create the VM.')
+param vmAddsSize string = 'Standard_B1s'
 param vmAddsImagePublisher string = 'MicrosoftWindowsServer'
-
-@description('The offer type of the virtual machine image used to create the VM.')
 param vmAddsImageOffer string = 'WindowsServer'
-
-@description('The sku of the virtual machine image used to create the VM.')
 param vmAddsImageSku string = '2022-datacenter-core-g2'
-
-@description('The version of the virtual machine image used to create the VM.')
 param vmAddsImageVersion string = 'Latest'
-
-@description('The storage replication type to be used for the VMs OS and data disks.')
 param vmAddsStorageAccountCaching string = 'ReadWrite'
-
-@description('The storage replication type to be used for the VMs OS and data disks.')
 param vmAddsStorageAccountType string = 'Standard_LRS'
 
 var adminPassword = 'P-${uniqueString(resourceGroup().id, deployment().name)}'
@@ -231,69 +186,69 @@ resource nsg 'Microsoft.Network/networkSecurityGroups@2023-09-01' = [ for nsg in
 //   dependsOn: [ vnet ]
 // }
 
-// resource vmAddsNic 'Microsoft.Network/networkInterfaces@2022-05-01' = {
-//   name: 'nic-${vmAddsName}-1'
-//   location: location
-//   properties: {
-//     ipConfigurations: [
-//       {
-//         name: 'ipc-${vmAddsName}-1'
-//         properties: {
-//           privateIPAllocationMethod: vmAddsNicPrivateIpAllocationMethod
-//           subnet: {
-//             id: resourceId('Microsoft.Network/virtualNetworks/subnets', vnetName, 'snet-adds-01')
-//           }
-//         }
-//       }
-//     ]
-//   }
-//   dependsOn: [ vnet ]
-// }
+resource vmAddsNic 'Microsoft.Network/networkInterfaces@2022-05-01' = {
+  name: 'nic-${vmAddsName}-1'
+  location: location
+  properties: {
+    ipConfigurations: [
+      {
+        name: 'ipc-${vmAddsName}-1'
+        properties: {
+          privateIPAllocationMethod: vmAddsNicPrivateIpAllocationMethod
+          subnet: {
+            id: resourceId('Microsoft.Network/virtualNetworks/subnets', vnetName, 'snet-adds-01')
+          }
+        }
+      }
+    ]
+  }
+  dependsOn: [ vnet ]
+}
 
-// resource vmAdds 'Microsoft.Compute/virtualMachines@2022-03-01' = {
-//   name: vmAddsName
-//   location: location
-//   properties: {
-//     hardwareProfile: {
-//       vmSize: vmAddsSize
-//     }
-//     osProfile: {
-//       computerName: vmAddsName
-//       adminUsername: adminUsername
-//       adminPassword: adminPassword
-//       windowsConfiguration: {
-//         enableAutomaticUpdates: false
-//         patchSettings: {
-//           patchMode: 'Manual'
-//         }
-//       }
-//     }
-//     storageProfile: {
-//       imageReference: {
-//         publisher: vmAddsImagePublisher
-//         offer: vmAddsImageOffer
-//         sku: vmAddsImageSku
-//         version: vmAddsImageVersion
-//       }
-//       osDisk: {
-//         createOption: 'FromImage'
-//         caching: vmAddsStorageAccountCaching
-//         managedDisk: {
-//           storageAccountType: vmAddsStorageAccountType
-//         }
-//       }
-//     }
-//     networkProfile: {
-//       networkInterfaces: [
-//         {
-//           id: vmAddsNic.id
-//         }
-//       ]
-//     }
-//   }
-// }
+resource vmAdds 'Microsoft.Compute/virtualMachines@2022-03-01' = {
+  name: vmAddsName
+  location: location
+  properties: {
+    hardwareProfile: {
+      vmSize: vmAddsSize
+    }
+    osProfile: {
+      computerName: vmAddsName
+      adminUsername: adminUsername
+      adminPassword: adminPassword
+      windowsConfiguration: {
+        enableAutomaticUpdates: true
+        patchSettings: {
+          patchMode: 'AutomaticByOS'
+        }
+      }
+    }
+    storageProfile: {
+      imageReference: {
+        publisher: vmAddsImagePublisher
+        offer: vmAddsImageOffer
+        sku: vmAddsImageSku
+        version: vmAddsImageVersion
+      }
+      osDisk: {
+        createOption: 'FromImage'
+        caching: vmAddsStorageAccountCaching
+        managedDisk: {
+          storageAccountType: vmAddsStorageAccountType
+        }
+      }
+    }
+    networkProfile: {
+      networkInterfaces: [
+        {
+          id: vmAddsNic.id
+        }
+      ]
+    }
+  }
+}
 
-@description('The name of the new virtual network to be provisioned.')
+@description('The details of subnets and NSGs.')
 param subnets object = {
   AzureBastionSubnet: {
     addressPrefix: '10.1.0.0/27'

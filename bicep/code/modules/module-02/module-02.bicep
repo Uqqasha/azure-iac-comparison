@@ -1,80 +1,34 @@
-@description('The name of the Azure Region where resources will be provisioned.')
 param location string
-
-@description('')
 param dnsServers array
-
-@description('')
 param vnetNameM1 string
-
-@description('The name of the new virtual network to be provisioned.')
-param vnetNameM2 string = 'vnet-app-01'
-
-@description('The address space in CIDR notation for the new virtual network.')
-param vnetAddressPrefixM2 string = '10.2.0.0/16'
-
-@description('')
-param privateDnsZones array = [ 'privatelink.database.windows.net', 'privatelink.file.core.windows.net', 'privatelink.mysql.database.azure.com']
-
-@description('Username of admin user.')
 param adminUsername string
-
-@description('')
 @secure()
 param adminPassword string 
-
-@description('')
-param vmJumpboxWinName string = 'jumpwin1'
-
-@description('')
-param vmJumpboxWinSize string = 'Standard_B2s'
-
-@description('')
-param vmJumpboxWinPublisher string = 'MicrosoftWindowsServer'
-
-@description('')
-param vmJumpboxWinOffer string = 'WindowsServer'
-
-@description('')
-param vmJumpboxWinSku string = '2022-datacenter-g2'
-
-@description('')
-param vmJumpboxWinVersion string = 'Latest'
-
-@description('')
-param vmJumpboxWinStorageAccountType string = 'Standard_LRS'
-
-@description('')
-param vmJumpboxLinuxName string = 'jumplinux1'
-
-@description('')
-param vmJumpboxLinuxSize string = 'Standard_B2s'
-
-@description('')
-param vmJumpboxLinuxPublisher string = 'Canonical'
-
-@description('')
-param vmJumpboxLinuxOffer string = '0001-com-ubuntu-server-jammy'
-
-@description('')
-param vmJumpboxLinuxSku string = '22_04-lts-gen2'
-
-@description('')
-param vmJumpboxLinuxVersion string = 'Latest'
-
-@description('')
-param vmJumpboxLinuxStorageAccountType string = 'Standard_LRS'
-
-@description('')
 param keyVaultName string
-
-@description('')
 param storageAccountName string
 
-@description('')
-param storageShareName string = 'myfileshare'
+param vnetNameM2 string = 'vnet-app-01'
+param vnetAddressPrefixM2 string = '10.2.0.0/16'
 
-@description('')
+param privateDnsZones array = [ 'privatelink.database.windows.net', 'privatelink.file.core.windows.net', 'privatelink.mysql.database.azure.com']
+
+param vmJumpboxWinName string = 'jumpwin1'
+param vmJumpboxWinSize string = 'Standard_B1s'
+param vmJumpboxWinPublisher string = 'MicrosoftWindowsServer'
+param vmJumpboxWinOffer string = 'WindowsServer'
+param vmJumpboxWinSku string = '2022-datacenter-g2'
+param vmJumpboxWinVersion string = 'Latest'
+param vmJumpboxWinStorageAccountType string = 'Standard_LRS'
+
+param vmJumpboxLinuxName string = 'jumplinux1'
+param vmJumpboxLinuxSize string = 'Standard_B1s'
+param vmJumpboxLinuxPublisher string = 'Canonical'
+param vmJumpboxLinuxOffer string = '0001-com-ubuntu-server-jammy'
+param vmJumpboxLinuxSku string = '22_04-lts-gen2'
+param vmJumpboxLinuxVersion string = 'Latest'
+param vmJumpboxLinuxStorageAccountType string = 'Standard_LRS'
+
+param storageShareName string = 'myfileshare'
 param storageShareQuota int = 1024
 
 resource vnetApp 'Microsoft.Network/virtualNetworks@2023-09-01' = {
@@ -89,16 +43,15 @@ resource vnetApp 'Microsoft.Network/virtualNetworks@2023-09-01' = {
         vnetAddressPrefixM2
       ]
     }
-    subnets: [ for subnet in items(subnets): {
+    subnets: [ for (subnet, i) in items(subnets): {
       name: subnet.key
       properties: {
         addressPrefix: subnet.value.addressPrefix
         privateEndpointNetworkPolicies: subnet.value.privateEndpointNetworkPolicies
-        networkSecurityGroup: { id: resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-${vnetNameM2}.${subnet.key}')}
+        networkSecurityGroup: { id: nsg[i].id}
       }
     }]
   }
-  dependsOn: [ nsg ]
 }
 
 resource nsg 'Microsoft.Network/networkSecurityGroups@2023-09-01' = [ for nsg in items(subnets): {
@@ -169,66 +122,66 @@ resource privateDNSZoneVirtualNetworkLinksVnetShared01 'Microsoft.Network/privat
   ]
 }]
 
-resource vmJumpboxWinNic 'Microsoft.Network/networkInterfaces@2022-05-01' = {
-  name: 'nic-${vmJumpboxWinName}-1'
-  location: location
-  properties: {
-    ipConfigurations: [
-      {
-        name: 'ipc-${vmJumpboxWinName}-1'
-        properties: {
-          privateIPAllocationMethod: 'Dynamic'
-          subnet: {
-            id: vnetApp.properties.subnets[0].id
-          }
-        }
-      }
-    ]
-  }
-}
+// resource vmJumpboxWinNic 'Microsoft.Network/networkInterfaces@2022-05-01' = {
+//   name: 'nic-${vmJumpboxWinName}-1'
+//   location: location
+//   properties: {
+//     ipConfigurations: [
+//       {
+//         name: 'ipc-${vmJumpboxWinName}-1'
+//         properties: {
+//           privateIPAllocationMethod: 'Dynamic'
+//           subnet: {
+//             id: vnetApp.properties.subnets[0].id
+//           }
+//         }
+//       }
+//     ]
+//   }
+// }
 
-resource vmJumpboxWin 'Microsoft.Compute/virtualMachines@2022-03-01' = {
-  name: vmJumpboxWinName
-  location: location
-  properties: {
-    hardwareProfile: {
-      vmSize: vmJumpboxWinSize
-    }
-    osProfile: {
-      computerName: vmJumpboxWinName
-      adminUsername: adminUsername
-      adminPassword: adminPassword
-      windowsConfiguration: {
-        enableAutomaticUpdates: false
-        patchSettings: {
-          patchMode: 'Manual'
-        }
-      }
-    }
-    storageProfile: {
-      imageReference: {
-        publisher: vmJumpboxWinPublisher
-        offer: vmJumpboxWinOffer
-        sku: vmJumpboxWinSku
-        version: vmJumpboxWinVersion
-      }
-      osDisk: {
-        createOption: 'FromImage'
-        caching: 'ReadWrite'
-        managedDisk: {
-          storageAccountType: vmJumpboxWinStorageAccountType
-        }
-      }
-    }
-    networkProfile: {
-      networkInterfaces: [
-        {
-          id: vmJumpboxWinNic.id
-        }
-      ]
-    }
-  }
-}
+// resource vmJumpboxWin 'Microsoft.Compute/virtualMachines@2022-03-01' = {
+//   name: vmJumpboxWinName
+//   location: location
+//   properties: {
+//     hardwareProfile: {
+//       vmSize: vmJumpboxWinSize
+//     }
+//     osProfile: {
+//       computerName: vmJumpboxWinName
+//       adminUsername: adminUsername
+//       adminPassword: adminPassword
+//       windowsConfiguration: {
+//         enableAutomaticUpdates: true
+//         patchSettings: {
+//           patchMode: 'AutomaticByOS'
+//         }
+//       }
+//     }
+//     storageProfile: {
+//       imageReference: {
+//         publisher: vmJumpboxWinPublisher
+//         offer: vmJumpboxWinOffer
+//         sku: vmJumpboxWinSku
+//         version: vmJumpboxWinVersion
+//       }
+//       osDisk: {
+//         createOption: 'FromImage'
+//         caching: 'ReadWrite'
+//         managedDisk: {
+//           storageAccountType: vmJumpboxWinStorageAccountType
+//         }
+//       }
+//     }
+//     networkProfile: {
+//       networkInterfaces: [
+//         {
+//           id: vmJumpboxWinNic.id
+//         }
+//       ]
+//     }
+//   }
+// }
 
 resource vmJumpboxLinuxNic 'Microsoft.Network/networkInterfaces@2022-05-01' = {
   name: 'nic-${vmJumpboxLinuxName}-1'
@@ -345,7 +298,7 @@ resource privateDnsZoneARecord 'Microsoft.Network/privateDnsZones/A@2020-06-01' 
   dependsOn: [privateDNSZones]
 }
 
-@description('The name of the new virtual network to be provisioned.')
+@description('The details of subnets and NSGs.')
 param subnets object = {
   'snet-app-01': {
     addressPrefix: '10.2.0.0/24'
@@ -540,3 +493,5 @@ param subnets object = {
     ]
   }
 }
+
+output vnetNameM2 string = vnetApp.name

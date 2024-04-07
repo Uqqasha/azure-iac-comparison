@@ -1,4 +1,3 @@
-@description('The name of the Azure Region where resources will be provisioned.')
 param location string = resourceGroup().location
 
 @description('The Object ID of Azure CLI signed in User.')
@@ -7,10 +6,7 @@ param ownerObjectId string
 @description('The Object ID for the service principal.')
 param armClientObjectId string
 
-@description('')
 param dnsServers array
-
-@description('Username of admin user.')
 param adminUsername string
 
 module module01 'modules/module-01/module-01.bicep' = {
@@ -37,6 +33,45 @@ module module02 'modules/module-02/module-02.bicep' = {
     adminPassword: keyVault.getSecret('adminpassword')
     storageAccountName: module01.outputs.storageAccountName
     keyVaultName: module01.outputs.keyVaultName
+  }
+  dependsOn: [
+    module01
+  ]
+}
+
+module module03 'modules/module-03/module-03.bicep' = {
+  name: 'module03Deployment'
+  params: {
+    location: location
+    vnetNameM2: module02.outputs.vnetNameM2
+    adminUsername: adminUsername
+    adminPassword: keyVault.getSecret('adminpassword')
+  }
+  dependsOn: [
+    module01
+  ]
+}
+
+module module04 'modules/module-04/module-04.bicep' = {
+  name: 'module04Deployment'
+  params: {
+    location: location
+    vnetNameM2: module02.outputs.vnetNameM2
+    adminUsername: adminUsername
+    adminPassword: keyVault.getSecret('adminpassword')
+  }
+  dependsOn: [
+    module01
+  ]
+}
+
+module module05 'modules/module-05/module-05.bicep' = {
+  name: 'module05Deployment'
+  params: {
+    location: location
+    vnetNameM2: module02.outputs.vnetNameM2
+    adminUsername: adminUsername
+    adminPassword: keyVault.getSecret('adminpassword')
   }
   dependsOn: [
     module01
