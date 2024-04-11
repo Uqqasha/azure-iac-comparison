@@ -7,12 +7,12 @@ MEM_USED=$(bc -l <<<"`free -b | grep Mem | awk '{print $3}'`-`cat ${PREFIX}mem_i
 echo $(bc -l <<<"${MEM_USED}+`cat ${PREFIX}mem_amount`") > ${PREFIX}mem_amount
 
 ## CPU ##
-CPU=$(bc -l <<<"100-`mpstat | grep all | awk '{print $13}'`")
+CPU=$(bc -l <<<"100-`mpstat | grep all | awk '{print $12}'`")
 echo $(bc -l <<<"${CPU}+`cat ${PREFIX}cpu_amount`") > ${PREFIX}cpu_amount
 
 ## Disk IO ##
 # Get current disk I/O statistics
-stats=$(iostat -dy 1 1 | awk '/vda/ {print $2,$6,$7}')
+stats=$(iostat -dy 1 1 | awk '/sda/ {print $2,$6,$7}')
 # Extract values for tps, kB_read, and kB_write from stats
 tps=$(echo "$stats" | awk '{print $1}')
 kb_read=$(echo "$stats" | awk '{print $2}')
