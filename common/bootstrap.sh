@@ -92,7 +92,7 @@ if [ $execution -eq 1 ]; then
        --arg key2 "armClientObjectId" --arg value2 "$arm_client_object_id" \
        '.parameters += { ($key1): { "value": $value1 }, ($key2): { "value": $value2 } }' \
         ${DIR}/ARM/code/root.parameters.json > temp.json && \
-    mv temp.json ${DIR}/ARM/code/01-vnet-shared.parameters.json
+    mv temp.json ${DIR}/ARM/code/root.parameters.json
 
     printf " Done"
 
