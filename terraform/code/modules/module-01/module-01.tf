@@ -22,6 +22,7 @@ resource "azurerm_storage_account" "st" {
 resource "azurerm_storage_container" "st_container" {
   name                  = var.storage_container_name
   storage_account_name  = azurerm_storage_account.st.name
+  depends_on            = [ azurerm_storage_account.st ]
 }
 
 ###### Azure Key Vault #####
@@ -73,12 +74,16 @@ resource "azurerm_key_vault_secret" "storage_account_access_key" {
   name         = azurerm_storage_account.st.name
   value        = azurerm_storage_account.st.primary_access_key
   key_vault_id = azurerm_key_vault.kv.id
+
+  depends_on   = [ azurerm_storage_account.st ]
 }
 
 resource "azurerm_key_vault_secret" "log_analytics_workspace_01_primary_shared_key" {
   name  = azurerm_log_analytics_workspace.log_analytics_workspace_01.workspace_id
   value = azurerm_log_analytics_workspace.log_analytics_workspace_01.primary_shared_key
   key_vault_id = azurerm_key_vault.kv.id
+
+  depends_on = [ azurerm_log_analytics_workspace.log_analytics_workspace_01 ]
 }
 
 ##### Azure Automation account #####
@@ -109,6 +114,8 @@ resource "azurerm_subnet" "vnet_shared_01_subnets" {
   virtual_network_name                      = azurerm_virtual_network.vnet_shared_01.name
   address_prefixes                          = [each.value.address_prefix]
   private_endpoint_network_policies_enabled = each.value.private_endpoint_network_policies_enabled
+
+  depends_on = [ azurerm_virtual_network.vnet_shared_01 ]
 }
 
 resource "azurerm_network_security_group" "network_security_groups_m1" {
@@ -117,6 +124,8 @@ resource "azurerm_network_security_group" "network_security_groups_m1" {
   name                = "nsg-${var.vnet_name_m1}.${each.key}"
   location            = var.location
   resource_group_name = var.resource_group_name
+
+  depends_on = [ azurerm_subnet.vnet_shared_01_subnets ]
 }
 
 resource "azurerm_subnet_network_security_group_association" "nsg_subnet_associations_m1" {
@@ -156,25 +165,27 @@ resource "azurerm_network_security_rule" "network_security_rules_m1" {
 }
 
 ##### Bastion #####
-# resource "azurerm_bastion_host" "bastion_host_01" {
-#   name                = var.bastion_name
-#   location            = var.location
-#   resource_group_name = var.resource_group_name
+resource "azurerm_bastion_host" "bastion_host_01" {
+  name                = var.bastion_name
+  location            = var.location
+  resource_group_name = var.resource_group_name
 
-#   ip_configuration {
-#     name                 = "ipc-${var.bastion_name}"
-#     subnet_id            = azurerm_subnet.vnet_shared_01_subnets["AzureBastionSubnet"].id
-#     public_ip_address_id = azurerm_public_ip.bastion_host_01.id
-#   }
-# }
+  ip_configuration {
+    name                 = "ipc-${var.bastion_name}"
+    subnet_id            = azurerm_subnet.vnet_shared_01_subnets["AzureBastionSubnet"].id
+    public_ip_address_id = azurerm_public_ip.bastion_host_01.id
+  }
+
+  depends_on = [ azurerm_public_ip.bastion_host_01, azurerm_subnet.vnet_shared_01_subnets ]
+}
 # # Dedicated public ip for bastion
-# resource "azurerm_public_ip" "bastion_host_01" {
-#   name                = "pip-${var.bastion_name}"
-#   location            = var.location
-#   resource_group_name = var.resource_group_name
-#   allocation_method   = var.bastion_pip_allocation
-#   sku                 = var.bastion_pip_sku
-# }
+resource "azurerm_public_ip" "bastion_host_01" {
+  name                = "pip-${var.bastion_name}"
+  location            = var.location
+  resource_group_name = var.resource_group_name
+  allocation_method   = var.bastion_pip_allocation
+  sku                 = var.bastion_pip_sku
+}
 
 # ##### AD DS Virtual Machine #####
 resource "azurerm_windows_virtual_machine" "vm_adds" {
@@ -200,6 +211,8 @@ resource "azurerm_windows_virtual_machine" "vm_adds" {
     sku       = var.vm_adds_image_sku
     version   = var.vm_adds_image_version
   }
+
+  depends_on = [ azurerm_network_interface.vm_adds_nic_01 ]
 }
 
 resource "azurerm_network_interface" "vm_adds_nic_01" {
@@ -212,4 +225,6 @@ resource "azurerm_network_interface" "vm_adds_nic_01" {
     subnet_id                     = azurerm_subnet.vnet_shared_01_subnets["snet-adds-01"].id
     private_ip_address_allocation = "Dynamic"
   }
+
+  depends_on = [ azurerm_subnet.vnet_shared_01_subnets ]
 }

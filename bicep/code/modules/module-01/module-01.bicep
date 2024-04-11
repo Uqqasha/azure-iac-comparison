@@ -158,37 +158,37 @@ resource nsg 'Microsoft.Network/networkSecurityGroups@2023-09-01' = [ for nsg in
   }
 }]
 
-// resource bastionPip 'Microsoft.Network/publicIPAddresses@2023-09-01' = {
-//   name: 'pip-${bastionName}'
-//   location: location
-//   sku: {
-//     name: bastionPipSKU
-//   }
-//   properties: {
-//     publicIPAllocationMethod: bastionPipAllocation
-//   }
-// }
+resource bastionPip 'Microsoft.Network/publicIPAddresses@2023-09-01' = {
+  name: 'pip-${bastionName}'
+  location: location
+  sku: {
+    name: bastionPipSKU
+  }
+  properties: {
+    publicIPAllocationMethod: bastionPipAllocation
+  }
+}
 
-// resource bastionHost 'Microsoft.Network/bastionHosts@2023-09-01' = {
-//   name: bastionName
-//   location: location
-//   properties: {
-//     ipConfigurations: [
-//       {
-//         name: 'ipc-${bastionName}'
-//         properties: {
-//           subnet: {
-//             id: resourceId('Microsoft.Network/virtualNetworks/subnets', vnetName, 'AzureBastionSubnet')
-//           }
-//           publicIPAddress: {
-//             id: bastionPip.id
-//           }
-//         }
-//       }
-//     ]
-//   }
-//   dependsOn: [ vnet ]
-// }
+resource bastionHost 'Microsoft.Network/bastionHosts@2023-09-01' = {
+  name: bastionName
+  location: location
+  properties: {
+    ipConfigurations: [
+      {
+        name: 'ipc-${bastionName}'
+        properties: {
+          subnet: {
+            id: resourceId('Microsoft.Network/virtualNetworks/subnets', vnetName, 'AzureBastionSubnet')
+          }
+          publicIPAddress: {
+            id: bastionPip.id
+          }
+        }
+      }
+    ]
+  }
+  dependsOn: [ vnet ]
+}
 
 resource vmAddsNic 'Microsoft.Network/networkInterfaces@2022-05-01' = {
   name: 'nic-${vmAddsName}-1'
