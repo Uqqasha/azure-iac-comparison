@@ -21,7 +21,6 @@ while [ $COUNTc -le $RETRY_COUNTc ]; do
         if [ $RETRYc ]; then
             if [ $COUNTc -eq $RETRY_COUNTc ]; then
                 printf "\n     No more retrys... skipping"
-                exit 1
             else
                 printf "\n     Retrying..."
             fi
