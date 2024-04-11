@@ -2,6 +2,7 @@ param location string
 param ownerObjectId string
 param armClientObjectId string
 param adminUsername string
+param vnetDnsServers array
 
 param storageAccountSKU string = 'Standard_LRS'
 param storageAccountKind string = 'StorageV2'
@@ -129,6 +130,9 @@ resource vnet 'Microsoft.Network/virtualNetworks@2023-09-01' = {
   name: vnetName
   location: location
   properties: {
+    dhcpOptions: {
+      dnsServers: vnetDnsServers
+    }
     addressSpace: {
       addressPrefixes: [
         vnetAddressPrefix
