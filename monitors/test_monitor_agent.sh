@@ -7,7 +7,7 @@ MEM_USED=$(bc -l <<<"`free -b | grep Mem | awk '{print $3}'`-`cat ${PREFIX}mem_i
 echo $(bc -l <<<"${MEM_USED}+`cat ${PREFIX}mem_amount`") > ${PREFIX}mem_amount
 
 ## CPU ##
-CPU=$(bc -l <<<"100-`mpstat | grep all | awk '{print $12}'`")
+CPU=$(bc -l <<<"100-`mpstat 1 1 | grep all | awk '{print $12}'`")
 echo $(bc -l <<<"${CPU}+`cat ${PREFIX}cpu_amount`") > ${PREFIX}cpu_amount
 
 ## Disk IO ##
@@ -42,7 +42,7 @@ fi
 
 ## Log ##
 MEM=$(bc -l <<<"`cat ${PREFIX}mem_amount`/`cat ${PREFIX}count`/1024")
-CPU=$(bc -l <<<"`cat ${PREFIX}cpu_amount`/`cat ${PREFIX}count`")
+CPU_AVG=$(bc -l <<<"`cat ${PREFIX}cpu_amount`/`cat ${PREFIX}count`")
 NET=$(cat ${PREFIX}net_amount)
 DISK_TPS=$(cat ${PREFIX}tps)
 DISK_READ=$(cat ${PREFIX}io_read)
@@ -51,4 +51,4 @@ DISK_WRITE=$(cat ${PREFIX}io_write)
 #Duration
 SPENT=$(bc -l <<<"(`date +%s`-`cat ${PREFIX}time_init`)/60")
 
-echo "     | $(printf '%.*f\n' 2 ${SPENT})     | $(printf '%.*f\n' 2 ${MEM}) | $(printf '%.*f\n' 2 ${CPU}) |  $(printf '%.*f\n' 2 ${NET}) | $(printf '%.*f\n' 2 ${DISK_TPS}) | $(printf '%.*f\n' 2 ${DISK_READ}) | $(printf '%.*f\n' 2 ${DISK_WRITE}) |" >> $1
+echo "     |  $(printf '%05.*f\n' 2 ${SPENT})   | $(printf '%.*f\n' 2 ${MEM}) | $(printf '%05.*f\n' 2 ${CPU}) |  $(printf '%05.*f\n' 2 ${CPU_AVG})  | $(printf '%.*f\n' 2 ${NET}) | $(printf '%.*f\n' 2 ${DISK_TPS}) | $(printf '%.*f\n' 2 ${DISK_READ}) | $(printf '%.*f\n' 2 ${DISK_WRITE}) |" >> $1

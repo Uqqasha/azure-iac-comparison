@@ -1,5 +1,5 @@
-echo "     | Duration | Memory     | CPU   |  NETWORK  | Disk(tps) | Disk(reads) | Disk(writes) |" >> $1
-echo "     |----------|------------|-------|-----------|-----------|-------------|--------------|" >> $1
+echo "     | Duration |   Memory   |  CPU  | CPU_AVG |  NETWORK  | Disk(tps) | Disk(reads) | Disk(writes) |" >> $1
+echo "     |----------|------------|-------|---------|-----------|-----------|-------------|--------------|" >> $1
 
 date +%s > /tmp/temp_time_init
 
