@@ -1,0 +1,153 @@
+Starting provisioning process
+WARNING: A new Bicep release is available: v0.26.170. Upgrade now by running "az bicep upgrade".
+WARNING: /home/deploymentazureuser/Module-01-Test-02/azure-iac-comparison/bicep/code/modules/module-01/module-01.bicep(16,7) : Warning no-unused-params: Parameter "automationAccountSku" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+
+INFO: Command ran in 551.822 seconds (init: 0.228, invoke: 551.594)
+{
+  "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-bicep-2/providers/Microsoft.Resources/deployments/deployment1",
+  "location": null,
+  "name": "deployment1",
+  "properties": {
+    "correlationId": "095f5fa6-2a5a-4792-b2f1-57dc11f712a8",
+    "debugSetting": null,
+    "dependencies": [],
+    "duration": "PT8M39.2004755S",
+    "error": null,
+    "mode": "Incremental",
+    "onErrorDeployment": null,
+    "outputResources": [
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-bicep-2/providers/Microsoft.Compute/virtualMachines/adds1",
+        "resourceGroup": "RG-SoutheastAsia-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-bicep-2/providers/Microsoft.KeyVault/vaults/kv-yzf6y62b3t752",
+        "resourceGroup": "RG-SoutheastAsia-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-bicep-2/providers/Microsoft.KeyVault/vaults/kv-yzf6y62b3t752/secrets/adminpassword",
+        "resourceGroup": "RG-SoutheastAsia-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-bicep-2/providers/Microsoft.KeyVault/vaults/kv-yzf6y62b3t752/secrets/adminuser",
+        "resourceGroup": "RG-SoutheastAsia-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-bicep-2/providers/Microsoft.KeyVault/vaults/kv-yzf6y62b3t752/secrets/log-shared-bicep-01-ID",
+        "resourceGroup": "RG-SoutheastAsia-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-bicep-2/providers/Microsoft.KeyVault/vaults/kv-yzf6y62b3t752/secrets/styzf6y62b3t752",
+        "resourceGroup": "RG-SoutheastAsia-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-bicep-2/providers/Microsoft.Network/bastionHosts/bst-bicep-01",
+        "resourceGroup": "RG-SoutheastAsia-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-bicep-2/providers/Microsoft.Network/networkInterfaces/nic-adds1-1",
+        "resourceGroup": "RG-SoutheastAsia-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-bicep-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet",
+        "resourceGroup": "RG-SoutheastAsia-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-bicep-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-adds-01",
+        "resourceGroup": "RG-SoutheastAsia-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-bicep-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-01",
+        "resourceGroup": "RG-SoutheastAsia-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-bicep-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-02",
+        "resourceGroup": "RG-SoutheastAsia-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-bicep-2/providers/Microsoft.Network/publicIPAddresses/pip-bst-bicep-01",
+        "resourceGroup": "RG-SoutheastAsia-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-bicep-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01",
+        "resourceGroup": "RG-SoutheastAsia-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-bicep-2/providers/Microsoft.OperationalInsights/workspaces/log-shared-bicep-01",
+        "resourceGroup": "RG-SoutheastAsia-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-bicep-2/providers/Microsoft.Storage/storageAccounts/styzf6y62b3t752",
+        "resourceGroup": "RG-SoutheastAsia-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-bicep-2/providers/Microsoft.Storage/storageAccounts/styzf6y62b3t752/blobServices/default",
+        "resourceGroup": "RG-SoutheastAsia-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-bicep-2/providers/Microsoft.Storage/storageAccounts/styzf6y62b3t752/blobServices/default/containers/scripts",
+        "resourceGroup": "RG-SoutheastAsia-bicep-2"
+      }
+    ],
+    "outputs": null,
+    "parameters": {
+      "adminUsername": {
+        "type": "String",
+        "value": "bootstrapadmin"
+      },
+      "armClientObjectId": {
+        "type": "String",
+        "value": "c4b9d2d3-0fe4-46e4-a0b0-e8f0ce1bbbde"
+      },
+      "dnsServers": {
+        "type": "Array",
+        "value": [
+          "10.1.1.4",
+          "168.63.129.16"
+        ]
+      },
+      "location": {
+        "type": "String",
+        "value": "southeastasia"
+      },
+      "ownerObjectId": {
+        "type": "String",
+        "value": "5e1a0937-9b34-46ca-adde-41e4a5d58f58"
+      }
+    },
+    "parametersLink": null,
+    "providers": [
+      {
+        "id": null,
+        "namespace": "Microsoft.Resources",
+        "providerAuthorizationConsentState": null,
+        "registrationPolicy": null,
+        "registrationState": null,
+        "resourceTypes": [
+          {
+            "aliases": null,
+            "apiProfiles": null,
+            "apiVersions": null,
+            "capabilities": null,
+            "defaultApiVersion": null,
+            "locationMappings": null,
+            "locations": [
+              null
+            ],
+            "properties": null,
+            "resourceType": "deployments",
+            "zoneMappings": null
+          }
+        ]
+      }
+    ],
+    "provisioningState": "Succeeded",
+    "templateHash": "10102048362693420054",
+    "templateLink": null,
+    "timestamp": "2024-04-16T06:07:11.442759+00:00",
+    "validatedResources": null
+  },
+  "resourceGroup": "RG-SoutheastAsia-bicep-2",
+  "tags": null,
+  "type": "Microsoft.Resources/deployments"
+}

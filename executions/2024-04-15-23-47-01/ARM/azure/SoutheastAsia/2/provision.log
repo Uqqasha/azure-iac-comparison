@@ -1,0 +1,154 @@
+Starting provisioning process
+INFO: Command ran in 575.079 seconds (init: 0.262, invoke: 574.817)
+{
+  "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-ARM-2/providers/Microsoft.Resources/deployments/root",
+  "location": null,
+  "name": "root",
+  "properties": {
+    "correlationId": "b42f38d1-b9ed-41fc-aa14-c8f07459d020",
+    "debugSetting": null,
+    "dependencies": [],
+    "duration": "PT9M0.3866773S",
+    "error": null,
+    "mode": "Incremental",
+    "onErrorDeployment": null,
+    "outputResources": [
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-ARM-2/providers/Microsoft.Compute/virtualMachines/adds1",
+        "resourceGroup": "RG-SoutheastAsia-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-ARM-2/providers/Microsoft.KeyVault/vaults/kv-kjhju2w5diluy",
+        "resourceGroup": "RG-SoutheastAsia-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-ARM-2/providers/Microsoft.KeyVault/vaults/kv-kjhju2w5diluy/secrets/adminpassword",
+        "resourceGroup": "RG-SoutheastAsia-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-ARM-2/providers/Microsoft.KeyVault/vaults/kv-kjhju2w5diluy/secrets/adminuser",
+        "resourceGroup": "RG-SoutheastAsia-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-ARM-2/providers/Microsoft.KeyVault/vaults/kv-kjhju2w5diluy/secrets/log-shared-arm-01-ID",
+        "resourceGroup": "RG-SoutheastAsia-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-ARM-2/providers/Microsoft.KeyVault/vaults/kv-kjhju2w5diluy/secrets/stkjhju2w5diluy",
+        "resourceGroup": "RG-SoutheastAsia-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-ARM-2/providers/Microsoft.Network/bastionHosts/bst-ARM-01",
+        "resourceGroup": "RG-SoutheastAsia-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-ARM-2/providers/Microsoft.Network/networkInterfaces/nic-adds11",
+        "resourceGroup": "RG-SoutheastAsia-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-ARM-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet",
+        "resourceGroup": "RG-SoutheastAsia-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-ARM-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-adds-01",
+        "resourceGroup": "RG-SoutheastAsia-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-ARM-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-01",
+        "resourceGroup": "RG-SoutheastAsia-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-ARM-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-02",
+        "resourceGroup": "RG-SoutheastAsia-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-ARM-2/providers/Microsoft.Network/publicIPAddresses/pip-bst-ARM-01",
+        "resourceGroup": "RG-SoutheastAsia-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-ARM-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01",
+        "resourceGroup": "RG-SoutheastAsia-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-ARM-2/providers/Microsoft.OperationalInsights/workspaces/log-shared-arm-01",
+        "resourceGroup": "RG-SoutheastAsia-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-ARM-2/providers/Microsoft.Storage/storageAccounts/stkjhju2w5diluy",
+        "resourceGroup": "RG-SoutheastAsia-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SoutheastAsia-ARM-2/providers/Microsoft.Storage/storageAccounts/stkjhju2w5diluy/blobServices/default/containers/scripts",
+        "resourceGroup": "RG-SoutheastAsia-ARM-2"
+      }
+    ],
+    "outputs": null,
+    "parameters": {
+      "adminUsername": {
+        "type": "String",
+        "value": "bootstrapadmin"
+      },
+      "armClientObjectId": {
+        "type": "String",
+        "value": "c4b9d2d3-0fe4-46e4-a0b0-e8f0ce1bbbde"
+      },
+      "dnsServers": {
+        "type": "Array",
+        "value": [
+          "10.1.1.4",
+          "168.63.129.16"
+        ]
+      },
+      "location": {
+        "type": "String",
+        "value": "southeastasia"
+      },
+      "ownerObjectId": {
+        "type": "String",
+        "value": "5e1a0937-9b34-46ca-adde-41e4a5d58f58"
+      },
+      "resourceGroupName": {
+        "type": "String",
+        "value": "RG-SoutheastAsia-ARM-2"
+      },
+      "subscriptionId": {
+        "type": "String",
+        "value": "33f27ac9-52ef-43de-b518-ef0b994e7f1b"
+      }
+    },
+    "parametersLink": null,
+    "providers": [
+      {
+        "id": null,
+        "namespace": "Microsoft.Resources",
+        "providerAuthorizationConsentState": null,
+        "registrationPolicy": null,
+        "registrationState": null,
+        "resourceTypes": [
+          {
+            "aliases": null,
+            "apiProfiles": null,
+            "apiVersions": null,
+            "capabilities": null,
+            "defaultApiVersion": null,
+            "locationMappings": null,
+            "locations": [
+              null
+            ],
+            "properties": null,
+            "resourceType": "deployments",
+            "zoneMappings": null
+          }
+        ]
+      }
+    ],
+    "provisioningState": "Succeeded",
+    "templateHash": "7847943174284701388",
+    "templateLink": null,
+    "timestamp": "2024-04-16T05:02:23.317599+00:00",
+    "validatedResources": null
+  },
+  "resourceGroup": "RG-SoutheastAsia-ARM-2",
+  "tags": null,
+  "type": "Microsoft.Resources/deployments"
+}

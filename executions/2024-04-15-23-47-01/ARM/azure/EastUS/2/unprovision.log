@@ -1,0 +1,29 @@
+Starting unprovisioning process
+INFO: Command ran in 920.358 seconds (init: 0.233, invoke: 920.126)
+{
+  "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-ARM-2/providers/Microsoft.Resources/deployments/cleanup",
+  "location": null,
+  "name": "cleanup",
+  "properties": {
+    "correlationId": "4d04f650-2130-4708-bd14-81b435772219",
+    "debugSetting": null,
+    "dependencies": [],
+    "duration": "PT15M4.1008371S",
+    "error": null,
+    "mode": "Complete",
+    "onErrorDeployment": null,
+    "outputResources": [],
+    "outputs": {},
+    "parameters": {},
+    "parametersLink": null,
+    "providers": [],
+    "provisioningState": "Succeeded",
+    "templateHash": "11635883502557795404",
+    "templateLink": null,
+    "timestamp": "2024-04-16T04:32:34.736552+00:00",
+    "validatedResources": null
+  },
+  "resourceGroup": "RG-EastUS-ARM-2",
+  "tags": null,
+  "type": "Microsoft.Resources/deployments"
+}
