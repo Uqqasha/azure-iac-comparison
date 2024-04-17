@@ -20,25 +20,25 @@ module module01 'modules/module-01/module-01.bicep' = {
   }
 }
 
-// resource keyVault 'Microsoft.KeyVault/vaults@2023-02-01' existing = {
-//   name: module01.outputs.keyVaultName
-// }
+resource keyVault 'Microsoft.KeyVault/vaults@2023-02-01' existing = {
+  name: module01.outputs.keyVaultName
+}
 
-// module module02 'modules/module-02/module-02.bicep' = {
-//   name: 'module02Deployment'
-//   params: {
-//     location: location
-//     dnsServers: dnsServers
-//     vnetNameM1: module01.outputs.vnetNameM1
-//     adminUsername: adminUsername
-//     adminPassword: keyVault.getSecret('adminpassword')
-//     storageAccountName: module01.outputs.storageAccountName
-//     keyVaultName: module01.outputs.keyVaultName
-//   }
-//   dependsOn: [
-//     module01
-//   ]
-// }
+module module02 'modules/module-02/module-02.bicep' = {
+  name: 'module02Deployment'
+  params: {
+    location: location
+    dnsServers: dnsServers
+    vnetNameM1: module01.outputs.vnetNameM1
+    adminUsername: adminUsername
+    adminPassword: keyVault.getSecret('adminpassword')
+    storageAccountName: module01.outputs.storageAccountName
+    keyVaultName: module01.outputs.keyVaultName
+  }
+  dependsOn: [
+    module01
+  ]
+}
 
 // module module03 'modules/module-03/module-03.bicep' = {
 //   name: 'module03Deployment'

@@ -7,7 +7,7 @@ MEM_USED=$(bc -l <<<"`free -b | grep Mem | awk '{print $3}'`-`cat ${PREFIX}mem_i
 echo $(bc -l <<<"${MEM_USED}+`cat ${PREFIX}mem_amount`") > ${PREFIX}mem_amount
 
 ## CPU ##
-CPU=$(bc -l <<<"100-`mpstat 1 1 | grep all | awk '{print $12}'`")
+CPU=$(bc -l <<<"100-`mpstat 1 1 | grep Average | awk '{print $12}'`")
 echo $(bc -l <<<"${CPU}+`cat ${PREFIX}cpu_amount`") > ${PREFIX}cpu_amount
 
 ## Disk IO ##

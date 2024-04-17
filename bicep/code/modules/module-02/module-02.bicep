@@ -122,23 +122,23 @@ resource privateDNSZoneVirtualNetworkLinksVnetShared01 'Microsoft.Network/privat
   ]
 }]
 
-// resource vmJumpboxWinNic 'Microsoft.Network/networkInterfaces@2022-05-01' = {
-//   name: 'nic-${vmJumpboxWinName}-1'
-//   location: location
-//   properties: {
-//     ipConfigurations: [
-//       {
-//         name: 'ipc-${vmJumpboxWinName}-1'
-//         properties: {
-//           privateIPAllocationMethod: 'Dynamic'
-//           subnet: {
-//             id: vnetApp.properties.subnets[0].id
-//           }
-//         }
-//       }
-//     ]
-//   }
-// }
+resource vmJumpboxWinNic 'Microsoft.Network/networkInterfaces@2022-05-01' = {
+  name: 'nic-${vmJumpboxWinName}-1'
+  location: location
+  properties: {
+    ipConfigurations: [
+      {
+        name: 'ipc-${vmJumpboxWinName}-1'
+        properties: {
+          privateIPAllocationMethod: 'Dynamic'
+          subnet: {
+            id: vnetApp.properties.subnets[0].id
+          }
+        }
+      }
+    ]
+  }
+}
 
 // resource vmJumpboxWin 'Microsoft.Compute/virtualMachines@2022-03-01' = {
 //   name: vmJumpboxWinName
