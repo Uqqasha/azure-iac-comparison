@@ -1,0 +1,1491 @@
+Starting unprovisioning process
+module.module-01.random_password.admin_password: Refreshing state... [id=none]
+module.module-01.random_string.azurerm_storage_account_name: Refreshing state... [id=dynxcmiejeymoczo]
+module.module-01.azurerm_storage_account.st: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Storage/storageAccounts/stdynxcmiejeymoczo]
+module.module-01.azurerm_key_vault.kv: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.KeyVault/vaults/kv-dynxcmiejeymoczo]
+module.module-01.azurerm_log_analytics_workspace.log_analytics_workspace_01: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.OperationalInsights/workspaces/log-shared-terraform-01]
+module.module-01.azurerm_public_ip.bastion_host_01: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/publicIPAddresses/pip-bst-terraform-01]
+module.module-01.azurerm_virtual_network.vnet_shared_01: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-misc-01"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-misc-01]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-adds-01"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-adds-01]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-misc-02"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-misc-02]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["AzureBastionSubnet"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/AzureBastionSubnet]
+module.module-01.azurerm_network_security_group.network_security_groups_m1["snet-misc-01"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-01]
+module.module-01.azurerm_network_security_group.network_security_groups_m1["snet-adds-01"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-adds-01]
+module.module-01.azurerm_network_interface.vm_adds_nic_01: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkInterfaces/nic-adds1-1]
+module.module-01.azurerm_network_security_group.network_security_groups_m1["AzureBastionSubnet"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet]
+module.module-01.azurerm_network_security_group.network_security_groups_m1["snet-misc-02"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-02]
+module.module-01.azurerm_bastion_host.bastion_host_01: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/bastionHosts/bst-terraform-01]
+module.module-01.azurerm_key_vault_secret.adminpassword: Refreshing state... [id=https://kv-dynxcmiejeymoczo.vault.azure.net/secrets/adminpassword/b423407e98d44c5caafda52c4a7ed9fd]
+module.module-01.azurerm_key_vault_secret.adminuser: Refreshing state... [id=https://kv-dynxcmiejeymoczo.vault.azure.net/secrets/adminuser/8e9a4ecaceca428b8a5da0ddc268f6c6]
+module.module-01.azurerm_windows_virtual_machine.vm_adds: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Compute/virtualMachines/vm-adds1]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-adds-01.AllowVirtualNetworkOutbound"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-adds-01/securityRules/AllowVirtualNetworkOutbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowBastionCommunicationOutbound"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowBastionCommunicationOutbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowAzureLoadBalancerInbound"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowAzureLoadBalancerInbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-adds-01.AllowInternetOutbound"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-adds-01/securityRules/AllowInternetOutbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-02.AllowVirtualNetworkInbound"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-02/securityRules/AllowVirtualNetworkInbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-02.AllowInternetOutbound"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-02/securityRules/AllowInternetOutbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowGatewayManagerInbound"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowGatewayManagerInbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowHttpsInbound"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowHttpsInbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-adds-01.AllowVirtualNetworkInbound"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-adds-01/securityRules/AllowVirtualNetworkInbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowGetSessionInformationOutbound"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowGetSessionInformationOutbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-02.AllowVirtualNetworkOutbound"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-02/securityRules/AllowVirtualNetworkOutbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowSshRdpOutbound"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowSshRdpOutbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-01.AllowInternetOutbound"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-01/securityRules/AllowInternetOutbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowBastionCommunicationInbound"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowBastionCommunicationInbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-01.AllowVirtualNetworkInbound"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-01/securityRules/AllowVirtualNetworkInbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-01.AllowVirtualNetworkOutbound"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-01/securityRules/AllowVirtualNetworkOutbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowAzureCloudOutbound"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowAzureCloudOutbound]
+module.module-01.azurerm_key_vault_secret.log_analytics_workspace_01_primary_shared_key: Refreshing state... [id=https://kv-dynxcmiejeymoczo.vault.azure.net/secrets/3ae07d25-ee0c-49a7-bfa3-e9332a3faeb6/0783e1e27f7e4c2e838ced5736250f8d]
+module.module-01.azurerm_storage_container.st_container: Refreshing state... [id=https://stdynxcmiejeymoczo.blob.core.windows.net/scripts]
+module.module-01.azurerm_key_vault_secret.storage_account_access_key: Refreshing state... [id=https://kv-dynxcmiejeymoczo.vault.azure.net/secrets/stdynxcmiejeymoczo/99ed423b2cb3434fab8c388b525e590c]
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["snet-adds-01"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-adds-01]
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["snet-misc-01"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-misc-01]
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["snet-misc-02"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-misc-02]
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["AzureBastionSubnet"]: Refreshing state... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/AzureBastionSubnet]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # module.module-01.azurerm_bastion_host.bastion_host_01 will be destroyed
+  - resource "azurerm_bastion_host" "bastion_host_01" {
+      - copy_paste_enabled     = true -> null
+      - dns_name               = "bst-b726f63d-640c-4827-92a6-661dfa8d089c.bastion.azure.com" -> null
+      - file_copy_enabled      = false -> null
+      - id                     = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/bastionHosts/bst-terraform-01" -> null
+      - ip_connect_enabled     = false -> null
+      - location               = "swedencentral" -> null
+      - name                   = "bst-terraform-01" -> null
+      - resource_group_name    = "RG-SwedenCentral-terraform-2" -> null
+      - scale_units            = 2 -> null
+      - shareable_link_enabled = false -> null
+      - sku                    = "Basic" -> null
+      - tags                   = {} -> null
+      - tunneling_enabled      = false -> null
+
+      - ip_configuration {
+          - name                 = "ipc-bst-terraform-01" -> null
+          - public_ip_address_id = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/publicIPAddresses/pip-bst-terraform-01" -> null
+          - subnet_id            = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/AzureBastionSubnet" -> null
+        }
+    }
+
+  # module.module-01.azurerm_key_vault.kv will be destroyed
+  - resource "azurerm_key_vault" "kv" {
+      - access_policy                   = [
+          - {
+              - application_id          = ""
+              - certificate_permissions = []
+              - key_permissions         = []
+              - object_id               = "5e1a0937-9b34-46ca-adde-41e4a5d58f58"
+              - secret_permissions      = [
+                  - "Get",
+                  - "List",
+                  - "Set",
+                  - "Delete",
+                  - "Purge",
+                ]
+              - storage_permissions     = []
+              - tenant_id               = "c8001d36-ba17-4be2-b907-931bc500e970"
+            },
+          - {
+              - application_id          = ""
+              - certificate_permissions = []
+              - key_permissions         = []
+              - object_id               = "c4b9d2d3-0fe4-46e4-a0b0-e8f0ce1bbbde"
+              - secret_permissions      = [
+                  - "Get",
+                  - "Set",
+                  - "Delete",
+                  - "Purge",
+                ]
+              - storage_permissions     = []
+              - tenant_id               = "c8001d36-ba17-4be2-b907-931bc500e970"
+            },
+        ] -> null
+      - enable_rbac_authorization       = false -> null
+      - enabled_for_deployment          = false -> null
+      - enabled_for_disk_encryption     = false -> null
+      - enabled_for_template_deployment = false -> null
+      - id                              = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.KeyVault/vaults/kv-dynxcmiejeymoczo" -> null
+      - location                        = "swedencentral" -> null
+      - name                            = "kv-dynxcmiejeymoczo" -> null
+      - public_network_access_enabled   = true -> null
+      - purge_protection_enabled        = false -> null
+      - resource_group_name             = "RG-SwedenCentral-terraform-2" -> null
+      - sku_name                        = "standard" -> null
+      - soft_delete_retention_days      = 7 -> null
+      - tags                            = {} -> null
+      - tenant_id                       = "c8001d36-ba17-4be2-b907-931bc500e970" -> null
+      - vault_uri                       = "https://kv-dynxcmiejeymoczo.vault.azure.net/" -> null
+
+      - network_acls {
+          - bypass                     = "AzureServices" -> null
+          - default_action             = "Allow" -> null
+          - ip_rules                   = [] -> null
+          - virtual_network_subnet_ids = [] -> null
+        }
+    }
+
+  # module.module-01.azurerm_key_vault_secret.adminpassword will be destroyed
+  - resource "azurerm_key_vault_secret" "adminpassword" {
+      - id                      = "https://kv-dynxcmiejeymoczo.vault.azure.net/secrets/adminpassword/b423407e98d44c5caafda52c4a7ed9fd" -> null
+      - key_vault_id            = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.KeyVault/vaults/kv-dynxcmiejeymoczo" -> null
+      - name                    = "adminpassword" -> null
+      - resource_id             = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.KeyVault/vaults/kv-dynxcmiejeymoczo/secrets/adminpassword/versions/b423407e98d44c5caafda52c4a7ed9fd" -> null
+      - resource_versionless_id = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.KeyVault/vaults/kv-dynxcmiejeymoczo/secrets/adminpassword" -> null
+      - tags                    = {} -> null
+      - value                   = (sensitive value) -> null
+      - version                 = "b423407e98d44c5caafda52c4a7ed9fd" -> null
+      - versionless_id          = "https://kv-dynxcmiejeymoczo.vault.azure.net/secrets/adminpassword" -> null
+    }
+
+  # module.module-01.azurerm_key_vault_secret.adminuser will be destroyed
+  - resource "azurerm_key_vault_secret" "adminuser" {
+      - id                      = "https://kv-dynxcmiejeymoczo.vault.azure.net/secrets/adminuser/8e9a4ecaceca428b8a5da0ddc268f6c6" -> null
+      - key_vault_id            = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.KeyVault/vaults/kv-dynxcmiejeymoczo" -> null
+      - name                    = "adminuser" -> null
+      - resource_id             = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.KeyVault/vaults/kv-dynxcmiejeymoczo/secrets/adminuser/versions/8e9a4ecaceca428b8a5da0ddc268f6c6" -> null
+      - resource_versionless_id = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.KeyVault/vaults/kv-dynxcmiejeymoczo/secrets/adminuser" -> null
+      - tags                    = {} -> null
+      - value                   = (sensitive value) -> null
+      - version                 = "8e9a4ecaceca428b8a5da0ddc268f6c6" -> null
+      - versionless_id          = "https://kv-dynxcmiejeymoczo.vault.azure.net/secrets/adminuser" -> null
+    }
+
+  # module.module-01.azurerm_key_vault_secret.log_analytics_workspace_01_primary_shared_key will be destroyed
+  - resource "azurerm_key_vault_secret" "log_analytics_workspace_01_primary_shared_key" {
+      - id                      = "https://kv-dynxcmiejeymoczo.vault.azure.net/secrets/3ae07d25-ee0c-49a7-bfa3-e9332a3faeb6/0783e1e27f7e4c2e838ced5736250f8d" -> null
+      - key_vault_id            = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.KeyVault/vaults/kv-dynxcmiejeymoczo" -> null
+      - name                    = "3ae07d25-ee0c-49a7-bfa3-e9332a3faeb6" -> null
+      - resource_id             = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.KeyVault/vaults/kv-dynxcmiejeymoczo/secrets/3ae07d25-ee0c-49a7-bfa3-e9332a3faeb6/versions/0783e1e27f7e4c2e838ced5736250f8d" -> null
+      - resource_versionless_id = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.KeyVault/vaults/kv-dynxcmiejeymoczo/secrets/3ae07d25-ee0c-49a7-bfa3-e9332a3faeb6" -> null
+      - tags                    = {} -> null
+      - value                   = (sensitive value) -> null
+      - version                 = "0783e1e27f7e4c2e838ced5736250f8d" -> null
+      - versionless_id          = "https://kv-dynxcmiejeymoczo.vault.azure.net/secrets/3ae07d25-ee0c-49a7-bfa3-e9332a3faeb6" -> null
+    }
+
+  # module.module-01.azurerm_key_vault_secret.storage_account_access_key will be destroyed
+  - resource "azurerm_key_vault_secret" "storage_account_access_key" {
+      - id                      = "https://kv-dynxcmiejeymoczo.vault.azure.net/secrets/stdynxcmiejeymoczo/99ed423b2cb3434fab8c388b525e590c" -> null
+      - key_vault_id            = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.KeyVault/vaults/kv-dynxcmiejeymoczo" -> null
+      - name                    = "stdynxcmiejeymoczo" -> null
+      - resource_id             = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.KeyVault/vaults/kv-dynxcmiejeymoczo/secrets/stdynxcmiejeymoczo/versions/99ed423b2cb3434fab8c388b525e590c" -> null
+      - resource_versionless_id = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.KeyVault/vaults/kv-dynxcmiejeymoczo/secrets/stdynxcmiejeymoczo" -> null
+      - tags                    = {} -> null
+      - value                   = (sensitive value) -> null
+      - version                 = "99ed423b2cb3434fab8c388b525e590c" -> null
+      - versionless_id          = "https://kv-dynxcmiejeymoczo.vault.azure.net/secrets/stdynxcmiejeymoczo" -> null
+    }
+
+  # module.module-01.azurerm_log_analytics_workspace.log_analytics_workspace_01 will be destroyed
+  - resource "azurerm_log_analytics_workspace" "log_analytics_workspace_01" {
+      - allow_resource_only_permissions         = true -> null
+      - cmk_for_query_forced                    = false -> null
+      - daily_quota_gb                          = -1 -> null
+      - id                                      = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.OperationalInsights/workspaces/log-shared-terraform-01" -> null
+      - immediate_data_purge_on_30_days_enabled = false -> null
+      - internet_ingestion_enabled              = true -> null
+      - internet_query_enabled                  = true -> null
+      - local_authentication_disabled           = false -> null
+      - location                                = "swedencentral" -> null
+      - name                                    = "log-shared-terraform-01" -> null
+      - primary_shared_key                      = (sensitive value) -> null
+      - resource_group_name                     = "RG-SwedenCentral-terraform-2" -> null
+      - retention_in_days                       = 30 -> null
+      - secondary_shared_key                    = (sensitive value) -> null
+      - sku                                     = "PerGB2018" -> null
+      - tags                                    = {} -> null
+      - workspace_id                            = "3ae07d25-ee0c-49a7-bfa3-e9332a3faeb6" -> null
+    }
+
+  # module.module-01.azurerm_network_interface.vm_adds_nic_01 will be destroyed
+  - resource "azurerm_network_interface" "vm_adds_nic_01" {
+      - applied_dns_servers           = [] -> null
+      - dns_servers                   = [] -> null
+      - enable_accelerated_networking = false -> null
+      - enable_ip_forwarding          = false -> null
+      - id                            = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkInterfaces/nic-adds1-1" -> null
+      - internal_domain_name_suffix   = "qrp2fddwf1eupijbm5dts4gydh.gvxx.internal.cloudapp.net" -> null
+      - location                      = "swedencentral" -> null
+      - mac_address                   = "60-45-BD-FB-AD-C6" -> null
+      - name                          = "nic-adds1-1" -> null
+      - private_ip_address            = "10.1.1.4" -> null
+      - private_ip_addresses          = [
+          - "10.1.1.4",
+        ] -> null
+      - resource_group_name           = "RG-SwedenCentral-terraform-2" -> null
+      - tags                          = {} -> null
+      - virtual_machine_id            = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Compute/virtualMachines/vm-adds1" -> null
+
+      - ip_configuration {
+          - name                          = "ipc-adds1-1" -> null
+          - primary                       = true -> null
+          - private_ip_address            = "10.1.1.4" -> null
+          - private_ip_address_allocation = "Dynamic" -> null
+          - private_ip_address_version    = "IPv4" -> null
+          - subnet_id                     = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-adds-01" -> null
+        }
+    }
+
+  # module.module-01.azurerm_network_security_group.network_security_groups_m1["AzureBastionSubnet"] will be destroyed
+  - resource "azurerm_network_security_group" "network_security_groups_m1" {
+      - id                  = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet" -> null
+      - location            = "swedencentral" -> null
+      - name                = "nsg-vnet-shared-01.AzureBastionSubnet" -> null
+      - resource_group_name = "RG-SwedenCentral-terraform-2" -> null
+      - security_rule       = [
+          - {
+              - access                                     = "Allow"
+              - description                                = ""
+              - destination_address_prefix                 = "*"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "443"
+              - destination_port_ranges                    = []
+              - direction                                  = "Inbound"
+              - name                                       = "AllowAzureLoadBalancerInbound"
+              - priority                                   = 120
+              - protocol                                   = "Tcp"
+              - source_address_prefix                      = "AzureLoadBalancer"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+            },
+          - {
+              - access                                     = "Allow"
+              - description                                = ""
+              - destination_address_prefix                 = "*"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "443"
+              - destination_port_ranges                    = []
+              - direction                                  = "Inbound"
+              - name                                       = "AllowGatewayManagerInbound"
+              - priority                                   = 110
+              - protocol                                   = "Tcp"
+              - source_address_prefix                      = "GatewayManager"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+            },
+          - {
+              - access                                     = "Allow"
+              - description                                = ""
+              - destination_address_prefix                 = "*"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "443"
+              - destination_port_ranges                    = []
+              - direction                                  = "Inbound"
+              - name                                       = "AllowHttpsInbound"
+              - priority                                   = 100
+              - protocol                                   = "Tcp"
+              - source_address_prefix                      = "Internet"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+            },
+          - {
+              - access                                     = "Allow"
+              - description                                = ""
+              - destination_address_prefix                 = "AzureCloud"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "443"
+              - destination_port_ranges                    = []
+              - direction                                  = "Outbound"
+              - name                                       = "AllowAzureCloudOutbound"
+              - priority                                   = 150
+              - protocol                                   = "Tcp"
+              - source_address_prefix                      = "*"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+            },
+          - {
+              - access                                     = "Allow"
+              - description                                = ""
+              - destination_address_prefix                 = "Internet"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "80"
+              - destination_port_ranges                    = []
+              - direction                                  = "Outbound"
+              - name                                       = "AllowGetSessionInformationOutbound"
+              - priority                                   = 170
+              - protocol                                   = "*"
+              - source_address_prefix                      = "*"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+            },
+          - {
+              - access                                     = "Allow"
+              - description                                = ""
+              - destination_address_prefix                 = "VirtualNetwork"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = ""
+              - destination_port_ranges                    = [
+                  - "22",
+                  - "3389",
+                ]
+              - direction                                  = "Outbound"
+              - name                                       = "AllowSshRdpOutbound"
+              - priority                                   = 140
+              - protocol                                   = "*"
+              - source_address_prefix                      = "*"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+            },
+          - {
+              - access                                     = "Allow"
+              - description                                = ""
+              - destination_address_prefix                 = "VirtualNetwork"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = ""
+              - destination_port_ranges                    = [
+                  - "5701",
+                  - "8080",
+                ]
+              - direction                                  = "Inbound"
+              - name                                       = "AllowBastionCommunicationInbound"
+              - priority                                   = 130
+              - protocol                                   = "*"
+              - source_address_prefix                      = "VirtualNetwork"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+            },
+          - {
+              - access                                     = "Allow"
+              - description                                = ""
+              - destination_address_prefix                 = "VirtualNetwork"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = ""
+              - destination_port_ranges                    = [
+                  - "5701",
+                  - "8080",
+                ]
+              - direction                                  = "Outbound"
+              - name                                       = "AllowBastionCommunicationOutbound"
+              - priority                                   = 160
+              - protocol                                   = "*"
+              - source_address_prefix                      = "VirtualNetwork"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+            },
+        ] -> null
+      - tags                = {} -> null
+    }
+
+  # module.module-01.azurerm_network_security_group.network_security_groups_m1["snet-adds-01"] will be destroyed
+  - resource "azurerm_network_security_group" "network_security_groups_m1" {
+      - id                  = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-adds-01" -> null
+      - location            = "swedencentral" -> null
+      - name                = "nsg-vnet-shared-01.snet-adds-01" -> null
+      - resource_group_name = "RG-SwedenCentral-terraform-2" -> null
+      - security_rule       = [
+          - {
+              - access                                     = "Allow"
+              - description                                = ""
+              - destination_address_prefix                 = "Internet"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "*"
+              - destination_port_ranges                    = []
+              - direction                                  = "Outbound"
+              - name                                       = "AllowInternetOutbound"
+              - priority                                   = 120
+              - protocol                                   = "*"
+              - source_address_prefix                      = "*"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+            },
+          - {
+              - access                                     = "Allow"
+              - description                                = ""
+              - destination_address_prefix                 = "VirtualNetwork"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "*"
+              - destination_port_ranges                    = []
+              - direction                                  = "Inbound"
+              - name                                       = "AllowVirtualNetworkInbound"
+              - priority                                   = 100
+              - protocol                                   = "*"
+              - source_address_prefix                      = "VirtualNetwork"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+            },
+          - {
+              - access                                     = "Allow"
+              - description                                = ""
+              - destination_address_prefix                 = "VirtualNetwork"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "*"
+              - destination_port_ranges                    = []
+              - direction                                  = "Outbound"
+              - name                                       = "AllowVirtualNetworkOutbound"
+              - priority                                   = 110
+              - protocol                                   = "*"
+              - source_address_prefix                      = "VirtualNetwork"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+            },
+        ] -> null
+      - tags                = {} -> null
+    }
+
+  # module.module-01.azurerm_network_security_group.network_security_groups_m1["snet-misc-01"] will be destroyed
+  - resource "azurerm_network_security_group" "network_security_groups_m1" {
+      - id                  = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-01" -> null
+      - location            = "swedencentral" -> null
+      - name                = "nsg-vnet-shared-01.snet-misc-01" -> null
+      - resource_group_name = "RG-SwedenCentral-terraform-2" -> null
+      - security_rule       = [
+          - {
+              - access                                     = "Allow"
+              - description                                = ""
+              - destination_address_prefix                 = "Internet"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "*"
+              - destination_port_ranges                    = []
+              - direction                                  = "Outbound"
+              - name                                       = "AllowInternetOutbound"
+              - priority                                   = 120
+              - protocol                                   = "*"
+              - source_address_prefix                      = "*"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+            },
+          - {
+              - access                                     = "Allow"
+              - description                                = ""
+              - destination_address_prefix                 = "VirtualNetwork"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "*"
+              - destination_port_ranges                    = []
+              - direction                                  = "Inbound"
+              - name                                       = "AllowVirtualNetworkInbound"
+              - priority                                   = 100
+              - protocol                                   = "*"
+              - source_address_prefix                      = "VirtualNetwork"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+            },
+          - {
+              - access                                     = "Allow"
+              - description                                = ""
+              - destination_address_prefix                 = "VirtualNetwork"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "*"
+              - destination_port_ranges                    = []
+              - direction                                  = "Outbound"
+              - name                                       = "AllowVirtualNetworkOutbound"
+              - priority                                   = 110
+              - protocol                                   = "*"
+              - source_address_prefix                      = "VirtualNetwork"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+            },
+        ] -> null
+      - tags                = {} -> null
+    }
+
+  # module.module-01.azurerm_network_security_group.network_security_groups_m1["snet-misc-02"] will be destroyed
+  - resource "azurerm_network_security_group" "network_security_groups_m1" {
+      - id                  = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-02" -> null
+      - location            = "swedencentral" -> null
+      - name                = "nsg-vnet-shared-01.snet-misc-02" -> null
+      - resource_group_name = "RG-SwedenCentral-terraform-2" -> null
+      - security_rule       = [
+          - {
+              - access                                     = "Allow"
+              - description                                = ""
+              - destination_address_prefix                 = "Internet"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "*"
+              - destination_port_ranges                    = []
+              - direction                                  = "Outbound"
+              - name                                       = "AllowInternetOutbound"
+              - priority                                   = 120
+              - protocol                                   = "*"
+              - source_address_prefix                      = "*"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+            },
+          - {
+              - access                                     = "Allow"
+              - description                                = ""
+              - destination_address_prefix                 = "VirtualNetwork"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "*"
+              - destination_port_ranges                    = []
+              - direction                                  = "Inbound"
+              - name                                       = "AllowVirtualNetworkInbound"
+              - priority                                   = 100
+              - protocol                                   = "*"
+              - source_address_prefix                      = "VirtualNetwork"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+            },
+          - {
+              - access                                     = "Allow"
+              - description                                = ""
+              - destination_address_prefix                 = "VirtualNetwork"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "*"
+              - destination_port_ranges                    = []
+              - direction                                  = "Outbound"
+              - name                                       = "AllowVirtualNetworkOutbound"
+              - priority                                   = 110
+              - protocol                                   = "*"
+              - source_address_prefix                      = "VirtualNetwork"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+            },
+        ] -> null
+      - tags                = {} -> null
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowAzureCloudOutbound"] will be destroyed
+  - resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      - access                                     = "Allow" -> null
+      - destination_address_prefix                 = "AzureCloud" -> null
+      - destination_address_prefixes               = [] -> null
+      - destination_application_security_group_ids = [] -> null
+      - destination_port_range                     = "443" -> null
+      - destination_port_ranges                    = [] -> null
+      - direction                                  = "Outbound" -> null
+      - id                                         = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowAzureCloudOutbound" -> null
+      - name                                       = "AllowAzureCloudOutbound" -> null
+      - network_security_group_name                = "nsg-vnet-shared-01.AzureBastionSubnet" -> null
+      - priority                                   = 150 -> null
+      - protocol                                   = "Tcp" -> null
+      - resource_group_name                        = "RG-SwedenCentral-terraform-2" -> null
+      - source_address_prefix                      = "*" -> null
+      - source_address_prefixes                    = [] -> null
+      - source_application_security_group_ids      = [] -> null
+      - source_port_range                          = "*" -> null
+      - source_port_ranges                         = [] -> null
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowAzureLoadBalancerInbound"] will be destroyed
+  - resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      - access                                     = "Allow" -> null
+      - destination_address_prefix                 = "*" -> null
+      - destination_address_prefixes               = [] -> null
+      - destination_application_security_group_ids = [] -> null
+      - destination_port_range                     = "443" -> null
+      - destination_port_ranges                    = [] -> null
+      - direction                                  = "Inbound" -> null
+      - id                                         = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowAzureLoadBalancerInbound" -> null
+      - name                                       = "AllowAzureLoadBalancerInbound" -> null
+      - network_security_group_name                = "nsg-vnet-shared-01.AzureBastionSubnet" -> null
+      - priority                                   = 120 -> null
+      - protocol                                   = "Tcp" -> null
+      - resource_group_name                        = "RG-SwedenCentral-terraform-2" -> null
+      - source_address_prefix                      = "AzureLoadBalancer" -> null
+      - source_address_prefixes                    = [] -> null
+      - source_application_security_group_ids      = [] -> null
+      - source_port_range                          = "*" -> null
+      - source_port_ranges                         = [] -> null
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowBastionCommunicationInbound"] will be destroyed
+  - resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      - access                                     = "Allow" -> null
+      - destination_address_prefix                 = "VirtualNetwork" -> null
+      - destination_address_prefixes               = [] -> null
+      - destination_application_security_group_ids = [] -> null
+      - destination_port_ranges                    = [
+          - "5701",
+          - "8080",
+        ] -> null
+      - direction                                  = "Inbound" -> null
+      - id                                         = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowBastionCommunicationInbound" -> null
+      - name                                       = "AllowBastionCommunicationInbound" -> null
+      - network_security_group_name                = "nsg-vnet-shared-01.AzureBastionSubnet" -> null
+      - priority                                   = 130 -> null
+      - protocol                                   = "*" -> null
+      - resource_group_name                        = "RG-SwedenCentral-terraform-2" -> null
+      - source_address_prefix                      = "VirtualNetwork" -> null
+      - source_address_prefixes                    = [] -> null
+      - source_application_security_group_ids      = [] -> null
+      - source_port_range                          = "*" -> null
+      - source_port_ranges                         = [] -> null
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowBastionCommunicationOutbound"] will be destroyed
+  - resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      - access                                     = "Allow" -> null
+      - destination_address_prefix                 = "VirtualNetwork" -> null
+      - destination_address_prefixes               = [] -> null
+      - destination_application_security_group_ids = [] -> null
+      - destination_port_ranges                    = [
+          - "5701",
+          - "8080",
+        ] -> null
+      - direction                                  = "Outbound" -> null
+      - id                                         = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowBastionCommunicationOutbound" -> null
+      - name                                       = "AllowBastionCommunicationOutbound" -> null
+      - network_security_group_name                = "nsg-vnet-shared-01.AzureBastionSubnet" -> null
+      - priority                                   = 160 -> null
+      - protocol                                   = "*" -> null
+      - resource_group_name                        = "RG-SwedenCentral-terraform-2" -> null
+      - source_address_prefix                      = "VirtualNetwork" -> null
+      - source_address_prefixes                    = [] -> null
+      - source_application_security_group_ids      = [] -> null
+      - source_port_range                          = "*" -> null
+      - source_port_ranges                         = [] -> null
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowGatewayManagerInbound"] will be destroyed
+  - resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      - access                                     = "Allow" -> null
+      - destination_address_prefix                 = "*" -> null
+      - destination_address_prefixes               = [] -> null
+      - destination_application_security_group_ids = [] -> null
+      - destination_port_range                     = "443" -> null
+      - destination_port_ranges                    = [] -> null
+      - direction                                  = "Inbound" -> null
+      - id                                         = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowGatewayManagerInbound" -> null
+      - name                                       = "AllowGatewayManagerInbound" -> null
+      - network_security_group_name                = "nsg-vnet-shared-01.AzureBastionSubnet" -> null
+      - priority                                   = 110 -> null
+      - protocol                                   = "Tcp" -> null
+      - resource_group_name                        = "RG-SwedenCentral-terraform-2" -> null
+      - source_address_prefix                      = "GatewayManager" -> null
+      - source_address_prefixes                    = [] -> null
+      - source_application_security_group_ids      = [] -> null
+      - source_port_range                          = "*" -> null
+      - source_port_ranges                         = [] -> null
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowGetSessionInformationOutbound"] will be destroyed
+  - resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      - access                                     = "Allow" -> null
+      - destination_address_prefix                 = "Internet" -> null
+      - destination_address_prefixes               = [] -> null
+      - destination_application_security_group_ids = [] -> null
+      - destination_port_range                     = "80" -> null
+      - destination_port_ranges                    = [] -> null
+      - direction                                  = "Outbound" -> null
+      - id                                         = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowGetSessionInformationOutbound" -> null
+      - name                                       = "AllowGetSessionInformationOutbound" -> null
+      - network_security_group_name                = "nsg-vnet-shared-01.AzureBastionSubnet" -> null
+      - priority                                   = 170 -> null
+      - protocol                                   = "*" -> null
+      - resource_group_name                        = "RG-SwedenCentral-terraform-2" -> null
+      - source_address_prefix                      = "*" -> null
+      - source_address_prefixes                    = [] -> null
+      - source_application_security_group_ids      = [] -> null
+      - source_port_range                          = "*" -> null
+      - source_port_ranges                         = [] -> null
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowHttpsInbound"] will be destroyed
+  - resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      - access                                     = "Allow" -> null
+      - destination_address_prefix                 = "*" -> null
+      - destination_address_prefixes               = [] -> null
+      - destination_application_security_group_ids = [] -> null
+      - destination_port_range                     = "443" -> null
+      - destination_port_ranges                    = [] -> null
+      - direction                                  = "Inbound" -> null
+      - id                                         = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowHttpsInbound" -> null
+      - name                                       = "AllowHttpsInbound" -> null
+      - network_security_group_name                = "nsg-vnet-shared-01.AzureBastionSubnet" -> null
+      - priority                                   = 100 -> null
+      - protocol                                   = "Tcp" -> null
+      - resource_group_name                        = "RG-SwedenCentral-terraform-2" -> null
+      - source_address_prefix                      = "Internet" -> null
+      - source_address_prefixes                    = [] -> null
+      - source_application_security_group_ids      = [] -> null
+      - source_port_range                          = "*" -> null
+      - source_port_ranges                         = [] -> null
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowSshRdpOutbound"] will be destroyed
+  - resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      - access                                     = "Allow" -> null
+      - destination_address_prefix                 = "VirtualNetwork" -> null
+      - destination_address_prefixes               = [] -> null
+      - destination_application_security_group_ids = [] -> null
+      - destination_port_ranges                    = [
+          - "22",
+          - "3389",
+        ] -> null
+      - direction                                  = "Outbound" -> null
+      - id                                         = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowSshRdpOutbound" -> null
+      - name                                       = "AllowSshRdpOutbound" -> null
+      - network_security_group_name                = "nsg-vnet-shared-01.AzureBastionSubnet" -> null
+      - priority                                   = 140 -> null
+      - protocol                                   = "*" -> null
+      - resource_group_name                        = "RG-SwedenCentral-terraform-2" -> null
+      - source_address_prefix                      = "*" -> null
+      - source_address_prefixes                    = [] -> null
+      - source_application_security_group_ids      = [] -> null
+      - source_port_range                          = "*" -> null
+      - source_port_ranges                         = [] -> null
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-adds-01.AllowInternetOutbound"] will be destroyed
+  - resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      - access                                     = "Allow" -> null
+      - destination_address_prefix                 = "Internet" -> null
+      - destination_address_prefixes               = [] -> null
+      - destination_application_security_group_ids = [] -> null
+      - destination_port_range                     = "*" -> null
+      - destination_port_ranges                    = [] -> null
+      - direction                                  = "Outbound" -> null
+      - id                                         = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-adds-01/securityRules/AllowInternetOutbound" -> null
+      - name                                       = "AllowInternetOutbound" -> null
+      - network_security_group_name                = "nsg-vnet-shared-01.snet-adds-01" -> null
+      - priority                                   = 120 -> null
+      - protocol                                   = "*" -> null
+      - resource_group_name                        = "RG-SwedenCentral-terraform-2" -> null
+      - source_address_prefix                      = "*" -> null
+      - source_address_prefixes                    = [] -> null
+      - source_application_security_group_ids      = [] -> null
+      - source_port_range                          = "*" -> null
+      - source_port_ranges                         = [] -> null
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-adds-01.AllowVirtualNetworkInbound"] will be destroyed
+  - resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      - access                                     = "Allow" -> null
+      - destination_address_prefix                 = "VirtualNetwork" -> null
+      - destination_address_prefixes               = [] -> null
+      - destination_application_security_group_ids = [] -> null
+      - destination_port_range                     = "*" -> null
+      - destination_port_ranges                    = [] -> null
+      - direction                                  = "Inbound" -> null
+      - id                                         = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-adds-01/securityRules/AllowVirtualNetworkInbound" -> null
+      - name                                       = "AllowVirtualNetworkInbound" -> null
+      - network_security_group_name                = "nsg-vnet-shared-01.snet-adds-01" -> null
+      - priority                                   = 100 -> null
+      - protocol                                   = "*" -> null
+      - resource_group_name                        = "RG-SwedenCentral-terraform-2" -> null
+      - source_address_prefix                      = "VirtualNetwork" -> null
+      - source_address_prefixes                    = [] -> null
+      - source_application_security_group_ids      = [] -> null
+      - source_port_range                          = "*" -> null
+      - source_port_ranges                         = [] -> null
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-adds-01.AllowVirtualNetworkOutbound"] will be destroyed
+  - resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      - access                                     = "Allow" -> null
+      - destination_address_prefix                 = "VirtualNetwork" -> null
+      - destination_address_prefixes               = [] -> null
+      - destination_application_security_group_ids = [] -> null
+      - destination_port_range                     = "*" -> null
+      - destination_port_ranges                    = [] -> null
+      - direction                                  = "Outbound" -> null
+      - id                                         = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-adds-01/securityRules/AllowVirtualNetworkOutbound" -> null
+      - name                                       = "AllowVirtualNetworkOutbound" -> null
+      - network_security_group_name                = "nsg-vnet-shared-01.snet-adds-01" -> null
+      - priority                                   = 110 -> null
+      - protocol                                   = "*" -> null
+      - resource_group_name                        = "RG-SwedenCentral-terraform-2" -> null
+      - source_address_prefix                      = "VirtualNetwork" -> null
+      - source_address_prefixes                    = [] -> null
+      - source_application_security_group_ids      = [] -> null
+      - source_port_range                          = "*" -> null
+      - source_port_ranges                         = [] -> null
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-01.AllowInternetOutbound"] will be destroyed
+  - resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      - access                                     = "Allow" -> null
+      - destination_address_prefix                 = "Internet" -> null
+      - destination_address_prefixes               = [] -> null
+      - destination_application_security_group_ids = [] -> null
+      - destination_port_range                     = "*" -> null
+      - destination_port_ranges                    = [] -> null
+      - direction                                  = "Outbound" -> null
+      - id                                         = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-01/securityRules/AllowInternetOutbound" -> null
+      - name                                       = "AllowInternetOutbound" -> null
+      - network_security_group_name                = "nsg-vnet-shared-01.snet-misc-01" -> null
+      - priority                                   = 120 -> null
+      - protocol                                   = "*" -> null
+      - resource_group_name                        = "RG-SwedenCentral-terraform-2" -> null
+      - source_address_prefix                      = "*" -> null
+      - source_address_prefixes                    = [] -> null
+      - source_application_security_group_ids      = [] -> null
+      - source_port_range                          = "*" -> null
+      - source_port_ranges                         = [] -> null
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-01.AllowVirtualNetworkInbound"] will be destroyed
+  - resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      - access                                     = "Allow" -> null
+      - destination_address_prefix                 = "VirtualNetwork" -> null
+      - destination_address_prefixes               = [] -> null
+      - destination_application_security_group_ids = [] -> null
+      - destination_port_range                     = "*" -> null
+      - destination_port_ranges                    = [] -> null
+      - direction                                  = "Inbound" -> null
+      - id                                         = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-01/securityRules/AllowVirtualNetworkInbound" -> null
+      - name                                       = "AllowVirtualNetworkInbound" -> null
+      - network_security_group_name                = "nsg-vnet-shared-01.snet-misc-01" -> null
+      - priority                                   = 100 -> null
+      - protocol                                   = "*" -> null
+      - resource_group_name                        = "RG-SwedenCentral-terraform-2" -> null
+      - source_address_prefix                      = "VirtualNetwork" -> null
+      - source_address_prefixes                    = [] -> null
+      - source_application_security_group_ids      = [] -> null
+      - source_port_range                          = "*" -> null
+      - source_port_ranges                         = [] -> null
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-01.AllowVirtualNetworkOutbound"] will be destroyed
+  - resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      - access                                     = "Allow" -> null
+      - destination_address_prefix                 = "VirtualNetwork" -> null
+      - destination_address_prefixes               = [] -> null
+      - destination_application_security_group_ids = [] -> null
+      - destination_port_range                     = "*" -> null
+      - destination_port_ranges                    = [] -> null
+      - direction                                  = "Outbound" -> null
+      - id                                         = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-01/securityRules/AllowVirtualNetworkOutbound" -> null
+      - name                                       = "AllowVirtualNetworkOutbound" -> null
+      - network_security_group_name                = "nsg-vnet-shared-01.snet-misc-01" -> null
+      - priority                                   = 110 -> null
+      - protocol                                   = "*" -> null
+      - resource_group_name                        = "RG-SwedenCentral-terraform-2" -> null
+      - source_address_prefix                      = "VirtualNetwork" -> null
+      - source_address_prefixes                    = [] -> null
+      - source_application_security_group_ids      = [] -> null
+      - source_port_range                          = "*" -> null
+      - source_port_ranges                         = [] -> null
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-02.AllowInternetOutbound"] will be destroyed
+  - resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      - access                                     = "Allow" -> null
+      - destination_address_prefix                 = "Internet" -> null
+      - destination_address_prefixes               = [] -> null
+      - destination_application_security_group_ids = [] -> null
+      - destination_port_range                     = "*" -> null
+      - destination_port_ranges                    = [] -> null
+      - direction                                  = "Outbound" -> null
+      - id                                         = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-02/securityRules/AllowInternetOutbound" -> null
+      - name                                       = "AllowInternetOutbound" -> null
+      - network_security_group_name                = "nsg-vnet-shared-01.snet-misc-02" -> null
+      - priority                                   = 120 -> null
+      - protocol                                   = "*" -> null
+      - resource_group_name                        = "RG-SwedenCentral-terraform-2" -> null
+      - source_address_prefix                      = "*" -> null
+      - source_address_prefixes                    = [] -> null
+      - source_application_security_group_ids      = [] -> null
+      - source_port_range                          = "*" -> null
+      - source_port_ranges                         = [] -> null
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-02.AllowVirtualNetworkInbound"] will be destroyed
+  - resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      - access                                     = "Allow" -> null
+      - destination_address_prefix                 = "VirtualNetwork" -> null
+      - destination_address_prefixes               = [] -> null
+      - destination_application_security_group_ids = [] -> null
+      - destination_port_range                     = "*" -> null
+      - destination_port_ranges                    = [] -> null
+      - direction                                  = "Inbound" -> null
+      - id                                         = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-02/securityRules/AllowVirtualNetworkInbound" -> null
+      - name                                       = "AllowVirtualNetworkInbound" -> null
+      - network_security_group_name                = "nsg-vnet-shared-01.snet-misc-02" -> null
+      - priority                                   = 100 -> null
+      - protocol                                   = "*" -> null
+      - resource_group_name                        = "RG-SwedenCentral-terraform-2" -> null
+      - source_address_prefix                      = "VirtualNetwork" -> null
+      - source_address_prefixes                    = [] -> null
+      - source_application_security_group_ids      = [] -> null
+      - source_port_range                          = "*" -> null
+      - source_port_ranges                         = [] -> null
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-02.AllowVirtualNetworkOutbound"] will be destroyed
+  - resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      - access                                     = "Allow" -> null
+      - destination_address_prefix                 = "VirtualNetwork" -> null
+      - destination_address_prefixes               = [] -> null
+      - destination_application_security_group_ids = [] -> null
+      - destination_port_range                     = "*" -> null
+      - destination_port_ranges                    = [] -> null
+      - direction                                  = "Outbound" -> null
+      - id                                         = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-02/securityRules/AllowVirtualNetworkOutbound" -> null
+      - name                                       = "AllowVirtualNetworkOutbound" -> null
+      - network_security_group_name                = "nsg-vnet-shared-01.snet-misc-02" -> null
+      - priority                                   = 110 -> null
+      - protocol                                   = "*" -> null
+      - resource_group_name                        = "RG-SwedenCentral-terraform-2" -> null
+      - source_address_prefix                      = "VirtualNetwork" -> null
+      - source_address_prefixes                    = [] -> null
+      - source_application_security_group_ids      = [] -> null
+      - source_port_range                          = "*" -> null
+      - source_port_ranges                         = [] -> null
+    }
+
+  # module.module-01.azurerm_public_ip.bastion_host_01 will be destroyed
+  - resource "azurerm_public_ip" "bastion_host_01" {
+      - allocation_method       = "Static" -> null
+      - ddos_protection_mode    = "VirtualNetworkInherited" -> null
+      - id                      = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/publicIPAddresses/pip-bst-terraform-01" -> null
+      - idle_timeout_in_minutes = 4 -> null
+      - ip_address              = "4.223.82.200" -> null
+      - ip_tags                 = {} -> null
+      - ip_version              = "IPv4" -> null
+      - location                = "swedencentral" -> null
+      - name                    = "pip-bst-terraform-01" -> null
+      - resource_group_name     = "RG-SwedenCentral-terraform-2" -> null
+      - sku                     = "Standard" -> null
+      - sku_tier                = "Regional" -> null
+      - tags                    = {} -> null
+      - zones                   = [] -> null
+    }
+
+  # module.module-01.azurerm_storage_account.st will be destroyed
+  - resource "azurerm_storage_account" "st" {
+      - access_tier                       = "Hot" -> null
+      - account_kind                      = "StorageV2" -> null
+      - account_replication_type          = "LRS" -> null
+      - account_tier                      = "Standard" -> null
+      - allow_nested_items_to_be_public   = true -> null
+      - cross_tenant_replication_enabled  = true -> null
+      - default_to_oauth_authentication   = false -> null
+      - enable_https_traffic_only         = true -> null
+      - id                                = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Storage/storageAccounts/stdynxcmiejeymoczo" -> null
+      - infrastructure_encryption_enabled = false -> null
+      - is_hns_enabled                    = false -> null
+      - local_user_enabled                = true -> null
+      - location                          = "swedencentral" -> null
+      - min_tls_version                   = "TLS1_2" -> null
+      - name                              = "stdynxcmiejeymoczo" -> null
+      - nfsv3_enabled                     = false -> null
+      - primary_access_key                = (sensitive value) -> null
+      - primary_blob_connection_string    = (sensitive value) -> null
+      - primary_blob_endpoint             = "https://stdynxcmiejeymoczo.blob.core.windows.net/" -> null
+      - primary_blob_host                 = "stdynxcmiejeymoczo.blob.core.windows.net" -> null
+      - primary_connection_string         = (sensitive value) -> null
+      - primary_dfs_endpoint              = "https://stdynxcmiejeymoczo.dfs.core.windows.net/" -> null
+      - primary_dfs_host                  = "stdynxcmiejeymoczo.dfs.core.windows.net" -> null
+      - primary_file_endpoint             = "https://stdynxcmiejeymoczo.file.core.windows.net/" -> null
+      - primary_file_host                 = "stdynxcmiejeymoczo.file.core.windows.net" -> null
+      - primary_location                  = "swedencentral" -> null
+      - primary_queue_endpoint            = "https://stdynxcmiejeymoczo.queue.core.windows.net/" -> null
+      - primary_queue_host                = "stdynxcmiejeymoczo.queue.core.windows.net" -> null
+      - primary_table_endpoint            = "https://stdynxcmiejeymoczo.table.core.windows.net/" -> null
+      - primary_table_host                = "stdynxcmiejeymoczo.table.core.windows.net" -> null
+      - primary_web_endpoint              = "https://stdynxcmiejeymoczo.z1.web.core.windows.net/" -> null
+      - primary_web_host                  = "stdynxcmiejeymoczo.z1.web.core.windows.net" -> null
+      - public_network_access_enabled     = true -> null
+      - queue_encryption_key_type         = "Service" -> null
+      - resource_group_name               = "RG-SwedenCentral-terraform-2" -> null
+      - secondary_access_key              = (sensitive value) -> null
+      - secondary_connection_string       = (sensitive value) -> null
+      - sftp_enabled                      = false -> null
+      - shared_access_key_enabled         = true -> null
+      - table_encryption_key_type         = "Service" -> null
+      - tags                              = {} -> null
+
+      - blob_properties {
+          - change_feed_enabled           = false -> null
+          - change_feed_retention_in_days = 0 -> null
+          - last_access_time_enabled      = false -> null
+          - versioning_enabled            = false -> null
+        }
+
+      - network_rules {
+          - bypass                     = [
+              - "AzureServices",
+            ] -> null
+          - default_action             = "Allow" -> null
+          - ip_rules                   = [] -> null
+          - virtual_network_subnet_ids = [] -> null
+        }
+
+      - queue_properties {
+          - hour_metrics {
+              - enabled               = true -> null
+              - include_apis          = true -> null
+              - retention_policy_days = 7 -> null
+              - version               = "1.0" -> null
+            }
+          - logging {
+              - delete                = false -> null
+              - read                  = false -> null
+              - retention_policy_days = 0 -> null
+              - version               = "1.0" -> null
+              - write                 = false -> null
+            }
+          - minute_metrics {
+              - enabled               = false -> null
+              - include_apis          = false -> null
+              - retention_policy_days = 0 -> null
+              - version               = "1.0" -> null
+            }
+        }
+
+      - share_properties {
+          - retention_policy {
+              - days = 7 -> null
+            }
+        }
+    }
+
+  # module.module-01.azurerm_storage_container.st_container will be destroyed
+  - resource "azurerm_storage_container" "st_container" {
+      - container_access_type   = "private" -> null
+      - has_immutability_policy = false -> null
+      - has_legal_hold          = false -> null
+      - id                      = "https://stdynxcmiejeymoczo.blob.core.windows.net/scripts" -> null
+      - metadata                = {} -> null
+      - name                    = "scripts" -> null
+      - resource_manager_id     = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Storage/storageAccounts/stdynxcmiejeymoczo/blobServices/default/containers/scripts" -> null
+      - storage_account_name    = "stdynxcmiejeymoczo" -> null
+    }
+
+  # module.module-01.azurerm_subnet.vnet_shared_01_subnets["AzureBastionSubnet"] will be destroyed
+  - resource "azurerm_subnet" "vnet_shared_01_subnets" {
+      - address_prefixes                               = [
+          - "10.1.0.0/27",
+        ] -> null
+      - enforce_private_link_endpoint_network_policies = true -> null
+      - enforce_private_link_service_network_policies  = false -> null
+      - id                                             = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/AzureBastionSubnet" -> null
+      - name                                           = "AzureBastionSubnet" -> null
+      - private_endpoint_network_policies_enabled      = false -> null
+      - private_link_service_network_policies_enabled  = true -> null
+      - resource_group_name                            = "RG-SwedenCentral-terraform-2" -> null
+      - service_endpoint_policy_ids                    = [] -> null
+      - service_endpoints                              = [] -> null
+      - virtual_network_name                           = "vnet-shared-01" -> null
+    }
+
+  # module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-adds-01"] will be destroyed
+  - resource "azurerm_subnet" "vnet_shared_01_subnets" {
+      - address_prefixes                               = [
+          - "10.1.1.0/24",
+        ] -> null
+      - enforce_private_link_endpoint_network_policies = true -> null
+      - enforce_private_link_service_network_policies  = false -> null
+      - id                                             = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-adds-01" -> null
+      - name                                           = "snet-adds-01" -> null
+      - private_endpoint_network_policies_enabled      = false -> null
+      - private_link_service_network_policies_enabled  = true -> null
+      - resource_group_name                            = "RG-SwedenCentral-terraform-2" -> null
+      - service_endpoint_policy_ids                    = [] -> null
+      - service_endpoints                              = [] -> null
+      - virtual_network_name                           = "vnet-shared-01" -> null
+    }
+
+  # module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-misc-01"] will be destroyed
+  - resource "azurerm_subnet" "vnet_shared_01_subnets" {
+      - address_prefixes                               = [
+          - "10.1.2.0/27",
+        ] -> null
+      - enforce_private_link_endpoint_network_policies = true -> null
+      - enforce_private_link_service_network_policies  = false -> null
+      - id                                             = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-misc-01" -> null
+      - name                                           = "snet-misc-01" -> null
+      - private_endpoint_network_policies_enabled      = false -> null
+      - private_link_service_network_policies_enabled  = true -> null
+      - resource_group_name                            = "RG-SwedenCentral-terraform-2" -> null
+      - service_endpoint_policy_ids                    = [] -> null
+      - service_endpoints                              = [] -> null
+      - virtual_network_name                           = "vnet-shared-01" -> null
+    }
+
+  # module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-misc-02"] will be destroyed
+  - resource "azurerm_subnet" "vnet_shared_01_subnets" {
+      - address_prefixes                               = [
+          - "10.1.3.0/27",
+        ] -> null
+      - enforce_private_link_endpoint_network_policies = true -> null
+      - enforce_private_link_service_network_policies  = false -> null
+      - id                                             = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-misc-02" -> null
+      - name                                           = "snet-misc-02" -> null
+      - private_endpoint_network_policies_enabled      = false -> null
+      - private_link_service_network_policies_enabled  = true -> null
+      - resource_group_name                            = "RG-SwedenCentral-terraform-2" -> null
+      - service_endpoint_policy_ids                    = [] -> null
+      - service_endpoints                              = [] -> null
+      - virtual_network_name                           = "vnet-shared-01" -> null
+    }
+
+  # module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["AzureBastionSubnet"] will be destroyed
+  - resource "azurerm_subnet_network_security_group_association" "nsg_subnet_associations_m1" {
+      - id                        = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/AzureBastionSubnet" -> null
+      - network_security_group_id = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet" -> null
+      - subnet_id                 = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/AzureBastionSubnet" -> null
+    }
+
+  # module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["snet-adds-01"] will be destroyed
+  - resource "azurerm_subnet_network_security_group_association" "nsg_subnet_associations_m1" {
+      - id                        = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-adds-01" -> null
+      - network_security_group_id = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-adds-01" -> null
+      - subnet_id                 = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-adds-01" -> null
+    }
+
+  # module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["snet-misc-01"] will be destroyed
+  - resource "azurerm_subnet_network_security_group_association" "nsg_subnet_associations_m1" {
+      - id                        = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-misc-01" -> null
+      - network_security_group_id = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-01" -> null
+      - subnet_id                 = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-misc-01" -> null
+    }
+
+  # module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["snet-misc-02"] will be destroyed
+  - resource "azurerm_subnet_network_security_group_association" "nsg_subnet_associations_m1" {
+      - id                        = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-misc-02" -> null
+      - network_security_group_id = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-02" -> null
+      - subnet_id                 = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-misc-02" -> null
+    }
+
+  # module.module-01.azurerm_virtual_network.vnet_shared_01 will be destroyed
+  - resource "azurerm_virtual_network" "vnet_shared_01" {
+      - address_space           = [
+          - "10.1.0.0/16",
+        ] -> null
+      - dns_servers             = [
+          - "10.1.1.4",
+          - "168.63.129.16",
+        ] -> null
+      - flow_timeout_in_minutes = 0 -> null
+      - guid                    = "8cc25f84-2e76-47c9-a121-67c73978d81f" -> null
+      - id                      = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01" -> null
+      - location                = "swedencentral" -> null
+      - name                    = "vnet-shared-01" -> null
+      - resource_group_name     = "RG-SwedenCentral-terraform-2" -> null
+      - subnet                  = [
+          - {
+              - address_prefix = "10.1.0.0/27"
+              - id             = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/AzureBastionSubnet"
+              - name           = "AzureBastionSubnet"
+              - security_group = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet"
+            },
+          - {
+              - address_prefix = "10.1.1.0/24"
+              - id             = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-adds-01"
+              - name           = "snet-adds-01"
+              - security_group = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-adds-01"
+            },
+          - {
+              - address_prefix = "10.1.2.0/27"
+              - id             = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-misc-01"
+              - name           = "snet-misc-01"
+              - security_group = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-01"
+            },
+          - {
+              - address_prefix = "10.1.3.0/27"
+              - id             = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-misc-02"
+              - name           = "snet-misc-02"
+              - security_group = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-02"
+            },
+        ] -> null
+      - tags                    = {} -> null
+    }
+
+  # module.module-01.azurerm_windows_virtual_machine.vm_adds will be destroyed
+  - resource "azurerm_windows_virtual_machine" "vm_adds" {
+      - admin_password                                         = (sensitive value) -> null
+      - admin_username                                         = (sensitive value) -> null
+      - allow_extension_operations                             = true -> null
+      - bypass_platform_safety_checks_on_user_schedule_enabled = false -> null
+      - computer_name                                          = "vm-adds1" -> null
+      - enable_automatic_updates                               = true -> null
+      - encryption_at_host_enabled                             = false -> null
+      - extensions_time_budget                                 = "PT1H30M" -> null
+      - hotpatching_enabled                                    = false -> null
+      - id                                                     = "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Compute/virtualMachines/vm-adds1" -> null
+      - location                                               = "swedencentral" -> null
+      - max_bid_price                                          = -1 -> null
+      - name                                                   = "vm-adds1" -> null
+      - network_interface_ids                                  = [
+          - "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkInterfaces/nic-adds1-1",
+        ] -> null
+      - patch_assessment_mode                                  = "ImageDefault" -> null
+      - patch_mode                                             = "AutomaticByOS" -> null
+      - platform_fault_domain                                  = -1 -> null
+      - priority                                               = "Regular" -> null
+      - private_ip_address                                     = "10.1.1.4" -> null
+      - private_ip_addresses                                   = [
+          - "10.1.1.4",
+        ] -> null
+      - provision_vm_agent                                     = true -> null
+      - public_ip_addresses                                    = [] -> null
+      - resource_group_name                                    = "RG-SwedenCentral-terraform-2" -> null
+      - secure_boot_enabled                                    = false -> null
+      - size                                                   = "Standard_B1s" -> null
+      - tags                                                   = {} -> null
+      - virtual_machine_id                                     = "a9860e15-2c63-4490-96f1-70456d3ed94b" -> null
+      - vtpm_enabled                                           = false -> null
+
+      - os_disk {
+          - caching                   = "ReadWrite" -> null
+          - disk_size_gb              = 127 -> null
+          - name                      = "vm-adds1_disk1_0d7592b4e9e8472caf224411da3759d0" -> null
+          - storage_account_type      = "Standard_LRS" -> null
+          - write_accelerator_enabled = false -> null
+        }
+
+      - source_image_reference {
+          - offer     = "WindowsServer" -> null
+          - publisher = "MicrosoftWindowsServer" -> null
+          - sku       = "2022-datacenter-core-g2" -> null
+          - version   = "Latest" -> null
+        }
+    }
+
+  # module.module-01.random_password.admin_password will be destroyed
+  - resource "random_password" "admin_password" {
+      - bcrypt_hash      = (sensitive value) -> null
+      - id               = "none" -> null
+      - length           = 16 -> null
+      - lower            = true -> null
+      - min_lower        = 0 -> null
+      - min_numeric      = 0 -> null
+      - min_special      = 0 -> null
+      - min_upper        = 0 -> null
+      - number           = true -> null
+      - numeric          = true -> null
+      - override_special = "!#$%&*" -> null
+      - result           = (sensitive value) -> null
+      - special          = true -> null
+      - upper            = true -> null
+    }
+
+  # module.module-01.random_string.azurerm_storage_account_name will be destroyed
+  - resource "random_string" "azurerm_storage_account_name" {
+      - id          = "dynxcmiejeymoczo" -> null
+      - length      = 16 -> null
+      - lower       = true -> null
+      - min_lower   = 0 -> null
+      - min_numeric = 0 -> null
+      - min_special = 0 -> null
+      - min_upper   = 0 -> null
+      - number      = false -> null
+      - numeric     = false -> null
+      - result      = "dynxcmiejeymoczo" -> null
+      - special     = false -> null
+      - upper       = false -> null
+    }
+
+Plan: 0 to add, 0 to change, 44 to destroy.
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["snet-misc-01"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-misc-01]
+module.module-01.azurerm_key_vault_secret.log_analytics_workspace_01_primary_shared_key: Destroying... [id=https://kv-dynxcmiejeymoczo.vault.azure.net/secrets/3ae07d25-ee0c-49a7-bfa3-e9332a3faeb6/0783e1e27f7e4c2e838ced5736250f8d]
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["snet-misc-02"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-misc-02]
+module.module-01.azurerm_bastion_host.bastion_host_01: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/bastionHosts/bst-terraform-01]
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["AzureBastionSubnet"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/AzureBastionSubnet]
+module.module-01.azurerm_key_vault_secret.storage_account_access_key: Destroying... [id=https://kv-dynxcmiejeymoczo.vault.azure.net/secrets/stdynxcmiejeymoczo/99ed423b2cb3434fab8c388b525e590c]
+module.module-01.azurerm_storage_container.st_container: Destroying... [id=https://stdynxcmiejeymoczo.blob.core.windows.net/scripts]
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["snet-adds-01"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-adds-01]
+module.module-01.azurerm_windows_virtual_machine.vm_adds: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Compute/virtualMachines/vm-adds1]
+module.module-01.azurerm_storage_container.st_container: Destruction complete after 1s
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["snet-misc-01"]: Destruction complete after 5s
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["snet-adds-01"]: Destruction complete after 9s
+module.module-01.azurerm_key_vault_secret.log_analytics_workspace_01_primary_shared_key: Still destroying... [id=https://kv-dynxcmiejeymoczo.vault.azure...faeb6/0783e1e27f7e4c2e838ced5736250f8d, 10s elapsed]
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["snet-misc-02"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...ks/vnet-shared-01/subnets/snet-misc-02, 10s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 10s elapsed]
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["AzureBastionSubnet"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...t-shared-01/subnets/AzureBastionSubnet, 10s elapsed]
+module.module-01.azurerm_key_vault_secret.storage_account_access_key: Still destroying... [id=https://kv-dynxcmiejeymoczo.vault.azure...moczo/99ed423b2cb3434fab8c388b525e590c, 10s elapsed]
+module.module-01.azurerm_windows_virtual_machine.vm_adds: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...osoft.Compute/virtualMachines/vm-adds1, 10s elapsed]
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["snet-misc-02"]: Destruction complete after 14s
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["AzureBastionSubnet"]: Destruction complete after 18s
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-02.AllowVirtualNetworkInbound"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-02/securityRules/AllowVirtualNetworkInbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-adds-01.AllowVirtualNetworkOutbound"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-adds-01/securityRules/AllowVirtualNetworkOutbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowGatewayManagerInbound"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowGatewayManagerInbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowGetSessionInformationOutbound"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowGetSessionInformationOutbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-01.AllowVirtualNetworkInbound"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-01/securityRules/AllowVirtualNetworkInbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowBastionCommunicationOutbound"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowBastionCommunicationOutbound]
+module.module-01.azurerm_key_vault_secret.log_analytics_workspace_01_primary_shared_key: Still destroying... [id=https://kv-dynxcmiejeymoczo.vault.azure...faeb6/0783e1e27f7e4c2e838ced5736250f8d, 20s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 20s elapsed]
+module.module-01.azurerm_key_vault_secret.storage_account_access_key: Still destroying... [id=https://kv-dynxcmiejeymoczo.vault.azure...moczo/99ed423b2cb3434fab8c388b525e590c, 20s elapsed]
+module.module-01.azurerm_windows_virtual_machine.vm_adds: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...osoft.Compute/virtualMachines/vm-adds1, 20s elapsed]
+module.module-01.azurerm_key_vault_secret.log_analytics_workspace_01_primary_shared_key: Destruction complete after 25s
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-02.AllowInternetOutbound"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-02/securityRules/AllowInternetOutbound]
+module.module-01.azurerm_key_vault_secret.storage_account_access_key: Destruction complete after 25s
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowAzureCloudOutbound"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowAzureCloudOutbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowGatewayManagerInbound"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...curityRules/AllowGatewayManagerInbound, 10s elapsed]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-02.AllowVirtualNetworkInbound"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...curityRules/AllowVirtualNetworkInbound, 10s elapsed]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowBastionCommunicationOutbound"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...ules/AllowBastionCommunicationOutbound, 10s elapsed]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowGetSessionInformationOutbound"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...les/AllowGetSessionInformationOutbound, 10s elapsed]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-adds-01.AllowVirtualNetworkOutbound"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...urityRules/AllowVirtualNetworkOutbound, 10s elapsed]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-01.AllowVirtualNetworkInbound"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...curityRules/AllowVirtualNetworkInbound, 10s elapsed]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-02.AllowVirtualNetworkInbound"]: Destruction complete after 11s
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-01.AllowInternetOutbound"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-01/securityRules/AllowInternetOutbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-01.AllowVirtualNetworkInbound"]: Destruction complete after 11s
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-02.AllowVirtualNetworkOutbound"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-02/securityRules/AllowVirtualNetworkOutbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowGatewayManagerInbound"]: Destruction complete after 12s
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowBastionCommunicationInbound"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowBastionCommunicationInbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-adds-01.AllowVirtualNetworkOutbound"]: Destruction complete after 12s
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-adds-01.AllowInternetOutbound"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-adds-01/securityRules/AllowInternetOutbound]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 30s elapsed]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowGetSessionInformationOutbound"]: Destruction complete after 12s
+module.module-01.azurerm_windows_virtual_machine.vm_adds: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...osoft.Compute/virtualMachines/vm-adds1, 30s elapsed]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowHttpsInbound"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowHttpsInbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-02.AllowInternetOutbound"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...02/securityRules/AllowInternetOutbound, 10s elapsed]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowAzureCloudOutbound"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-.../securityRules/AllowAzureCloudOutbound, 10s elapsed]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-02.AllowInternetOutbound"]: Destruction complete after 12s
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-01.AllowVirtualNetworkOutbound"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-01/securityRules/AllowVirtualNetworkOutbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowAzureCloudOutbound"]: Destruction complete after 12s
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowAzureLoadBalancerInbound"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowAzureLoadBalancerInbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowBastionCommunicationOutbound"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...ules/AllowBastionCommunicationOutbound, 20s elapsed]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-01.AllowInternetOutbound"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...01/securityRules/AllowInternetOutbound, 10s elapsed]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-02.AllowVirtualNetworkOutbound"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...urityRules/AllowVirtualNetworkOutbound, 10s elapsed]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowBastionCommunicationInbound"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...Rules/AllowBastionCommunicationInbound, 10s elapsed]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-adds-01.AllowInternetOutbound"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...01/securityRules/AllowInternetOutbound, 10s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 40s elapsed]
+module.module-01.azurerm_windows_virtual_machine.vm_adds: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...osoft.Compute/virtualMachines/vm-adds1, 40s elapsed]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowHttpsInbound"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...Subnet/securityRules/AllowHttpsInbound, 10s elapsed]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-01.AllowInternetOutbound"]: Destruction complete after 11s
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-adds-01.AllowVirtualNetworkInbound"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-adds-01/securityRules/AllowVirtualNetworkInbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowBastionCommunicationInbound"]: Destruction complete after 12s
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowSshRdpOutbound"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowSshRdpOutbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowHttpsInbound"]: Destruction complete after 12s
+module.module-01.azurerm_log_analytics_workspace.log_analytics_workspace_01: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.OperationalInsights/workspaces/log-shared-terraform-01]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowBastionCommunicationOutbound"]: Destruction complete after 25s
+module.module-01.azurerm_storage_account.st: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Storage/storageAccounts/stdynxcmiejeymoczo]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-adds-01.AllowInternetOutbound"]: Destruction complete after 13s
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-02.AllowVirtualNetworkOutbound"]: Destruction complete after 16s
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-01.AllowVirtualNetworkOutbound"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...urityRules/AllowVirtualNetworkOutbound, 10s elapsed]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowAzureLoadBalancerInbound"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...ityRules/AllowAzureLoadBalancerInbound, 10s elapsed]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-01.AllowVirtualNetworkOutbound"]: Destruction complete after 11s
+module.module-01.azurerm_storage_account.st: Destruction complete after 5s
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowAzureLoadBalancerInbound"]: Destruction complete after 12s
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 50s elapsed]
+module.module-01.azurerm_windows_virtual_machine.vm_adds: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...osoft.Compute/virtualMachines/vm-adds1, 50s elapsed]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-adds-01.AllowVirtualNetworkInbound"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...curityRules/AllowVirtualNetworkInbound, 10s elapsed]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowSshRdpOutbound"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...bnet/securityRules/AllowSshRdpOutbound, 10s elapsed]
+module.module-01.azurerm_log_analytics_workspace.log_analytics_workspace_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...hts/workspaces/log-shared-terraform-01, 10s elapsed]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowSshRdpOutbound"]: Destruction complete after 10s
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-adds-01.AllowVirtualNetworkInbound"]: Destruction complete after 14s
+module.module-01.azurerm_network_security_group.network_security_groups_m1["snet-adds-01"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-adds-01]
+module.module-01.azurerm_network_security_group.network_security_groups_m1["snet-misc-01"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-01]
+module.module-01.azurerm_network_security_group.network_security_groups_m1["AzureBastionSubnet"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet]
+module.module-01.azurerm_network_security_group.network_security_groups_m1["snet-misc-02"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-02]
+module.module-01.azurerm_network_security_group.network_security_groups_m1["AzureBastionSubnet"]: Destruction complete after 2s
+module.module-01.azurerm_log_analytics_workspace.log_analytics_workspace_01: Destruction complete after 15s
+module.module-01.azurerm_network_security_group.network_security_groups_m1["snet-misc-01"]: Destruction complete after 4s
+module.module-01.azurerm_network_security_group.network_security_groups_m1["snet-adds-01"]: Destruction complete after 4s
+module.module-01.azurerm_windows_virtual_machine.vm_adds: Destruction complete after 58s
+module.module-01.azurerm_key_vault_secret.adminuser: Destroying... [id=https://kv-dynxcmiejeymoczo.vault.azure.net/secrets/adminuser/8e9a4ecaceca428b8a5da0ddc268f6c6]
+module.module-01.azurerm_network_interface.vm_adds_nic_01: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/networkInterfaces/nic-adds1-1]
+module.module-01.azurerm_key_vault_secret.adminpassword: Destroying... [id=https://kv-dynxcmiejeymoczo.vault.azure.net/secrets/adminpassword/b423407e98d44c5caafda52c4a7ed9fd]
+module.module-01.azurerm_network_security_group.network_security_groups_m1["snet-misc-02"]: Destruction complete after 4s
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 1m0s elapsed]
+module.module-01.azurerm_key_vault_secret.adminuser: Still destroying... [id=https://kv-dynxcmiejeymoczo.vault.azure...nuser/8e9a4ecaceca428b8a5da0ddc268f6c6, 10s elapsed]
+module.module-01.azurerm_network_interface.vm_adds_nic_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/networkInterfaces/nic-adds1-1, 10s elapsed]
+module.module-01.azurerm_key_vault_secret.adminpassword: Still destroying... [id=https://kv-dynxcmiejeymoczo.vault.azure...sword/b423407e98d44c5caafda52c4a7ed9fd, 10s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 1m10s elapsed]
+module.module-01.azurerm_network_interface.vm_adds_nic_01: Destruction complete after 13s
+module.module-01.azurerm_key_vault_secret.adminuser: Still destroying... [id=https://kv-dynxcmiejeymoczo.vault.azure...nuser/8e9a4ecaceca428b8a5da0ddc268f6c6, 20s elapsed]
+module.module-01.azurerm_key_vault_secret.adminpassword: Still destroying... [id=https://kv-dynxcmiejeymoczo.vault.azure...sword/b423407e98d44c5caafda52c4a7ed9fd, 20s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 1m20s elapsed]
+module.module-01.azurerm_key_vault_secret.adminuser: Destruction complete after 24s
+module.module-01.azurerm_key_vault_secret.adminpassword: Destruction complete after 25s
+module.module-01.random_password.admin_password: Destroying... [id=none]
+module.module-01.random_password.admin_password: Destruction complete after 0s
+module.module-01.azurerm_key_vault.kv: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.KeyVault/vaults/kv-dynxcmiejeymoczo]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 1m30s elapsed]
+module.module-01.azurerm_key_vault.kv: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...ft.KeyVault/vaults/kv-dynxcmiejeymoczo, 10s elapsed]
+module.module-01.azurerm_key_vault.kv: Destruction complete after 10s
+module.module-01.random_string.azurerm_storage_account_name: Destroying... [id=dynxcmiejeymoczo]
+module.module-01.random_string.azurerm_storage_account_name: Destruction complete after 0s
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 1m40s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 1m50s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 2m0s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 2m10s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 2m20s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 2m30s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 2m40s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 2m50s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 3m0s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 3m10s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 3m20s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 3m30s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 3m40s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 3m50s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 4m0s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 4m10s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 4m20s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 4m30s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 4m40s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 4m50s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 5m0s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 5m10s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 5m20s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 5m30s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-....Network/bastionHosts/bst-terraform-01, 5m40s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Destruction complete after 5m46s
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-misc-02"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-misc-02]
+module.module-01.azurerm_public_ip.bastion_host_01: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/publicIPAddresses/pip-bst-terraform-01]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-adds-01"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-adds-01]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-misc-01"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-misc-01]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["AzureBastionSubnet"]: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/AzureBastionSubnet]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-misc-02"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...ks/vnet-shared-01/subnets/snet-misc-02, 10s elapsed]
+module.module-01.azurerm_public_ip.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...publicIPAddresses/pip-bst-terraform-01, 10s elapsed]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["AzureBastionSubnet"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...t-shared-01/subnets/AzureBastionSubnet, 10s elapsed]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-misc-01"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...ks/vnet-shared-01/subnets/snet-misc-01, 10s elapsed]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-adds-01"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...ks/vnet-shared-01/subnets/snet-adds-01, 10s elapsed]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-misc-02"]: Destruction complete after 11s
+module.module-01.azurerm_public_ip.bastion_host_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...publicIPAddresses/pip-bst-terraform-01, 20s elapsed]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-adds-01"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...ks/vnet-shared-01/subnets/snet-adds-01, 20s elapsed]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["AzureBastionSubnet"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...t-shared-01/subnets/AzureBastionSubnet, 20s elapsed]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-misc-01"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...ks/vnet-shared-01/subnets/snet-misc-01, 20s elapsed]
+module.module-01.azurerm_public_ip.bastion_host_01: Destruction complete after 22s
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-misc-01"]: Destruction complete after 22s
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["AzureBastionSubnet"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...t-shared-01/subnets/AzureBastionSubnet, 30s elapsed]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-adds-01"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...ks/vnet-shared-01/subnets/snet-adds-01, 30s elapsed]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-adds-01"]: Destruction complete after 33s
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["AzureBastionSubnet"]: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...t-shared-01/subnets/AzureBastionSubnet, 40s elapsed]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["AzureBastionSubnet"]: Destruction complete after 44s
+module.module-01.azurerm_virtual_network.vnet_shared_01: Destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-terraform-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01]
+module.module-01.azurerm_virtual_network.vnet_shared_01: Still destroying... [id=/subscriptions/33f27ac9-52ef-43de-b518-...Network/virtualNetworks/vnet-shared-01, 10s elapsed]
+module.module-01.azurerm_virtual_network.vnet_shared_01: Destruction complete after 12s
+
+Destroy complete! Resources: 44 destroyed.
