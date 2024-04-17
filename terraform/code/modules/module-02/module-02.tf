@@ -20,6 +20,8 @@ resource "azurerm_subnet" "vnet_app_01_subnets" {
   virtual_network_name                      = azurerm_virtual_network.vnet_app_01.name
   address_prefixes                          = [each.value.address_prefix]
   private_endpoint_network_policies_enabled = each.value.private_endpoint_network_policies_enabled
+
+  depends_on = [ azurerm_virtual_network.vnet_app_01 ]
 }
 
 resource "azurerm_network_security_group" "network_security_groups_m2" {
@@ -28,6 +30,8 @@ resource "azurerm_network_security_group" "network_security_groups_m2" {
   name                = "nsg-${var.vnet_name_m2}.${each.key}"
   location            = var.location
   resource_group_name = var.resource_group_name
+
+  depends_on = [ azurerm_subnet.vnet_app_01_subnets ]
 }
 
 resource "azurerm_subnet_network_security_group_association" "nsg_subnet_associations_m2" {
@@ -157,6 +161,8 @@ resource "azurerm_network_interface" "vm_jumpbox_win_nic_01" {
     subnet_id                     = azurerm_subnet.vnet_app_01_subnets["snet-app-01"].id
     private_ip_address_allocation = "Dynamic"
   }
+
+  depends_on = [ azurerm_subnet.vnet_app_01_subnets ]
 }
 
 # Linux virtual machine
@@ -185,6 +191,8 @@ resource "azurerm_linux_virtual_machine" "vm_jumpbox_linux" {
   identity {
     type = "SystemAssigned"
   }
+
+  depends_on = [ azurerm_network_interface.vm_jumbox_linux_nic_01 ]
 }
 
 # Nics
@@ -209,6 +217,8 @@ resource "azurerm_key_vault_access_policy" "vm_jumpbox_linux_secrets_get" {
   tenant_id          = azurerm_linux_virtual_machine.vm_jumpbox_linux.identity[0].tenant_id
   object_id          = azurerm_linux_virtual_machine.vm_jumpbox_linux.identity[0].principal_id
   secret_permissions = ["Get"]
+
+  depends_on = [ azurerm_linux_virtual_machine.vm_jumpbox_linux ]
 }
 
 # Azure Files share
