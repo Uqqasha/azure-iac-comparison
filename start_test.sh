@@ -8,7 +8,7 @@ iac_tools='terraform ARM bicep'
 provider='azure'
 
 # Regions
-azure_region='EastUS SwedenCentral SoutheastAsia'
+azure_region='EastUS SwedenCentral AustraliaEast'
 
 echo -e "------------------------- STARTING TESTS ------------------------- \n"
 

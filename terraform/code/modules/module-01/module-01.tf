@@ -8,6 +8,11 @@ resource "random_string" "azurerm_storage_account_name" {
 
 resource "random_password" "admin_password" {
   length  = 16
+  special = true
+  lower   = true
+  upper   = true
+  numeric = true
+  override_special = "!#$%&*"
 }
 
 resource "azurerm_storage_account" "st" {
