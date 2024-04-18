@@ -1,0 +1,309 @@
+Starting provisioning process
+WARNING: A new Bicep release is available: v0.26.170. Upgrade now by running "az bicep upgrade".
+WARNING: /home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-01/module-01.bicep(16,7) : Warning no-unused-params: Parameter "automationAccountSku" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(13,46) : Warning no-hardcoded-env-urls: Environment URLs should not be hardcoded. Use the environment() function to ensure compatibility across clouds. Found this disallowed host: "database.windows.net" [https://aka.ms/bicep/linter/no-hardcoded-env-urls]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(13,87) : Warning no-hardcoded-env-urls: Environment URLs should not be hardcoded. Use the environment() function to ensure compatibility across clouds. Found this disallowed host: "core.windows.net" [https://aka.ms/bicep/linter/no-hardcoded-env-urls]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(16,7) : Warning no-unused-params: Parameter "vmJumpboxWinSize" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(17,7) : Warning no-unused-params: Parameter "vmJumpboxWinPublisher" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(18,7) : Warning no-unused-params: Parameter "vmJumpboxWinOffer" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(19,7) : Warning no-unused-params: Parameter "vmJumpboxWinSku" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(20,7) : Warning no-unused-params: Parameter "vmJumpboxWinVersion" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(21,7) : Warning no-unused-params: Parameter "vmJumpboxWinStorageAccountType" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(289,27) : Warning no-hardcoded-env-urls: Environment URLs should not be hardcoded. Use the environment() function to ensure compatibility across clouds. Found this disallowed host: "core.windows.net" [https://aka.ms/bicep/linter/no-hardcoded-env-urls]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(294,83) : Warning BCP318: The value of type "CustomDnsConfigPropertiesFormat | null" may be null at the start of the deployment, which would cause this access expression (and the overall deployment with it) to fail.
+
+ERROR: {"status":"Failed","error":{"code":"DeploymentFailed","target":"/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Resources/deployments/deployment1","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/arm-deployment-operations for usage details.","details":[{"code":"ResourceDeploymentFailure","target":"/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Resources/deployments/module01Deployment","message":"The resource write operation failed to complete successfully, because it reached terminal provisioning state 'Failed'.","details":[{"code":"DeploymentFailed","target":"/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Resources/deployments/module01Deployment","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/arm-deployment-operations for usage details.","details":[{"code":"ResourceDeploymentFailure","target":"/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Compute/virtualMachines/adds1","message":"The resource write operation failed to complete successfully, because it reached terminal provisioning state 'Failed'.","details":[{"code":"RetryableError","message":"A retryable error occurred."}]}]}]}]}}
+INFO: Command ran in 585.272 seconds (init: 0.245, invoke: 585.027)
+Starting provisioning process
+WARNING: A new Bicep release is available: v0.26.170. Upgrade now by running "az bicep upgrade".
+WARNING: /home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-01/module-01.bicep(16,7) : Warning no-unused-params: Parameter "automationAccountSku" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(13,46) : Warning no-hardcoded-env-urls: Environment URLs should not be hardcoded. Use the environment() function to ensure compatibility across clouds. Found this disallowed host: "database.windows.net" [https://aka.ms/bicep/linter/no-hardcoded-env-urls]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(13,87) : Warning no-hardcoded-env-urls: Environment URLs should not be hardcoded. Use the environment() function to ensure compatibility across clouds. Found this disallowed host: "core.windows.net" [https://aka.ms/bicep/linter/no-hardcoded-env-urls]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(16,7) : Warning no-unused-params: Parameter "vmJumpboxWinSize" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(17,7) : Warning no-unused-params: Parameter "vmJumpboxWinPublisher" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(18,7) : Warning no-unused-params: Parameter "vmJumpboxWinOffer" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(19,7) : Warning no-unused-params: Parameter "vmJumpboxWinSku" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(20,7) : Warning no-unused-params: Parameter "vmJumpboxWinVersion" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(21,7) : Warning no-unused-params: Parameter "vmJumpboxWinStorageAccountType" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(289,27) : Warning no-hardcoded-env-urls: Environment URLs should not be hardcoded. Use the environment() function to ensure compatibility across clouds. Found this disallowed host: "core.windows.net" [https://aka.ms/bicep/linter/no-hardcoded-env-urls]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(294,83) : Warning BCP318: The value of type "CustomDnsConfigPropertiesFormat | null" may be null at the start of the deployment, which would cause this access expression (and the overall deployment with it) to fail.
+
+ERROR: {"status":"Failed","error":{"code":"DeploymentFailed","target":"/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Resources/deployments/deployment1","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/arm-deployment-operations for usage details.","details":[{"code":"ResourceDeploymentFailure","target":"/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Resources/deployments/module01Deployment","message":"The resource write operation failed to complete successfully, because it reached terminal provisioning state 'Failed'.","details":[{"code":"DeploymentFailed","target":"/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Resources/deployments/module01Deployment","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/arm-deployment-operations for usage details.","details":[{"code":"ResourceDeploymentFailure","target":"/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Compute/virtualMachines/adds1","message":"The resource write operation failed to complete successfully, because it reached terminal provisioning state 'Failed'.","details":[{"code":"RetryableError","message":"A retryable error occurred."}]}]}]}]}}
+INFO: Command ran in 462.876 seconds (init: 0.259, invoke: 462.617)
+Starting provisioning process
+WARNING: A new Bicep release is available: v0.26.170. Upgrade now by running "az bicep upgrade".
+WARNING: /home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-01/module-01.bicep(16,7) : Warning no-unused-params: Parameter "automationAccountSku" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(13,46) : Warning no-hardcoded-env-urls: Environment URLs should not be hardcoded. Use the environment() function to ensure compatibility across clouds. Found this disallowed host: "database.windows.net" [https://aka.ms/bicep/linter/no-hardcoded-env-urls]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(13,87) : Warning no-hardcoded-env-urls: Environment URLs should not be hardcoded. Use the environment() function to ensure compatibility across clouds. Found this disallowed host: "core.windows.net" [https://aka.ms/bicep/linter/no-hardcoded-env-urls]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(16,7) : Warning no-unused-params: Parameter "vmJumpboxWinSize" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(17,7) : Warning no-unused-params: Parameter "vmJumpboxWinPublisher" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(18,7) : Warning no-unused-params: Parameter "vmJumpboxWinOffer" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(19,7) : Warning no-unused-params: Parameter "vmJumpboxWinSku" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(20,7) : Warning no-unused-params: Parameter "vmJumpboxWinVersion" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(21,7) : Warning no-unused-params: Parameter "vmJumpboxWinStorageAccountType" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(289,27) : Warning no-hardcoded-env-urls: Environment URLs should not be hardcoded. Use the environment() function to ensure compatibility across clouds. Found this disallowed host: "core.windows.net" [https://aka.ms/bicep/linter/no-hardcoded-env-urls]
+/home/deploymentazureuser/Module-01-02-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(294,83) : Warning BCP318: The value of type "CustomDnsConfigPropertiesFormat | null" may be null at the start of the deployment, which would cause this access expression (and the overall deployment with it) to fail.
+
+{
+  "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Resources/deployments/deployment1",
+  "location": null,
+  "name": "deployment1",
+  "properties": {
+    "correlationId": "707c036d-e1b1-47c7-9f4e-6607ca74a2ed",
+    "debugSetting": null,
+    "dependencies": [
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Resources/deployments/module01Deployment",
+            "resourceGroup": "RG-EastUS-bicep-2",
+            "resourceName": "module01Deployment",
+            "resourceType": "Microsoft.Resources/deployments"
+          },
+          {
+            "apiVersion": "2022-09-01",
+            "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Resources/deployments/module01Deployment",
+            "resourceGroup": "RG-EastUS-bicep-2",
+            "resourceName": "module01Deployment",
+            "resourceType": "Microsoft.Resources/deployments"
+          }
+        ],
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Resources/deployments/module02Deployment",
+        "resourceGroup": "RG-EastUS-bicep-2",
+        "resourceName": "module02Deployment",
+        "resourceType": "Microsoft.Resources/deployments"
+      }
+    ],
+    "duration": "PT9M17.8807496S",
+    "error": null,
+    "mode": "Incremental",
+    "onErrorDeployment": null,
+    "outputResources": [
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Compute/virtualMachines/adds1",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Compute/virtualMachines/jumplinux1",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.KeyVault/vaults/kv-ubtnsvz5dgjwc",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.KeyVault/vaults/kv-ubtnsvz5dgjwc/accessPolicies/add",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.KeyVault/vaults/kv-ubtnsvz5dgjwc/secrets/adminpassword",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.KeyVault/vaults/kv-ubtnsvz5dgjwc/secrets/adminuser",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.KeyVault/vaults/kv-ubtnsvz5dgjwc/secrets/log-shared-bicep-01-ID",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.KeyVault/vaults/kv-ubtnsvz5dgjwc/secrets/stubtnsvz5dgjwc",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/bastionHosts/bst-bicep-01",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/networkInterfaces/nic-adds1-1",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/networkInterfaces/nic-jumplinux1-1",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/networkInterfaces/nic-jumpwin1-1",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-app-01",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-db-01",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-misc-03",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-privatelink-01",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-adds-01",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-01",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-02",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/privateDnsZones/privatelink.database.windows.net",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/privateDnsZones/privatelink.database.windows.net/virtualNetworkLinks/pdsnlink-privatelink.database.windows.net-vnet-app-01",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/privateDnsZones/privatelink.database.windows.net/virtualNetworkLinks/pdsnlink-privatelink.database.windows.net-vnet-shared-01",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/privateDnsZones/privatelink.file.core.windows.net",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/privateDnsZones/privatelink.file.core.windows.net/A/stubtnsvz5dgjwc",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/privateDnsZones/privatelink.file.core.windows.net/virtualNetworkLinks/pdsnlink-privatelink.file.core.windows.net-vnet-app-01",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/privateDnsZones/privatelink.file.core.windows.net/virtualNetworkLinks/pdsnlink-privatelink.file.core.windows.net-vnet-shared-01",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/privateDnsZones/privatelink.mysql.database.azure.com",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/privateDnsZones/privatelink.mysql.database.azure.com/virtualNetworkLinks/pdsnlink-privatelink.mysql.database.azure.com-vnet-app-01",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/privateDnsZones/privatelink.mysql.database.azure.com/virtualNetworkLinks/pdsnlink-privatelink.mysql.database.azure.com-vnet-shared-01",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/privateEndpoints/pend-stubtnsvz5dgjwc-file",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/publicIPAddresses/pip-bst-bicep-01",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/virtualNetworks/vnet-app-01",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/virtualNetworks/vnet-app-01/virtualNetworkPeerings/vnet_app_01_to_vnet_shared_01_peering",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/virtualNetworkPeerings/vnet_shared_01_to_vnet_app_01_peering",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.OperationalInsights/workspaces/log-shared-bicep-01",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Storage/storageAccounts/stubtnsvz5dgjwc",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Storage/storageAccounts/stubtnsvz5dgjwc/blobServices/default",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Storage/storageAccounts/stubtnsvz5dgjwc/blobServices/default/containers/scripts",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Storage/storageAccounts/stubtnsvz5dgjwc/fileServices/default/shares/myfileshare",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      }
+    ],
+    "outputs": null,
+    "parameters": {
+      "adminUsername": {
+        "type": "String",
+        "value": "bootstrapadmin"
+      },
+      "armClientObjectId": {
+        "type": "String",
+        "value": "c4b9d2d3-0fe4-46e4-a0b0-e8f0ce1bbbde"
+      },
+      "dnsServers": {
+        "type": "Array",
+        "value": [
+          "10.1.1.4",
+          "168.63.129.16"
+        ]
+      },
+      "location": {
+        "type": "String",
+        "value": "eastus"
+      },
+      "ownerObjectId": {
+        "type": "String",
+        "value": "5e1a0937-9b34-46ca-adde-41e4a5d58f58"
+      }
+    },
+    "parametersLink": null,
+    "providers": [
+      {
+        "id": null,
+        "namespace": "Microsoft.Resources",
+        "providerAuthorizationConsentState": null,
+        "registrationPolicy": null,
+        "registrationState": null,
+        "resourceTypes": [
+          {
+            "aliases": null,
+            "apiProfiles": null,
+            "apiVersions": null,
+            "capabilities": null,
+            "defaultApiVersion": null,
+            "locationMappings": null,
+            "locations": [
+              null
+            ],
+            "properties": null,
+            "resourceType": "deployments",
+            "zoneMappings": null
+          }
+        ]
+      }
+    ],
+    "provisioningState": "Succeeded",
+    "templateHash": "11869497723496342349",
+    "templateLink": null,
+    "timestamp": "2024-04-17T20:53:33.142079+00:00",
+    "validatedResources": null
+  },
+  "resourceGroup": "RG-EastUS-bicep-2",
+  "tags": null,
+  "type": "Microsoft.Resources/deployments"
+}
+INFO: Command ran in 583.709 seconds (init: 0.250, invoke: 583.460)

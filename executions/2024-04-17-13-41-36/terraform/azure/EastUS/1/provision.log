@@ -1,0 +1,1713 @@
+Starting provisioning process
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+ <= read (data resources)
+
+Terraform will perform the following actions:
+
+  # module.module-01.azurerm_bastion_host.bastion_host_01 will be created
+  + resource "azurerm_bastion_host" "bastion_host_01" {
+      + copy_paste_enabled     = true
+      + dns_name               = (known after apply)
+      + file_copy_enabled      = false
+      + id                     = (known after apply)
+      + ip_connect_enabled     = false
+      + location               = "eastus"
+      + name                   = "bst-terraform-01"
+      + resource_group_name    = "RG-EastUS-terraform-1"
+      + scale_units            = 2
+      + shareable_link_enabled = false
+      + sku                    = "Basic"
+      + tunneling_enabled      = false
+
+      + ip_configuration {
+          + name                 = "ipc-bst-terraform-01"
+          + public_ip_address_id = (known after apply)
+          + subnet_id            = (known after apply)
+        }
+    }
+
+  # module.module-01.azurerm_key_vault.kv will be created
+  + resource "azurerm_key_vault" "kv" {
+      + access_policy                 = [
+          + {
+              + object_id          = "5e1a0937-9b34-46ca-adde-41e4a5d58f58"
+              + secret_permissions = [
+                  + "Get",
+                  + "List",
+                  + "Set",
+                  + "Delete",
+                  + "Purge",
+                ]
+              + tenant_id          = "c8001d36-ba17-4be2-b907-931bc500e970"
+            },
+          + {
+              + object_id          = "c4b9d2d3-0fe4-46e4-a0b0-e8f0ce1bbbde"
+              + secret_permissions = [
+                  + "Get",
+                  + "Set",
+                  + "Delete",
+                  + "Purge",
+                ]
+              + tenant_id          = "c8001d36-ba17-4be2-b907-931bc500e970"
+            },
+        ]
+      + enable_rbac_authorization     = false
+      + id                            = (known after apply)
+      + location                      = "eastus"
+      + name                          = (known after apply)
+      + public_network_access_enabled = true
+      + purge_protection_enabled      = false
+      + resource_group_name           = "RG-EastUS-terraform-1"
+      + sku_name                      = "standard"
+      + soft_delete_retention_days    = 7
+      + tenant_id                     = "c8001d36-ba17-4be2-b907-931bc500e970"
+      + vault_uri                     = (known after apply)
+    }
+
+  # module.module-01.azurerm_key_vault_secret.adminpassword will be created
+  + resource "azurerm_key_vault_secret" "adminpassword" {
+      + id                      = (known after apply)
+      + key_vault_id            = (known after apply)
+      + name                    = "adminpassword"
+      + resource_id             = (known after apply)
+      + resource_versionless_id = (known after apply)
+      + value                   = (sensitive value)
+      + version                 = (known after apply)
+      + versionless_id          = (known after apply)
+    }
+
+  # module.module-01.azurerm_key_vault_secret.adminuser will be created
+  + resource "azurerm_key_vault_secret" "adminuser" {
+      + id                      = (known after apply)
+      + key_vault_id            = (known after apply)
+      + name                    = "adminuser"
+      + resource_id             = (known after apply)
+      + resource_versionless_id = (known after apply)
+      + value                   = (sensitive value)
+      + version                 = (known after apply)
+      + versionless_id          = (known after apply)
+    }
+
+  # module.module-01.azurerm_key_vault_secret.log_analytics_workspace_01_primary_shared_key will be created
+  + resource "azurerm_key_vault_secret" "log_analytics_workspace_01_primary_shared_key" {
+      + id                      = (known after apply)
+      + key_vault_id            = (known after apply)
+      + name                    = (known after apply)
+      + resource_id             = (known after apply)
+      + resource_versionless_id = (known after apply)
+      + value                   = (sensitive value)
+      + version                 = (known after apply)
+      + versionless_id          = (known after apply)
+    }
+
+  # module.module-01.azurerm_key_vault_secret.storage_account_access_key will be created
+  + resource "azurerm_key_vault_secret" "storage_account_access_key" {
+      + id                      = (known after apply)
+      + key_vault_id            = (known after apply)
+      + name                    = (known after apply)
+      + resource_id             = (known after apply)
+      + resource_versionless_id = (known after apply)
+      + value                   = (sensitive value)
+      + version                 = (known after apply)
+      + versionless_id          = (known after apply)
+    }
+
+  # module.module-01.azurerm_log_analytics_workspace.log_analytics_workspace_01 will be created
+  + resource "azurerm_log_analytics_workspace" "log_analytics_workspace_01" {
+      + allow_resource_only_permissions = true
+      + daily_quota_gb                  = -1
+      + id                              = (known after apply)
+      + internet_ingestion_enabled      = true
+      + internet_query_enabled          = true
+      + local_authentication_disabled   = false
+      + location                        = "eastus"
+      + name                            = "log-shared-terraform-01"
+      + primary_shared_key              = (sensitive value)
+      + resource_group_name             = "RG-EastUS-terraform-1"
+      + retention_in_days               = 30
+      + secondary_shared_key            = (sensitive value)
+      + sku                             = "PerGB2018"
+      + workspace_id                    = (known after apply)
+    }
+
+  # module.module-01.azurerm_network_interface.vm_adds_nic_01 will be created
+  + resource "azurerm_network_interface" "vm_adds_nic_01" {
+      + applied_dns_servers           = (known after apply)
+      + dns_servers                   = (known after apply)
+      + enable_accelerated_networking = false
+      + enable_ip_forwarding          = false
+      + id                            = (known after apply)
+      + internal_dns_name_label       = (known after apply)
+      + internal_domain_name_suffix   = (known after apply)
+      + location                      = "eastus"
+      + mac_address                   = (known after apply)
+      + name                          = "nic-adds1-1"
+      + private_ip_address            = (known after apply)
+      + private_ip_addresses          = (known after apply)
+      + resource_group_name           = "RG-EastUS-terraform-1"
+      + virtual_machine_id            = (known after apply)
+
+      + ip_configuration {
+          + gateway_load_balancer_frontend_ip_configuration_id = (known after apply)
+          + name                                               = "ipc-adds1-1"
+          + primary                                            = (known after apply)
+          + private_ip_address                                 = (known after apply)
+          + private_ip_address_allocation                      = "Dynamic"
+          + private_ip_address_version                         = "IPv4"
+          + subnet_id                                          = (known after apply)
+        }
+    }
+
+  # module.module-01.azurerm_network_security_group.network_security_groups_m1["AzureBastionSubnet"] will be created
+  + resource "azurerm_network_security_group" "network_security_groups_m1" {
+      + id                  = (known after apply)
+      + location            = "eastus"
+      + name                = "nsg-vnet-shared-01.AzureBastionSubnet"
+      + resource_group_name = "RG-EastUS-terraform-1"
+      + security_rule       = (known after apply)
+    }
+
+  # module.module-01.azurerm_network_security_group.network_security_groups_m1["snet-adds-01"] will be created
+  + resource "azurerm_network_security_group" "network_security_groups_m1" {
+      + id                  = (known after apply)
+      + location            = "eastus"
+      + name                = "nsg-vnet-shared-01.snet-adds-01"
+      + resource_group_name = "RG-EastUS-terraform-1"
+      + security_rule       = (known after apply)
+    }
+
+  # module.module-01.azurerm_network_security_group.network_security_groups_m1["snet-misc-01"] will be created
+  + resource "azurerm_network_security_group" "network_security_groups_m1" {
+      + id                  = (known after apply)
+      + location            = "eastus"
+      + name                = "nsg-vnet-shared-01.snet-misc-01"
+      + resource_group_name = "RG-EastUS-terraform-1"
+      + security_rule       = (known after apply)
+    }
+
+  # module.module-01.azurerm_network_security_group.network_security_groups_m1["snet-misc-02"] will be created
+  + resource "azurerm_network_security_group" "network_security_groups_m1" {
+      + id                  = (known after apply)
+      + location            = "eastus"
+      + name                = "nsg-vnet-shared-01.snet-misc-02"
+      + resource_group_name = "RG-EastUS-terraform-1"
+      + security_rule       = (known after apply)
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowAzureCloudOutbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "AzureCloud"
+      + destination_port_range      = "443"
+      + direction                   = "Outbound"
+      + id                          = (known after apply)
+      + name                        = "AllowAzureCloudOutbound"
+      + network_security_group_name = "nsg-vnet-shared-01.AzureBastionSubnet"
+      + priority                    = 150
+      + protocol                    = "Tcp"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "*"
+      + source_port_range           = "*"
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowAzureLoadBalancerInbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "*"
+      + destination_port_range      = "443"
+      + direction                   = "Inbound"
+      + id                          = (known after apply)
+      + name                        = "AllowAzureLoadBalancerInbound"
+      + network_security_group_name = "nsg-vnet-shared-01.AzureBastionSubnet"
+      + priority                    = 120
+      + protocol                    = "Tcp"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "AzureLoadBalancer"
+      + source_port_range           = "*"
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowBastionCommunicationInbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "VirtualNetwork"
+      + destination_port_ranges     = [
+          + "5701",
+          + "8080",
+        ]
+      + direction                   = "Inbound"
+      + id                          = (known after apply)
+      + name                        = "AllowBastionCommunicationInbound"
+      + network_security_group_name = "nsg-vnet-shared-01.AzureBastionSubnet"
+      + priority                    = 130
+      + protocol                    = "*"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "VirtualNetwork"
+      + source_port_range           = "*"
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowBastionCommunicationOutbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "VirtualNetwork"
+      + destination_port_ranges     = [
+          + "5701",
+          + "8080",
+        ]
+      + direction                   = "Outbound"
+      + id                          = (known after apply)
+      + name                        = "AllowBastionCommunicationOutbound"
+      + network_security_group_name = "nsg-vnet-shared-01.AzureBastionSubnet"
+      + priority                    = 160
+      + protocol                    = "*"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "VirtualNetwork"
+      + source_port_range           = "*"
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowGatewayManagerInbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "*"
+      + destination_port_range      = "443"
+      + direction                   = "Inbound"
+      + id                          = (known after apply)
+      + name                        = "AllowGatewayManagerInbound"
+      + network_security_group_name = "nsg-vnet-shared-01.AzureBastionSubnet"
+      + priority                    = 110
+      + protocol                    = "Tcp"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "GatewayManager"
+      + source_port_range           = "*"
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowGetSessionInformationOutbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "Internet"
+      + destination_port_range      = "80"
+      + direction                   = "Outbound"
+      + id                          = (known after apply)
+      + name                        = "AllowGetSessionInformationOutbound"
+      + network_security_group_name = "nsg-vnet-shared-01.AzureBastionSubnet"
+      + priority                    = 170
+      + protocol                    = "*"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "*"
+      + source_port_range           = "*"
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowHttpsInbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "*"
+      + destination_port_range      = "443"
+      + direction                   = "Inbound"
+      + id                          = (known after apply)
+      + name                        = "AllowHttpsInbound"
+      + network_security_group_name = "nsg-vnet-shared-01.AzureBastionSubnet"
+      + priority                    = 100
+      + protocol                    = "Tcp"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "Internet"
+      + source_port_range           = "*"
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowSshRdpOutbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "VirtualNetwork"
+      + destination_port_ranges     = [
+          + "22",
+          + "3389",
+        ]
+      + direction                   = "Outbound"
+      + id                          = (known after apply)
+      + name                        = "AllowSshRdpOutbound"
+      + network_security_group_name = "nsg-vnet-shared-01.AzureBastionSubnet"
+      + priority                    = 140
+      + protocol                    = "*"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "*"
+      + source_port_range           = "*"
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-adds-01.AllowInternetOutbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "Internet"
+      + destination_port_range      = "*"
+      + direction                   = "Outbound"
+      + id                          = (known after apply)
+      + name                        = "AllowInternetOutbound"
+      + network_security_group_name = "nsg-vnet-shared-01.snet-adds-01"
+      + priority                    = 120
+      + protocol                    = "*"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "*"
+      + source_port_range           = "*"
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-adds-01.AllowVirtualNetworkInbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "VirtualNetwork"
+      + destination_port_range      = "*"
+      + direction                   = "Inbound"
+      + id                          = (known after apply)
+      + name                        = "AllowVirtualNetworkInbound"
+      + network_security_group_name = "nsg-vnet-shared-01.snet-adds-01"
+      + priority                    = 100
+      + protocol                    = "*"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "VirtualNetwork"
+      + source_port_range           = "*"
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-adds-01.AllowVirtualNetworkOutbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "VirtualNetwork"
+      + destination_port_range      = "*"
+      + direction                   = "Outbound"
+      + id                          = (known after apply)
+      + name                        = "AllowVirtualNetworkOutbound"
+      + network_security_group_name = "nsg-vnet-shared-01.snet-adds-01"
+      + priority                    = 110
+      + protocol                    = "*"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "VirtualNetwork"
+      + source_port_range           = "*"
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-01.AllowInternetOutbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "Internet"
+      + destination_port_range      = "*"
+      + direction                   = "Outbound"
+      + id                          = (known after apply)
+      + name                        = "AllowInternetOutbound"
+      + network_security_group_name = "nsg-vnet-shared-01.snet-misc-01"
+      + priority                    = 120
+      + protocol                    = "*"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "*"
+      + source_port_range           = "*"
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-01.AllowVirtualNetworkInbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "VirtualNetwork"
+      + destination_port_range      = "*"
+      + direction                   = "Inbound"
+      + id                          = (known after apply)
+      + name                        = "AllowVirtualNetworkInbound"
+      + network_security_group_name = "nsg-vnet-shared-01.snet-misc-01"
+      + priority                    = 100
+      + protocol                    = "*"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "VirtualNetwork"
+      + source_port_range           = "*"
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-01.AllowVirtualNetworkOutbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "VirtualNetwork"
+      + destination_port_range      = "*"
+      + direction                   = "Outbound"
+      + id                          = (known after apply)
+      + name                        = "AllowVirtualNetworkOutbound"
+      + network_security_group_name = "nsg-vnet-shared-01.snet-misc-01"
+      + priority                    = 110
+      + protocol                    = "*"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "VirtualNetwork"
+      + source_port_range           = "*"
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-02.AllowInternetOutbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "Internet"
+      + destination_port_range      = "*"
+      + direction                   = "Outbound"
+      + id                          = (known after apply)
+      + name                        = "AllowInternetOutbound"
+      + network_security_group_name = "nsg-vnet-shared-01.snet-misc-02"
+      + priority                    = 120
+      + protocol                    = "*"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "*"
+      + source_port_range           = "*"
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-02.AllowVirtualNetworkInbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "VirtualNetwork"
+      + destination_port_range      = "*"
+      + direction                   = "Inbound"
+      + id                          = (known after apply)
+      + name                        = "AllowVirtualNetworkInbound"
+      + network_security_group_name = "nsg-vnet-shared-01.snet-misc-02"
+      + priority                    = 100
+      + protocol                    = "*"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "VirtualNetwork"
+      + source_port_range           = "*"
+    }
+
+  # module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-02.AllowVirtualNetworkOutbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m1" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "VirtualNetwork"
+      + destination_port_range      = "*"
+      + direction                   = "Outbound"
+      + id                          = (known after apply)
+      + name                        = "AllowVirtualNetworkOutbound"
+      + network_security_group_name = "nsg-vnet-shared-01.snet-misc-02"
+      + priority                    = 110
+      + protocol                    = "*"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "VirtualNetwork"
+      + source_port_range           = "*"
+    }
+
+  # module.module-01.azurerm_public_ip.bastion_host_01 will be created
+  + resource "azurerm_public_ip" "bastion_host_01" {
+      + allocation_method       = "Static"
+      + ddos_protection_mode    = "VirtualNetworkInherited"
+      + fqdn                    = (known after apply)
+      + id                      = (known after apply)
+      + idle_timeout_in_minutes = 4
+      + ip_address              = (known after apply)
+      + ip_version              = "IPv4"
+      + location                = "eastus"
+      + name                    = "pip-bst-terraform-01"
+      + resource_group_name     = "RG-EastUS-terraform-1"
+      + sku                     = "Standard"
+      + sku_tier                = "Regional"
+    }
+
+  # module.module-01.azurerm_storage_account.st will be created
+  + resource "azurerm_storage_account" "st" {
+      + access_tier                        = (known after apply)
+      + account_kind                       = "StorageV2"
+      + account_replication_type           = "LRS"
+      + account_tier                       = "Standard"
+      + allow_nested_items_to_be_public    = true
+      + cross_tenant_replication_enabled   = true
+      + default_to_oauth_authentication    = false
+      + enable_https_traffic_only          = true
+      + id                                 = (known after apply)
+      + infrastructure_encryption_enabled  = false
+      + is_hns_enabled                     = false
+      + large_file_share_enabled           = (known after apply)
+      + local_user_enabled                 = true
+      + location                           = "eastus"
+      + min_tls_version                    = "TLS1_2"
+      + name                               = (known after apply)
+      + nfsv3_enabled                      = false
+      + primary_access_key                 = (sensitive value)
+      + primary_blob_connection_string     = (sensitive value)
+      + primary_blob_endpoint              = (known after apply)
+      + primary_blob_host                  = (known after apply)
+      + primary_blob_internet_endpoint     = (known after apply)
+      + primary_blob_internet_host         = (known after apply)
+      + primary_blob_microsoft_endpoint    = (known after apply)
+      + primary_blob_microsoft_host        = (known after apply)
+      + primary_connection_string          = (sensitive value)
+      + primary_dfs_endpoint               = (known after apply)
+      + primary_dfs_host                   = (known after apply)
+      + primary_dfs_internet_endpoint      = (known after apply)
+      + primary_dfs_internet_host          = (known after apply)
+      + primary_dfs_microsoft_endpoint     = (known after apply)
+      + primary_dfs_microsoft_host         = (known after apply)
+      + primary_file_endpoint              = (known after apply)
+      + primary_file_host                  = (known after apply)
+      + primary_file_internet_endpoint     = (known after apply)
+      + primary_file_internet_host         = (known after apply)
+      + primary_file_microsoft_endpoint    = (known after apply)
+      + primary_file_microsoft_host        = (known after apply)
+      + primary_location                   = (known after apply)
+      + primary_queue_endpoint             = (known after apply)
+      + primary_queue_host                 = (known after apply)
+      + primary_queue_microsoft_endpoint   = (known after apply)
+      + primary_queue_microsoft_host       = (known after apply)
+      + primary_table_endpoint             = (known after apply)
+      + primary_table_host                 = (known after apply)
+      + primary_table_microsoft_endpoint   = (known after apply)
+      + primary_table_microsoft_host       = (known after apply)
+      + primary_web_endpoint               = (known after apply)
+      + primary_web_host                   = (known after apply)
+      + primary_web_internet_endpoint      = (known after apply)
+      + primary_web_internet_host          = (known after apply)
+      + primary_web_microsoft_endpoint     = (known after apply)
+      + primary_web_microsoft_host         = (known after apply)
+      + public_network_access_enabled      = true
+      + queue_encryption_key_type          = "Service"
+      + resource_group_name                = "RG-EastUS-terraform-1"
+      + secondary_access_key               = (sensitive value)
+      + secondary_blob_connection_string   = (sensitive value)
+      + secondary_blob_endpoint            = (known after apply)
+      + secondary_blob_host                = (known after apply)
+      + secondary_blob_internet_endpoint   = (known after apply)
+      + secondary_blob_internet_host       = (known after apply)
+      + secondary_blob_microsoft_endpoint  = (known after apply)
+      + secondary_blob_microsoft_host      = (known after apply)
+      + secondary_connection_string        = (sensitive value)
+      + secondary_dfs_endpoint             = (known after apply)
+      + secondary_dfs_host                 = (known after apply)
+      + secondary_dfs_internet_endpoint    = (known after apply)
+      + secondary_dfs_internet_host        = (known after apply)
+      + secondary_dfs_microsoft_endpoint   = (known after apply)
+      + secondary_dfs_microsoft_host       = (known after apply)
+      + secondary_file_endpoint            = (known after apply)
+      + secondary_file_host                = (known after apply)
+      + secondary_file_internet_endpoint   = (known after apply)
+      + secondary_file_internet_host       = (known after apply)
+      + secondary_file_microsoft_endpoint  = (known after apply)
+      + secondary_file_microsoft_host      = (known after apply)
+      + secondary_location                 = (known after apply)
+      + secondary_queue_endpoint           = (known after apply)
+      + secondary_queue_host               = (known after apply)
+      + secondary_queue_microsoft_endpoint = (known after apply)
+      + secondary_queue_microsoft_host     = (known after apply)
+      + secondary_table_endpoint           = (known after apply)
+      + secondary_table_host               = (known after apply)
+      + secondary_table_microsoft_endpoint = (known after apply)
+      + secondary_table_microsoft_host     = (known after apply)
+      + secondary_web_endpoint             = (known after apply)
+      + secondary_web_host                 = (known after apply)
+      + secondary_web_internet_endpoint    = (known after apply)
+      + secondary_web_internet_host        = (known after apply)
+      + secondary_web_microsoft_endpoint   = (known after apply)
+      + secondary_web_microsoft_host       = (known after apply)
+      + sftp_enabled                       = false
+      + shared_access_key_enabled          = true
+      + table_encryption_key_type          = "Service"
+    }
+
+  # module.module-01.azurerm_storage_container.st_container will be created
+  + resource "azurerm_storage_container" "st_container" {
+      + container_access_type   = "private"
+      + has_immutability_policy = (known after apply)
+      + has_legal_hold          = (known after apply)
+      + id                      = (known after apply)
+      + metadata                = (known after apply)
+      + name                    = "scripts"
+      + resource_manager_id     = (known after apply)
+      + storage_account_name    = (known after apply)
+    }
+
+  # module.module-01.azurerm_subnet.vnet_shared_01_subnets["AzureBastionSubnet"] will be created
+  + resource "azurerm_subnet" "vnet_shared_01_subnets" {
+      + address_prefixes                               = [
+          + "10.1.0.0/27",
+        ]
+      + enforce_private_link_endpoint_network_policies = (known after apply)
+      + enforce_private_link_service_network_policies  = (known after apply)
+      + id                                             = (known after apply)
+      + name                                           = "AzureBastionSubnet"
+      + private_endpoint_network_policies_enabled      = false
+      + private_link_service_network_policies_enabled  = (known after apply)
+      + resource_group_name                            = "RG-EastUS-terraform-1"
+      + virtual_network_name                           = "vnet-shared-01"
+    }
+
+  # module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-adds-01"] will be created
+  + resource "azurerm_subnet" "vnet_shared_01_subnets" {
+      + address_prefixes                               = [
+          + "10.1.1.0/24",
+        ]
+      + enforce_private_link_endpoint_network_policies = (known after apply)
+      + enforce_private_link_service_network_policies  = (known after apply)
+      + id                                             = (known after apply)
+      + name                                           = "snet-adds-01"
+      + private_endpoint_network_policies_enabled      = false
+      + private_link_service_network_policies_enabled  = (known after apply)
+      + resource_group_name                            = "RG-EastUS-terraform-1"
+      + virtual_network_name                           = "vnet-shared-01"
+    }
+
+  # module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-misc-01"] will be created
+  + resource "azurerm_subnet" "vnet_shared_01_subnets" {
+      + address_prefixes                               = [
+          + "10.1.2.0/27",
+        ]
+      + enforce_private_link_endpoint_network_policies = (known after apply)
+      + enforce_private_link_service_network_policies  = (known after apply)
+      + id                                             = (known after apply)
+      + name                                           = "snet-misc-01"
+      + private_endpoint_network_policies_enabled      = false
+      + private_link_service_network_policies_enabled  = (known after apply)
+      + resource_group_name                            = "RG-EastUS-terraform-1"
+      + virtual_network_name                           = "vnet-shared-01"
+    }
+
+  # module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-misc-02"] will be created
+  + resource "azurerm_subnet" "vnet_shared_01_subnets" {
+      + address_prefixes                               = [
+          + "10.1.3.0/27",
+        ]
+      + enforce_private_link_endpoint_network_policies = (known after apply)
+      + enforce_private_link_service_network_policies  = (known after apply)
+      + id                                             = (known after apply)
+      + name                                           = "snet-misc-02"
+      + private_endpoint_network_policies_enabled      = false
+      + private_link_service_network_policies_enabled  = (known after apply)
+      + resource_group_name                            = "RG-EastUS-terraform-1"
+      + virtual_network_name                           = "vnet-shared-01"
+    }
+
+  # module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["AzureBastionSubnet"] will be created
+  + resource "azurerm_subnet_network_security_group_association" "nsg_subnet_associations_m1" {
+      + id                        = (known after apply)
+      + network_security_group_id = (known after apply)
+      + subnet_id                 = (known after apply)
+    }
+
+  # module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["snet-adds-01"] will be created
+  + resource "azurerm_subnet_network_security_group_association" "nsg_subnet_associations_m1" {
+      + id                        = (known after apply)
+      + network_security_group_id = (known after apply)
+      + subnet_id                 = (known after apply)
+    }
+
+  # module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["snet-misc-01"] will be created
+  + resource "azurerm_subnet_network_security_group_association" "nsg_subnet_associations_m1" {
+      + id                        = (known after apply)
+      + network_security_group_id = (known after apply)
+      + subnet_id                 = (known after apply)
+    }
+
+  # module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["snet-misc-02"] will be created
+  + resource "azurerm_subnet_network_security_group_association" "nsg_subnet_associations_m1" {
+      + id                        = (known after apply)
+      + network_security_group_id = (known after apply)
+      + subnet_id                 = (known after apply)
+    }
+
+  # module.module-01.azurerm_virtual_network.vnet_shared_01 will be created
+  + resource "azurerm_virtual_network" "vnet_shared_01" {
+      + address_space       = [
+          + "10.1.0.0/16",
+        ]
+      + dns_servers         = [
+          + "10.1.1.4",
+          + "168.63.129.16",
+        ]
+      + guid                = (known after apply)
+      + id                  = (known after apply)
+      + location            = "eastus"
+      + name                = "vnet-shared-01"
+      + resource_group_name = "RG-EastUS-terraform-1"
+      + subnet              = (known after apply)
+    }
+
+  # module.module-01.azurerm_windows_virtual_machine.vm_adds will be created
+  + resource "azurerm_windows_virtual_machine" "vm_adds" {
+      + admin_password                                         = (sensitive value)
+      + admin_username                                         = (sensitive value)
+      + allow_extension_operations                             = true
+      + bypass_platform_safety_checks_on_user_schedule_enabled = false
+      + computer_name                                          = (known after apply)
+      + enable_automatic_updates                               = true
+      + extensions_time_budget                                 = "PT1H30M"
+      + hotpatching_enabled                                    = false
+      + id                                                     = (known after apply)
+      + location                                               = "eastus"
+      + max_bid_price                                          = -1
+      + name                                                   = "vm-adds1"
+      + network_interface_ids                                  = (known after apply)
+      + patch_assessment_mode                                  = "ImageDefault"
+      + patch_mode                                             = "AutomaticByOS"
+      + platform_fault_domain                                  = -1
+      + priority                                               = "Regular"
+      + private_ip_address                                     = (known after apply)
+      + private_ip_addresses                                   = (known after apply)
+      + provision_vm_agent                                     = true
+      + public_ip_address                                      = (known after apply)
+      + public_ip_addresses                                    = (known after apply)
+      + resource_group_name                                    = "RG-EastUS-terraform-1"
+      + size                                                   = "Standard_B1s"
+      + virtual_machine_id                                     = (known after apply)
+
+      + os_disk {
+          + caching                   = "ReadWrite"
+          + disk_size_gb              = (known after apply)
+          + name                      = (known after apply)
+          + storage_account_type      = "Standard_LRS"
+          + write_accelerator_enabled = false
+        }
+
+      + source_image_reference {
+          + offer     = "WindowsServer"
+          + publisher = "MicrosoftWindowsServer"
+          + sku       = "2022-datacenter-core-g2"
+          + version   = "Latest"
+        }
+    }
+
+  # module.module-01.random_password.admin_password will be created
+  + resource "random_password" "admin_password" {
+      + bcrypt_hash      = (sensitive value)
+      + id               = (known after apply)
+      + length           = 16
+      + lower            = true
+      + min_lower        = 0
+      + min_numeric      = 0
+      + min_special      = 0
+      + min_upper        = 0
+      + number           = true
+      + numeric          = true
+      + override_special = "!#$%&*"
+      + result           = (sensitive value)
+      + special          = true
+      + upper            = true
+    }
+
+  # module.module-01.random_string.azurerm_storage_account_name will be created
+  + resource "random_string" "azurerm_storage_account_name" {
+      + id          = (known after apply)
+      + length      = 16
+      + lower       = true
+      + min_lower   = 0
+      + min_numeric = 0
+      + min_special = 0
+      + min_upper   = 0
+      + number      = false
+      + numeric     = false
+      + result      = (known after apply)
+      + special     = false
+      + upper       = false
+    }
+
+  # module.module-02.data.azurerm_key_vault_secret.adminpassword will be read during apply
+  # (config refers to values not yet known)
+ <= data "azurerm_key_vault_secret" "adminpassword" {
+      + content_type            = (known after apply)
+      + expiration_date         = (known after apply)
+      + id                      = (known after apply)
+      + key_vault_id            = (known after apply)
+      + name                    = "adminpassword"
+      + not_before_date         = (known after apply)
+      + resource_id             = (known after apply)
+      + resource_versionless_id = (known after apply)
+      + tags                    = (known after apply)
+      + value                   = (sensitive value)
+      + versionless_id          = (known after apply)
+    }
+
+  # module.module-02.azurerm_key_vault_access_policy.vm_jumpbox_linux_secrets_get will be created
+  + resource "azurerm_key_vault_access_policy" "vm_jumpbox_linux_secrets_get" {
+      + id                 = (known after apply)
+      + key_vault_id       = (known after apply)
+      + object_id          = (known after apply)
+      + secret_permissions = [
+          + "Get",
+        ]
+      + tenant_id          = (known after apply)
+    }
+
+  # module.module-02.azurerm_linux_virtual_machine.vm_jumpbox_linux will be created
+  + resource "azurerm_linux_virtual_machine" "vm_jumpbox_linux" {
+      + admin_password                                         = (sensitive value)
+      + admin_username                                         = "bootstrapadmin"
+      + allow_extension_operations                             = true
+      + bypass_platform_safety_checks_on_user_schedule_enabled = false
+      + computer_name                                          = (known after apply)
+      + disable_password_authentication                        = false
+      + extensions_time_budget                                 = "PT1H30M"
+      + id                                                     = (known after apply)
+      + location                                               = "eastus"
+      + max_bid_price                                          = -1
+      + name                                                   = "jumplinux1"
+      + network_interface_ids                                  = (known after apply)
+      + patch_assessment_mode                                  = "ImageDefault"
+      + patch_mode                                             = "ImageDefault"
+      + platform_fault_domain                                  = -1
+      + priority                                               = "Regular"
+      + private_ip_address                                     = (known after apply)
+      + private_ip_addresses                                   = (known after apply)
+      + provision_vm_agent                                     = true
+      + public_ip_address                                      = (known after apply)
+      + public_ip_addresses                                    = (known after apply)
+      + resource_group_name                                    = "RG-EastUS-terraform-1"
+      + size                                                   = "Standard_B1s"
+      + virtual_machine_id                                     = (known after apply)
+
+      + identity {
+          + principal_id = (known after apply)
+          + tenant_id    = (known after apply)
+          + type         = "SystemAssigned"
+        }
+
+      + os_disk {
+          + caching                   = "ReadWrite"
+          + disk_size_gb              = (known after apply)
+          + name                      = (known after apply)
+          + storage_account_type      = "Standard_LRS"
+          + write_accelerator_enabled = false
+        }
+
+      + source_image_reference {
+          + offer     = "0001-com-ubuntu-server-jammy"
+          + publisher = "Canonical"
+          + sku       = "22_04-lts-gen2"
+          + version   = "Latest"
+        }
+    }
+
+  # module.module-02.azurerm_network_interface.vm_jumbox_linux_nic_01 will be created
+  + resource "azurerm_network_interface" "vm_jumbox_linux_nic_01" {
+      + applied_dns_servers           = (known after apply)
+      + dns_servers                   = (known after apply)
+      + enable_accelerated_networking = false
+      + enable_ip_forwarding          = false
+      + id                            = (known after apply)
+      + internal_dns_name_label       = (known after apply)
+      + internal_domain_name_suffix   = (known after apply)
+      + location                      = "eastus"
+      + mac_address                   = (known after apply)
+      + name                          = "nic-jumplinux1"
+      + private_ip_address            = (known after apply)
+      + private_ip_addresses          = (known after apply)
+      + resource_group_name           = "RG-EastUS-terraform-1"
+      + virtual_machine_id            = (known after apply)
+
+      + ip_configuration {
+          + gateway_load_balancer_frontend_ip_configuration_id = (known after apply)
+          + name                                               = "ipc-jumplinux1"
+          + primary                                            = (known after apply)
+          + private_ip_address                                 = (known after apply)
+          + private_ip_address_allocation                      = "Dynamic"
+          + private_ip_address_version                         = "IPv4"
+          + subnet_id                                          = (known after apply)
+        }
+    }
+
+  # module.module-02.azurerm_network_interface.vm_jumpbox_win_nic_01 will be created
+  + resource "azurerm_network_interface" "vm_jumpbox_win_nic_01" {
+      + applied_dns_servers           = (known after apply)
+      + dns_servers                   = (known after apply)
+      + enable_accelerated_networking = false
+      + enable_ip_forwarding          = false
+      + id                            = (known after apply)
+      + internal_dns_name_label       = (known after apply)
+      + internal_domain_name_suffix   = (known after apply)
+      + location                      = "eastus"
+      + mac_address                   = (known after apply)
+      + name                          = "nic-jumpwin1-1"
+      + private_ip_address            = (known after apply)
+      + private_ip_addresses          = (known after apply)
+      + resource_group_name           = "RG-EastUS-terraform-1"
+      + virtual_machine_id            = (known after apply)
+
+      + ip_configuration {
+          + gateway_load_balancer_frontend_ip_configuration_id = (known after apply)
+          + name                                               = "ipc-jumpwin1-1"
+          + primary                                            = (known after apply)
+          + private_ip_address                                 = (known after apply)
+          + private_ip_address_allocation                      = "Dynamic"
+          + private_ip_address_version                         = "IPv4"
+          + subnet_id                                          = (known after apply)
+        }
+    }
+
+  # module.module-02.azurerm_network_security_group.network_security_groups_m2["snet-app-01"] will be created
+  + resource "azurerm_network_security_group" "network_security_groups_m2" {
+      + id                  = (known after apply)
+      + location            = "eastus"
+      + name                = "nsg-vnet-app-01.snet-app-01"
+      + resource_group_name = "RG-EastUS-terraform-1"
+      + security_rule       = (known after apply)
+    }
+
+  # module.module-02.azurerm_network_security_group.network_security_groups_m2["snet-db-01"] will be created
+  + resource "azurerm_network_security_group" "network_security_groups_m2" {
+      + id                  = (known after apply)
+      + location            = "eastus"
+      + name                = "nsg-vnet-app-01.snet-db-01"
+      + resource_group_name = "RG-EastUS-terraform-1"
+      + security_rule       = (known after apply)
+    }
+
+  # module.module-02.azurerm_network_security_group.network_security_groups_m2["snet-misc-03"] will be created
+  + resource "azurerm_network_security_group" "network_security_groups_m2" {
+      + id                  = (known after apply)
+      + location            = "eastus"
+      + name                = "nsg-vnet-app-01.snet-misc-03"
+      + resource_group_name = "RG-EastUS-terraform-1"
+      + security_rule       = (known after apply)
+    }
+
+  # module.module-02.azurerm_network_security_group.network_security_groups_m2["snet-privatelink-01"] will be created
+  + resource "azurerm_network_security_group" "network_security_groups_m2" {
+      + id                  = (known after apply)
+      + location            = "eastus"
+      + name                = "nsg-vnet-app-01.snet-privatelink-01"
+      + resource_group_name = "RG-EastUS-terraform-1"
+      + security_rule       = (known after apply)
+    }
+
+  # module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-app-01.AllowInternetOutbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m2" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "Internet"
+      + destination_port_range      = "*"
+      + direction                   = "Outbound"
+      + id                          = (known after apply)
+      + name                        = "AllowInternetOutbound"
+      + network_security_group_name = "nsg-vnet-app-01.snet-app-01"
+      + priority                    = 120
+      + protocol                    = "*"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "*"
+      + source_port_range           = "*"
+    }
+
+  # module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-app-01.AllowVirtualNetworkInbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m2" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "VirtualNetwork"
+      + destination_port_range      = "*"
+      + direction                   = "Inbound"
+      + id                          = (known after apply)
+      + name                        = "AllowVirtualNetworkInbound"
+      + network_security_group_name = "nsg-vnet-app-01.snet-app-01"
+      + priority                    = 100
+      + protocol                    = "*"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "VirtualNetwork"
+      + source_port_range           = "*"
+    }
+
+  # module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-app-01.AllowVirtualNetworkOutbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m2" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "VirtualNetwork"
+      + destination_port_range      = "*"
+      + direction                   = "Outbound"
+      + id                          = (known after apply)
+      + name                        = "AllowVirtualNetworkOutbound"
+      + network_security_group_name = "nsg-vnet-app-01.snet-app-01"
+      + priority                    = 110
+      + protocol                    = "*"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "VirtualNetwork"
+      + source_port_range           = "*"
+    }
+
+  # module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-db-01.AllowInternetOutbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m2" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "Internet"
+      + destination_port_range      = "*"
+      + direction                   = "Outbound"
+      + id                          = (known after apply)
+      + name                        = "AllowInternetOutbound"
+      + network_security_group_name = "nsg-vnet-app-01.snet-db-01"
+      + priority                    = 120
+      + protocol                    = "*"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "*"
+      + source_port_range           = "*"
+    }
+
+  # module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-db-01.AllowVirtualNetworkInbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m2" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "VirtualNetwork"
+      + destination_port_range      = "*"
+      + direction                   = "Inbound"
+      + id                          = (known after apply)
+      + name                        = "AllowVirtualNetworkInbound"
+      + network_security_group_name = "nsg-vnet-app-01.snet-db-01"
+      + priority                    = 100
+      + protocol                    = "*"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "VirtualNetwork"
+      + source_port_range           = "*"
+    }
+
+  # module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-db-01.AllowVirtualNetworkOutbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m2" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "VirtualNetwork"
+      + destination_port_range      = "*"
+      + direction                   = "Outbound"
+      + id                          = (known after apply)
+      + name                        = "AllowVirtualNetworkOutbound"
+      + network_security_group_name = "nsg-vnet-app-01.snet-db-01"
+      + priority                    = 110
+      + protocol                    = "*"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "VirtualNetwork"
+      + source_port_range           = "*"
+    }
+
+  # module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-misc-03.AllowInternetOutbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m2" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "Internet"
+      + destination_port_range      = "*"
+      + direction                   = "Outbound"
+      + id                          = (known after apply)
+      + name                        = "AllowInternetOutbound"
+      + network_security_group_name = "nsg-vnet-app-01.snet-misc-03"
+      + priority                    = 120
+      + protocol                    = "*"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "*"
+      + source_port_range           = "*"
+    }
+
+  # module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-misc-03.AllowVirtualNetworkInbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m2" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "VirtualNetwork"
+      + destination_port_range      = "*"
+      + direction                   = "Inbound"
+      + id                          = (known after apply)
+      + name                        = "AllowVirtualNetworkInbound"
+      + network_security_group_name = "nsg-vnet-app-01.snet-misc-03"
+      + priority                    = 100
+      + protocol                    = "*"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "VirtualNetwork"
+      + source_port_range           = "*"
+    }
+
+  # module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-misc-03.AllowVirtualNetworkOutbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m2" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "VirtualNetwork"
+      + destination_port_range      = "*"
+      + direction                   = "Outbound"
+      + id                          = (known after apply)
+      + name                        = "AllowVirtualNetworkOutbound"
+      + network_security_group_name = "nsg-vnet-app-01.snet-misc-03"
+      + priority                    = 110
+      + protocol                    = "*"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "VirtualNetwork"
+      + source_port_range           = "*"
+    }
+
+  # module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-privatelink-01.AllowVirtualNetworkInbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m2" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "VirtualNetwork"
+      + destination_port_range      = "*"
+      + direction                   = "Inbound"
+      + id                          = (known after apply)
+      + name                        = "AllowVirtualNetworkInbound"
+      + network_security_group_name = "nsg-vnet-app-01.snet-privatelink-01"
+      + priority                    = 100
+      + protocol                    = "*"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "VirtualNetwork"
+      + source_port_range           = "*"
+    }
+
+  # module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-privatelink-01.AllowVirtualNetworkOutbound"] will be created
+  + resource "azurerm_network_security_rule" "network_security_rules_m2" {
+      + access                      = "Allow"
+      + destination_address_prefix  = "VirtualNetwork"
+      + destination_port_range      = "*"
+      + direction                   = "Outbound"
+      + id                          = (known after apply)
+      + name                        = "AllowVirtualNetworkOutbound"
+      + network_security_group_name = "nsg-vnet-app-01.snet-privatelink-01"
+      + priority                    = 110
+      + protocol                    = "*"
+      + resource_group_name         = "RG-EastUS-terraform-1"
+      + source_address_prefix       = "VirtualNetwork"
+      + source_port_range           = "*"
+    }
+
+  # module.module-02.azurerm_private_dns_a_record.storage_account_01_file will be created
+  + resource "azurerm_private_dns_a_record" "storage_account_01_file" {
+      + fqdn                = (known after apply)
+      + id                  = (known after apply)
+      + name                = (known after apply)
+      + records             = (known after apply)
+      + resource_group_name = "RG-EastUS-terraform-1"
+      + ttl                 = 300
+      + zone_name           = "privatelink.file.core.windows.net"
+    }
+
+  # module.module-02.azurerm_private_dns_zone.private_dns_zones["privatelink.database.windows.net"] will be created
+  + resource "azurerm_private_dns_zone" "private_dns_zones" {
+      + id                                                    = (known after apply)
+      + max_number_of_record_sets                             = (known after apply)
+      + max_number_of_virtual_network_links                   = (known after apply)
+      + max_number_of_virtual_network_links_with_registration = (known after apply)
+      + name                                                  = "privatelink.database.windows.net"
+      + number_of_record_sets                                 = (known after apply)
+      + resource_group_name                                   = "RG-EastUS-terraform-1"
+    }
+
+  # module.module-02.azurerm_private_dns_zone.private_dns_zones["privatelink.file.core.windows.net"] will be created
+  + resource "azurerm_private_dns_zone" "private_dns_zones" {
+      + id                                                    = (known after apply)
+      + max_number_of_record_sets                             = (known after apply)
+      + max_number_of_virtual_network_links                   = (known after apply)
+      + max_number_of_virtual_network_links_with_registration = (known after apply)
+      + name                                                  = "privatelink.file.core.windows.net"
+      + number_of_record_sets                                 = (known after apply)
+      + resource_group_name                                   = "RG-EastUS-terraform-1"
+    }
+
+  # module.module-02.azurerm_private_dns_zone.private_dns_zones["privatelink.mysql.database.azure.com"] will be created
+  + resource "azurerm_private_dns_zone" "private_dns_zones" {
+      + id                                                    = (known after apply)
+      + max_number_of_record_sets                             = (known after apply)
+      + max_number_of_virtual_network_links                   = (known after apply)
+      + max_number_of_virtual_network_links_with_registration = (known after apply)
+      + name                                                  = "privatelink.mysql.database.azure.com"
+      + number_of_record_sets                                 = (known after apply)
+      + resource_group_name                                   = "RG-EastUS-terraform-1"
+    }
+
+  # module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_app_01["privatelink.database.windows.net"] will be created
+  + resource "azurerm_private_dns_zone_virtual_network_link" "private_dns_zone_virtual_network_links_vnet_app_01" {
+      + id                    = (known after apply)
+      + name                  = "pdnslnk-privatelink.database.windows.net-vnet-app-01"
+      + private_dns_zone_name = "privatelink.database.windows.net"
+      + registration_enabled  = false
+      + resource_group_name   = "RG-EastUS-terraform-1"
+      + virtual_network_id    = (known after apply)
+    }
+
+  # module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_app_01["privatelink.file.core.windows.net"] will be created
+  + resource "azurerm_private_dns_zone_virtual_network_link" "private_dns_zone_virtual_network_links_vnet_app_01" {
+      + id                    = (known after apply)
+      + name                  = "pdnslnk-privatelink.file.core.windows.net-vnet-app-01"
+      + private_dns_zone_name = "privatelink.file.core.windows.net"
+      + registration_enabled  = false
+      + resource_group_name   = "RG-EastUS-terraform-1"
+      + virtual_network_id    = (known after apply)
+    }
+
+  # module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_app_01["privatelink.mysql.database.azure.com"] will be created
+  + resource "azurerm_private_dns_zone_virtual_network_link" "private_dns_zone_virtual_network_links_vnet_app_01" {
+      + id                    = (known after apply)
+      + name                  = "pdnslnk-privatelink.mysql.database.azure.com-vnet-app-01"
+      + private_dns_zone_name = "privatelink.mysql.database.azure.com"
+      + registration_enabled  = false
+      + resource_group_name   = "RG-EastUS-terraform-1"
+      + virtual_network_id    = (known after apply)
+    }
+
+  # module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_shared_01["privatelink.database.windows.net"] will be created
+  + resource "azurerm_private_dns_zone_virtual_network_link" "private_dns_zone_virtual_network_links_vnet_shared_01" {
+      + id                    = (known after apply)
+      + name                  = "pdnslnk-privatelink.database.windows.net-vnet-shared-01"
+      + private_dns_zone_name = "privatelink.database.windows.net"
+      + registration_enabled  = false
+      + resource_group_name   = "RG-EastUS-terraform-1"
+      + virtual_network_id    = (known after apply)
+    }
+
+  # module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_shared_01["privatelink.file.core.windows.net"] will be created
+  + resource "azurerm_private_dns_zone_virtual_network_link" "private_dns_zone_virtual_network_links_vnet_shared_01" {
+      + id                    = (known after apply)
+      + name                  = "pdnslnk-privatelink.file.core.windows.net-vnet-shared-01"
+      + private_dns_zone_name = "privatelink.file.core.windows.net"
+      + registration_enabled  = false
+      + resource_group_name   = "RG-EastUS-terraform-1"
+      + virtual_network_id    = (known after apply)
+    }
+
+  # module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_shared_01["privatelink.mysql.database.azure.com"] will be created
+  + resource "azurerm_private_dns_zone_virtual_network_link" "private_dns_zone_virtual_network_links_vnet_shared_01" {
+      + id                    = (known after apply)
+      + name                  = "pdnslnk-privatelink.mysql.database.azure.com-vnet-shared-01"
+      + private_dns_zone_name = "privatelink.mysql.database.azure.com"
+      + registration_enabled  = false
+      + resource_group_name   = "RG-EastUS-terraform-1"
+      + virtual_network_id    = (known after apply)
+    }
+
+  # module.module-02.azurerm_private_endpoint.storage_account_01_file will be created
+  + resource "azurerm_private_endpoint" "storage_account_01_file" {
+      + custom_dns_configs       = (known after apply)
+      + id                       = (known after apply)
+      + location                 = "eastus"
+      + name                     = (known after apply)
+      + network_interface        = (known after apply)
+      + private_dns_zone_configs = (known after apply)
+      + resource_group_name      = "RG-EastUS-terraform-1"
+      + subnet_id                = (known after apply)
+
+      + private_service_connection {
+          + is_manual_connection           = false
+          + name                           = "azure_files"
+          + private_connection_resource_id = (known after apply)
+          + private_ip_address             = (known after apply)
+          + subresource_names              = [
+              + "file",
+            ]
+        }
+    }
+
+  # module.module-02.azurerm_storage_share.storage_share_01 will be created
+  + resource "azurerm_storage_share" "storage_share_01" {
+      + access_tier          = (known after apply)
+      + enabled_protocol     = "SMB"
+      + id                   = (known after apply)
+      + metadata             = (known after apply)
+      + name                 = "myfileshare"
+      + quota                = 1024
+      + resource_manager_id  = (known after apply)
+      + storage_account_name = (known after apply)
+      + url                  = (known after apply)
+    }
+
+  # module.module-02.azurerm_subnet.vnet_app_01_subnets["snet-app-01"] will be created
+  + resource "azurerm_subnet" "vnet_app_01_subnets" {
+      + address_prefixes                               = [
+          + "10.2.0.0/24",
+        ]
+      + enforce_private_link_endpoint_network_policies = (known after apply)
+      + enforce_private_link_service_network_policies  = (known after apply)
+      + id                                             = (known after apply)
+      + name                                           = "snet-app-01"
+      + private_endpoint_network_policies_enabled      = false
+      + private_link_service_network_policies_enabled  = (known after apply)
+      + resource_group_name                            = "RG-EastUS-terraform-1"
+      + virtual_network_name                           = "vnet-app-01"
+    }
+
+  # module.module-02.azurerm_subnet.vnet_app_01_subnets["snet-db-01"] will be created
+  + resource "azurerm_subnet" "vnet_app_01_subnets" {
+      + address_prefixes                               = [
+          + "10.2.1.0/24",
+        ]
+      + enforce_private_link_endpoint_network_policies = (known after apply)
+      + enforce_private_link_service_network_policies  = (known after apply)
+      + id                                             = (known after apply)
+      + name                                           = "snet-db-01"
+      + private_endpoint_network_policies_enabled      = false
+      + private_link_service_network_policies_enabled  = (known after apply)
+      + resource_group_name                            = "RG-EastUS-terraform-1"
+      + virtual_network_name                           = "vnet-app-01"
+    }
+
+  # module.module-02.azurerm_subnet.vnet_app_01_subnets["snet-misc-03"] will be created
+  + resource "azurerm_subnet" "vnet_app_01_subnets" {
+      + address_prefixes                               = [
+          + "10.2.3.0/24",
+        ]
+      + enforce_private_link_endpoint_network_policies = (known after apply)
+      + enforce_private_link_service_network_policies  = (known after apply)
+      + id                                             = (known after apply)
+      + name                                           = "snet-misc-03"
+      + private_endpoint_network_policies_enabled      = false
+      + private_link_service_network_policies_enabled  = (known after apply)
+      + resource_group_name                            = "RG-EastUS-terraform-1"
+      + virtual_network_name                           = "vnet-app-01"
+    }
+
+  # module.module-02.azurerm_subnet.vnet_app_01_subnets["snet-privatelink-01"] will be created
+  + resource "azurerm_subnet" "vnet_app_01_subnets" {
+      + address_prefixes                               = [
+          + "10.2.2.0/24",
+        ]
+      + enforce_private_link_endpoint_network_policies = (known after apply)
+      + enforce_private_link_service_network_policies  = (known after apply)
+      + id                                             = (known after apply)
+      + name                                           = "snet-privatelink-01"
+      + private_endpoint_network_policies_enabled      = true
+      + private_link_service_network_policies_enabled  = (known after apply)
+      + resource_group_name                            = "RG-EastUS-terraform-1"
+      + virtual_network_name                           = "vnet-app-01"
+    }
+
+  # module.module-02.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m2["snet-app-01"] will be created
+  + resource "azurerm_subnet_network_security_group_association" "nsg_subnet_associations_m2" {
+      + id                        = (known after apply)
+      + network_security_group_id = (known after apply)
+      + subnet_id                 = (known after apply)
+    }
+
+  # module.module-02.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m2["snet-db-01"] will be created
+  + resource "azurerm_subnet_network_security_group_association" "nsg_subnet_associations_m2" {
+      + id                        = (known after apply)
+      + network_security_group_id = (known after apply)
+      + subnet_id                 = (known after apply)
+    }
+
+  # module.module-02.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m2["snet-misc-03"] will be created
+  + resource "azurerm_subnet_network_security_group_association" "nsg_subnet_associations_m2" {
+      + id                        = (known after apply)
+      + network_security_group_id = (known after apply)
+      + subnet_id                 = (known after apply)
+    }
+
+  # module.module-02.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m2["snet-privatelink-01"] will be created
+  + resource "azurerm_subnet_network_security_group_association" "nsg_subnet_associations_m2" {
+      + id                        = (known after apply)
+      + network_security_group_id = (known after apply)
+      + subnet_id                 = (known after apply)
+    }
+
+  # module.module-02.azurerm_virtual_network.vnet_app_01 will be created
+  + resource "azurerm_virtual_network" "vnet_app_01" {
+      + address_space       = [
+          + "10.2.0.0/16",
+        ]
+      + dns_servers         = [
+          + "10.1.1.4",
+          + "168.63.129.16",
+        ]
+      + guid                = (known after apply)
+      + id                  = (known after apply)
+      + location            = "eastus"
+      + name                = "vnet-app-01"
+      + resource_group_name = "RG-EastUS-terraform-1"
+      + subnet              = (known after apply)
+    }
+
+  # module.module-02.azurerm_virtual_network_peering.vnet_app_01_to_vnet_shared_01_peering will be created
+  + resource "azurerm_virtual_network_peering" "vnet_app_01_to_vnet_shared_01_peering" {
+      + allow_forwarded_traffic      = true
+      + allow_gateway_transit        = true
+      + allow_virtual_network_access = true
+      + id                           = (known after apply)
+      + name                         = "vnet_app_01_to_vnet_shared_01_peering"
+      + remote_virtual_network_id    = (known after apply)
+      + resource_group_name          = "RG-EastUS-terraform-1"
+      + use_remote_gateways          = false
+      + virtual_network_name         = "vnet-app-01"
+    }
+
+  # module.module-02.azurerm_virtual_network_peering.vnet_shared_01_to_vnet_app_01_peering will be created
+  + resource "azurerm_virtual_network_peering" "vnet_shared_01_to_vnet_app_01_peering" {
+      + allow_forwarded_traffic      = true
+      + allow_gateway_transit        = true
+      + allow_virtual_network_access = true
+      + id                           = (known after apply)
+      + name                         = "vnet_shared_01_to_vnet_app_01_peering"
+      + remote_virtual_network_id    = (known after apply)
+      + resource_group_name          = "RG-EastUS-terraform-1"
+      + use_remote_gateways          = false
+      + virtual_network_name         = "vnet-shared-01"
+    }
+
+Plan: 86 to add, 0 to change, 0 to destroy.
+module.module-01.random_password.admin_password: Creating...
+module.module-01.random_string.azurerm_storage_account_name: Creating...
+module.module-01.random_string.azurerm_storage_account_name: Creation complete after 0s [id=qugltawzluryuwrf]
+module.module-01.random_password.admin_password: Creation complete after 4s [id=none]
+module.module-01.azurerm_virtual_network.vnet_shared_01: Creating...
+module.module-01.azurerm_public_ip.bastion_host_01: Creating...
+module.module-01.azurerm_log_analytics_workspace.log_analytics_workspace_01: Creating...
+module.module-01.azurerm_key_vault.kv: Creating...
+module.module-01.azurerm_storage_account.st: Creating...
+module.module-01.azurerm_public_ip.bastion_host_01: Creation complete after 5s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/publicIPAddresses/pip-bst-terraform-01]
+module.module-01.azurerm_virtual_network.vnet_shared_01: Creation complete after 6s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/virtualNetworks/vnet-shared-01]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-adds-01"]: Creating...
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["AzureBastionSubnet"]: Creating...
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-misc-02"]: Creating...
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-misc-01"]: Creating...
+module.module-01.azurerm_log_analytics_workspace.log_analytics_workspace_01: Still creating... [10s elapsed]
+module.module-01.azurerm_key_vault.kv: Still creating... [10s elapsed]
+module.module-01.azurerm_storage_account.st: Still creating... [10s elapsed]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["AzureBastionSubnet"]: Creation complete after 6s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/AzureBastionSubnet]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-misc-02"]: Still creating... [10s elapsed]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-adds-01"]: Still creating... [10s elapsed]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-misc-01"]: Still creating... [10s elapsed]
+module.module-01.azurerm_key_vault.kv: Still creating... [20s elapsed]
+module.module-01.azurerm_log_analytics_workspace.log_analytics_workspace_01: Still creating... [20s elapsed]
+module.module-01.azurerm_storage_account.st: Still creating... [20s elapsed]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-adds-01"]: Creation complete after 15s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-adds-01]
+module.module-01.azurerm_storage_account.st: Creation complete after 25s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Storage/storageAccounts/stqugltawzluryuwrf]
+module.module-01.azurerm_storage_container.st_container: Creating...
+module.module-01.azurerm_storage_container.st_container: Creation complete after 0s [id=https://stqugltawzluryuwrf.blob.core.windows.net/scripts]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-misc-02"]: Still creating... [20s elapsed]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-misc-01"]: Still creating... [20s elapsed]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-misc-02"]: Creation complete after 22s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-misc-02]
+module.module-01.azurerm_log_analytics_workspace.log_analytics_workspace_01: Creation complete after 29s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.OperationalInsights/workspaces/log-shared-terraform-01]
+module.module-01.azurerm_key_vault.kv: Still creating... [30s elapsed]
+module.module-01.azurerm_subnet.vnet_shared_01_subnets["snet-misc-01"]: Creation complete after 27s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-misc-01]
+module.module-01.azurerm_network_interface.vm_adds_nic_01: Creating...
+module.module-01.azurerm_network_security_group.network_security_groups_m1["AzureBastionSubnet"]: Creating...
+module.module-01.azurerm_network_security_group.network_security_groups_m1["snet-misc-01"]: Creating...
+module.module-01.azurerm_network_security_group.network_security_groups_m1["snet-adds-01"]: Creating...
+module.module-01.azurerm_bastion_host.bastion_host_01: Creating...
+module.module-01.azurerm_network_security_group.network_security_groups_m1["snet-misc-02"]: Creating...
+module.module-01.azurerm_network_security_group.network_security_groups_m1["snet-misc-01"]: Creation complete after 2s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-01]
+module.module-01.azurerm_network_security_group.network_security_groups_m1["snet-adds-01"]: Creation complete after 3s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-adds-01]
+module.module-01.azurerm_network_security_group.network_security_groups_m1["snet-misc-02"]: Creation complete after 5s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-02]
+module.module-01.azurerm_network_security_group.network_security_groups_m1["AzureBastionSubnet"]: Creation complete after 5s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-02.AllowVirtualNetworkOutbound"]: Creating...
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowAzureCloudOutbound"]: Creating...
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowBastionCommunicationInbound"]: Creating...
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-02.AllowInternetOutbound"]: Creating...
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowGetSessionInformationOutbound"]: Creating...
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-02.AllowVirtualNetworkInbound"]: Creating...
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-01.AllowVirtualNetworkOutbound"]: Creating...
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowGetSessionInformationOutbound"]: Creation complete after 2s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowGetSessionInformationOutbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowAzureLoadBalancerInbound"]: Creating...
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-02.AllowVirtualNetworkOutbound"]: Creation complete after 2s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-02/securityRules/AllowVirtualNetworkOutbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-adds-01.AllowVirtualNetworkOutbound"]: Creating...
+module.module-01.azurerm_key_vault.kv: Still creating... [40s elapsed]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-02.AllowVirtualNetworkInbound"]: Creation complete after 3s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-02/securityRules/AllowVirtualNetworkInbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowSshRdpOutbound"]: Creating...
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-01.AllowVirtualNetworkOutbound"]: Creation complete after 3s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-01/securityRules/AllowVirtualNetworkOutbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-adds-01.AllowInternetOutbound"]: Creating...
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-adds-01.AllowVirtualNetworkOutbound"]: Creation complete after 1s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-adds-01/securityRules/AllowVirtualNetworkOutbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowBastionCommunicationOutbound"]: Creating...
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-02.AllowInternetOutbound"]: Creation complete after 4s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-02/securityRules/AllowInternetOutbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-01.AllowVirtualNetworkInbound"]: Creating...
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowAzureCloudOutbound"]: Creation complete after 4s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowAzureCloudOutbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-adds-01.AllowVirtualNetworkInbound"]: Creating...
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowSshRdpOutbound"]: Creation complete after 2s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowSshRdpOutbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowHttpsInbound"]: Creating...
+module.module-01.azurerm_network_interface.vm_adds_nic_01: Still creating... [10s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [10s elapsed]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowAzureLoadBalancerInbound"]: Creation complete after 3s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowAzureLoadBalancerInbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-01.AllowInternetOutbound"]: Creating...
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-adds-01.AllowInternetOutbound"]: Creation complete after 3s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-adds-01/securityRules/AllowInternetOutbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowGatewayManagerInbound"]: Creating...
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowHttpsInbound"]: Creation complete after 1s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowHttpsInbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-01.AllowVirtualNetworkInbound"]: Creation complete after 2s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-01/securityRules/AllowVirtualNetworkInbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-adds-01.AllowVirtualNetworkInbound"]: Creation complete after 3s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-adds-01/securityRules/AllowVirtualNetworkInbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowBastionCommunicationOutbound"]: Creation complete after 4s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowBastionCommunicationOutbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["snet-misc-01.AllowInternetOutbound"]: Creation complete after 2s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-01/securityRules/AllowInternetOutbound]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowGatewayManagerInbound"]: Creation complete after 2s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowGatewayManagerInbound]
+module.module-01.azurerm_network_interface.vm_adds_nic_01: Creation complete after 13s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkInterfaces/nic-adds1-1]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowBastionCommunicationInbound"]: Still creating... [10s elapsed]
+module.module-01.azurerm_key_vault.kv: Still creating... [50s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [20s elapsed]
+module.module-01.azurerm_network_security_rule.network_security_rules_m1["AzureBastionSubnet.AllowBastionCommunicationInbound"]: Creation complete after 16s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet/securityRules/AllowBastionCommunicationInbound]
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["snet-misc-02"]: Creating...
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["snet-adds-01"]: Creating...
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["AzureBastionSubnet"]: Creating...
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["snet-misc-01"]: Creating...
+module.module-01.azurerm_key_vault.kv: Still creating... [1m0s elapsed]
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["snet-adds-01"]: Creation complete after 8s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-adds-01]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [30s elapsed]
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["snet-misc-02"]: Still creating... [10s elapsed]
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["AzureBastionSubnet"]: Still creating... [10s elapsed]
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["snet-misc-01"]: Still creating... [10s elapsed]
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["snet-misc-02"]: Creation complete after 15s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-misc-02]
+module.module-01.azurerm_key_vault.kv: Still creating... [1m10s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [40s elapsed]
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["AzureBastionSubnet"]: Still creating... [20s elapsed]
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["snet-misc-01"]: Still creating... [20s elapsed]
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["AzureBastionSubnet"]: Creation complete after 20s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/AzureBastionSubnet]
+module.module-01.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m1["snet-misc-01"]: Creation complete after 25s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/subnets/snet-misc-01]
+module.module-01.azurerm_key_vault.kv: Still creating... [1m20s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [50s elapsed]
+module.module-01.azurerm_key_vault.kv: Still creating... [1m30s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [1m0s elapsed]
+module.module-01.azurerm_key_vault.kv: Still creating... [1m40s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [1m10s elapsed]
+module.module-01.azurerm_key_vault.kv: Still creating... [1m50s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [1m20s elapsed]
+module.module-01.azurerm_key_vault.kv: Still creating... [2m0s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [1m30s elapsed]
+module.module-01.azurerm_key_vault.kv: Still creating... [2m10s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [1m40s elapsed]
+module.module-01.azurerm_key_vault.kv: Still creating... [2m20s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [1m50s elapsed]
+module.module-01.azurerm_key_vault.kv: Still creating... [2m30s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [2m0s elapsed]
+module.module-01.azurerm_key_vault.kv: Still creating... [2m40s elapsed]
+module.module-01.azurerm_key_vault.kv: Creation complete after 2m42s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.KeyVault/vaults/kv-qugltawzluryuwrf]
+module.module-01.azurerm_key_vault_secret.adminuser: Creating...
+module.module-01.azurerm_key_vault_secret.adminpassword: Creating...
+module.module-01.azurerm_key_vault_secret.storage_account_access_key: Creating...
+module.module-01.azurerm_key_vault_secret.log_analytics_workspace_01_primary_shared_key: Creating...
+module.module-01.azurerm_key_vault_secret.adminuser: Creation complete after 0s [id=https://kv-qugltawzluryuwrf.vault.azure.net/secrets/adminuser/e38114ee19b54231bf34df86b051c0e0]
+module.module-01.azurerm_key_vault_secret.log_analytics_workspace_01_primary_shared_key: Creation complete after 0s [id=https://kv-qugltawzluryuwrf.vault.azure.net/secrets/12f6ba79-73c9-43a6-ac05-a287c02deac4/5e689ad79ac742a882ca5037a7e0458f]
+module.module-01.azurerm_key_vault_secret.storage_account_access_key: Creation complete after 0s [id=https://kv-qugltawzluryuwrf.vault.azure.net/secrets/stqugltawzluryuwrf/7b6ad49d796443f3b9b6ac262e92ea81]
+module.module-01.azurerm_key_vault_secret.adminpassword: Creation complete after 0s [id=https://kv-qugltawzluryuwrf.vault.azure.net/secrets/adminpassword/89754945b3354504aa5908d9d1340dd3]
+module.module-01.azurerm_windows_virtual_machine.vm_adds: Creating...
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [2m10s elapsed]
+module.module-01.azurerm_windows_virtual_machine.vm_adds: Still creating... [10s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [2m20s elapsed]
+module.module-01.azurerm_windows_virtual_machine.vm_adds: Still creating... [20s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [2m30s elapsed]
+module.module-01.azurerm_windows_virtual_machine.vm_adds: Still creating... [30s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [2m40s elapsed]
+module.module-01.azurerm_windows_virtual_machine.vm_adds: Still creating... [40s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [2m50s elapsed]
+module.module-01.azurerm_windows_virtual_machine.vm_adds: Creation complete after 47s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Compute/virtualMachines/vm-adds1]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [3m0s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [3m10s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [3m20s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [3m30s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [3m40s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [3m50s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [4m0s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [4m10s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [4m20s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [4m30s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [4m40s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [4m50s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [5m0s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [5m10s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [5m20s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [5m30s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [5m40s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [5m50s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [6m0s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [6m10s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [6m20s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [6m30s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [6m40s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [6m50s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [7m0s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [7m10s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [7m20s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [7m30s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [7m40s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [7m50s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Still creating... [8m0s elapsed]
+module.module-01.azurerm_bastion_host.bastion_host_01: Creation complete after 8m4s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/bastionHosts/bst-terraform-01]
+module.module-02.data.azurerm_key_vault_secret.adminpassword: Reading...
+module.module-02.azurerm_virtual_network.vnet_app_01: Creating...
+module.module-02.azurerm_private_dns_zone.private_dns_zones["privatelink.file.core.windows.net"]: Creating...
+module.module-02.azurerm_storage_share.storage_share_01: Creating...
+module.module-02.azurerm_private_dns_zone.private_dns_zones["privatelink.database.windows.net"]: Creating...
+module.module-02.azurerm_private_dns_zone.private_dns_zones["privatelink.mysql.database.azure.com"]: Creating...
+module.module-02.azurerm_storage_share.storage_share_01: Creation complete after 1s [id=https://stqugltawzluryuwrf.file.core.windows.net/myfileshare]
+module.module-02.data.azurerm_key_vault_secret.adminpassword: Read complete after 1s [id=https://kv-qugltawzluryuwrf.vault.azure.net/secrets/adminpassword/89754945b3354504aa5908d9d1340dd3]
+module.module-02.azurerm_virtual_network.vnet_app_01: Creation complete after 5s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/virtualNetworks/vnet-app-01]
+module.module-02.azurerm_subnet.vnet_app_01_subnets["snet-app-01"]: Creating...
+module.module-02.azurerm_subnet.vnet_app_01_subnets["snet-privatelink-01"]: Creating...
+module.module-02.azurerm_subnet.vnet_app_01_subnets["snet-db-01"]: Creating...
+module.module-02.azurerm_subnet.vnet_app_01_subnets["snet-misc-03"]: Creating...
+module.module-02.azurerm_subnet.vnet_app_01_subnets["snet-privatelink-01"]: Creation complete after 5s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/virtualNetworks/vnet-app-01/subnets/snet-privatelink-01]
+module.module-02.azurerm_private_dns_zone.private_dns_zones["privatelink.database.windows.net"]: Still creating... [10s elapsed]
+module.module-02.azurerm_private_dns_zone.private_dns_zones["privatelink.file.core.windows.net"]: Still creating... [10s elapsed]
+module.module-02.azurerm_private_dns_zone.private_dns_zones["privatelink.mysql.database.azure.com"]: Still creating... [10s elapsed]
+module.module-02.azurerm_subnet.vnet_app_01_subnets["snet-app-01"]: Still creating... [10s elapsed]
+module.module-02.azurerm_subnet.vnet_app_01_subnets["snet-db-01"]: Still creating... [10s elapsed]
+module.module-02.azurerm_subnet.vnet_app_01_subnets["snet-misc-03"]: Still creating... [10s elapsed]
+module.module-02.azurerm_subnet.vnet_app_01_subnets["snet-misc-03"]: Creation complete after 11s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/virtualNetworks/vnet-app-01/subnets/snet-misc-03]
+module.module-02.azurerm_subnet.vnet_app_01_subnets["snet-app-01"]: Creation complete after 15s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/virtualNetworks/vnet-app-01/subnets/snet-app-01]
+module.module-02.azurerm_private_dns_zone.private_dns_zones["privatelink.database.windows.net"]: Still creating... [20s elapsed]
+module.module-02.azurerm_private_dns_zone.private_dns_zones["privatelink.file.core.windows.net"]: Still creating... [20s elapsed]
+module.module-02.azurerm_private_dns_zone.private_dns_zones["privatelink.mysql.database.azure.com"]: Still creating... [20s elapsed]
+module.module-02.azurerm_subnet.vnet_app_01_subnets["snet-db-01"]: Creation complete after 19s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/virtualNetworks/vnet-app-01/subnets/snet-db-01]
+module.module-02.azurerm_network_security_group.network_security_groups_m2["snet-app-01"]: Creating...
+module.module-02.azurerm_network_security_group.network_security_groups_m2["snet-misc-03"]: Creating...
+module.module-02.azurerm_network_security_group.network_security_groups_m2["snet-privatelink-01"]: Creating...
+module.module-02.azurerm_network_interface.vm_jumpbox_win_nic_01: Creating...
+module.module-02.azurerm_network_security_group.network_security_groups_m2["snet-db-01"]: Creating...
+module.module-02.azurerm_network_security_group.network_security_groups_m2["snet-app-01"]: Creation complete after 2s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-app-01]
+module.module-02.azurerm_network_security_group.network_security_groups_m2["snet-privatelink-01"]: Creation complete after 3s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-privatelink-01]
+module.module-02.azurerm_network_security_group.network_security_groups_m2["snet-misc-03"]: Creation complete after 3s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-misc-03]
+module.module-02.azurerm_network_security_group.network_security_groups_m2["snet-db-01"]: Creation complete after 3s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-db-01]
+module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-db-01.AllowInternetOutbound"]: Creating...
+module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-app-01.AllowVirtualNetworkInbound"]: Creating...
+module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-db-01.AllowVirtualNetworkInbound"]: Creating...
+module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-misc-03.AllowVirtualNetworkOutbound"]: Creating...
+module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-privatelink-01.AllowVirtualNetworkInbound"]: Creating...
+module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-db-01.AllowVirtualNetworkOutbound"]: Creating...
+module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-app-01.AllowVirtualNetworkInbound"]: Creation complete after 2s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-app-01/securityRules/AllowVirtualNetworkInbound]
+module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-misc-03.AllowVirtualNetworkInbound"]: Creating...
+module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-misc-03.AllowVirtualNetworkOutbound"]: Creation complete after 2s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-misc-03/securityRules/AllowVirtualNetworkOutbound]
+module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-misc-03.AllowInternetOutbound"]: Creating...
+module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-misc-03.AllowVirtualNetworkInbound"]: Creation complete after 1s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-misc-03/securityRules/AllowVirtualNetworkInbound]
+module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-app-01.AllowInternetOutbound"]: Creating...
+module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-db-01.AllowInternetOutbound"]: Creation complete after 3s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-db-01/securityRules/AllowInternetOutbound]
+module.module-02.azurerm_private_dns_zone.private_dns_zones["privatelink.database.windows.net"]: Still creating... [30s elapsed]
+module.module-02.azurerm_private_dns_zone.private_dns_zones["privatelink.file.core.windows.net"]: Still creating... [30s elapsed]
+module.module-02.azurerm_private_dns_zone.private_dns_zones["privatelink.mysql.database.azure.com"]: Still creating... [30s elapsed]
+module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-app-01.AllowVirtualNetworkOutbound"]: Creating...
+module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-db-01.AllowVirtualNetworkInbound"]: Creation complete after 4s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-db-01/securityRules/AllowVirtualNetworkInbound]
+module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-privatelink-01.AllowVirtualNetworkOutbound"]: Creating...
+module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-privatelink-01.AllowVirtualNetworkInbound"]: Creation complete after 4s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-privatelink-01/securityRules/AllowVirtualNetworkInbound]
+module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-app-01.AllowInternetOutbound"]: Creation complete after 2s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-app-01/securityRules/AllowInternetOutbound]
+module.module-02.azurerm_private_dns_zone.private_dns_zones["privatelink.database.windows.net"]: Creation complete after 33s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/privateDnsZones/privatelink.database.windows.net]
+module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-app-01.AllowVirtualNetworkOutbound"]: Creation complete after 3s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-app-01/securityRules/AllowVirtualNetworkOutbound]
+module.module-02.azurerm_network_interface.vm_jumpbox_win_nic_01: Still creating... [10s elapsed]
+module.module-02.azurerm_private_dns_zone.private_dns_zones["privatelink.mysql.database.azure.com"]: Creation complete after 35s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/privateDnsZones/privatelink.mysql.database.azure.com]
+module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-db-01.AllowVirtualNetworkOutbound"]: Creation complete after 9s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-db-01/securityRules/AllowVirtualNetworkOutbound]
+module.module-02.azurerm_private_dns_zone.private_dns_zones["privatelink.file.core.windows.net"]: Creation complete after 37s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/privateDnsZones/privatelink.file.core.windows.net]
+module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-misc-03.AllowInternetOutbound"]: Creation complete after 9s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-misc-03/securityRules/AllowInternetOutbound]
+module.module-02.azurerm_network_security_rule.network_security_rules_m2["snet-privatelink-01.AllowVirtualNetworkOutbound"]: Creation complete after 9s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-privatelink-01/securityRules/AllowVirtualNetworkOutbound]
+module.module-02.azurerm_virtual_network_peering.vnet_app_01_to_vnet_shared_01_peering: Creating...
+module.module-02.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m2["snet-misc-03"]: Creating...
+module.module-02.azurerm_virtual_network_peering.vnet_shared_01_to_vnet_app_01_peering: Creating...
+module.module-02.azurerm_network_interface.vm_jumpbox_win_nic_01: Creation complete after 16s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkInterfaces/nic-jumpwin1-1]
+module.module-02.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m2["snet-db-01"]: Creating...
+module.module-02.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m2["snet-app-01"]: Creating...
+module.module-02.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m2["snet-privatelink-01"]: Creating...
+module.module-02.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m2["snet-misc-03"]: Creation complete after 8s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/virtualNetworks/vnet-app-01/subnets/snet-misc-03]
+module.module-02.azurerm_virtual_network_peering.vnet_app_01_to_vnet_shared_01_peering: Still creating... [10s elapsed]
+module.module-02.azurerm_virtual_network_peering.vnet_shared_01_to_vnet_app_01_peering: Still creating... [10s elapsed]
+module.module-02.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m2["snet-db-01"]: Still creating... [10s elapsed]
+module.module-02.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m2["snet-app-01"]: Still creating... [10s elapsed]
+module.module-02.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m2["snet-privatelink-01"]: Still creating... [10s elapsed]
+module.module-02.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m2["snet-db-01"]: Creation complete after 11s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/virtualNetworks/vnet-app-01/subnets/snet-db-01]
+module.module-02.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m2["snet-app-01"]: Creation complete after 16s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/virtualNetworks/vnet-app-01/subnets/snet-app-01]
+module.module-02.azurerm_virtual_network_peering.vnet_app_01_to_vnet_shared_01_peering: Still creating... [20s elapsed]
+module.module-02.azurerm_virtual_network_peering.vnet_shared_01_to_vnet_app_01_peering: Still creating... [20s elapsed]
+module.module-02.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m2["snet-privatelink-01"]: Still creating... [20s elapsed]
+module.module-02.azurerm_subnet_network_security_group_association.nsg_subnet_associations_m2["snet-privatelink-01"]: Creation complete after 25s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/virtualNetworks/vnet-app-01/subnets/snet-privatelink-01]
+module.module-02.azurerm_network_interface.vm_jumbox_linux_nic_01: Creating...
+module.module-02.azurerm_private_endpoint.storage_account_01_file: Creating...
+module.module-02.azurerm_virtual_network_peering.vnet_shared_01_to_vnet_app_01_peering: Creation complete after 26s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/virtualNetworkPeerings/vnet_shared_01_to_vnet_app_01_peering]
+module.module-02.azurerm_virtual_network_peering.vnet_app_01_to_vnet_shared_01_peering: Still creating... [30s elapsed]
+module.module-02.azurerm_network_interface.vm_jumbox_linux_nic_01: Still creating... [10s elapsed]
+module.module-02.azurerm_private_endpoint.storage_account_01_file: Still creating... [10s elapsed]
+module.module-02.azurerm_network_interface.vm_jumbox_linux_nic_01: Creation complete after 12s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/networkInterfaces/nic-jumplinux1]
+module.module-02.azurerm_linux_virtual_machine.vm_jumpbox_linux: Creating...
+module.module-02.azurerm_virtual_network_peering.vnet_app_01_to_vnet_shared_01_peering: Still creating... [40s elapsed]
+module.module-02.azurerm_private_endpoint.storage_account_01_file: Still creating... [20s elapsed]
+module.module-02.azurerm_linux_virtual_machine.vm_jumpbox_linux: Still creating... [10s elapsed]
+module.module-02.azurerm_virtual_network_peering.vnet_app_01_to_vnet_shared_01_peering: Still creating... [50s elapsed]
+module.module-02.azurerm_virtual_network_peering.vnet_app_01_to_vnet_shared_01_peering: Creation complete after 52s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/virtualNetworks/vnet-app-01/virtualNetworkPeerings/vnet_app_01_to_vnet_shared_01_peering]
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_shared_01["privatelink.database.windows.net"]: Creating...
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_shared_01["privatelink.file.core.windows.net"]: Creating...
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_app_01["privatelink.mysql.database.azure.com"]: Creating...
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_shared_01["privatelink.mysql.database.azure.com"]: Creating...
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_app_01["privatelink.database.windows.net"]: Creating...
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_app_01["privatelink.file.core.windows.net"]: Creating...
+module.module-02.azurerm_private_endpoint.storage_account_01_file: Still creating... [30s elapsed]
+module.module-02.azurerm_linux_virtual_machine.vm_jumpbox_linux: Creation complete after 20s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Compute/virtualMachines/jumplinux1]
+module.module-02.azurerm_key_vault_access_policy.vm_jumpbox_linux_secrets_get: Creating...
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_shared_01["privatelink.database.windows.net"]: Still creating... [10s elapsed]
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_shared_01["privatelink.file.core.windows.net"]: Still creating... [10s elapsed]
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_shared_01["privatelink.mysql.database.azure.com"]: Still creating... [10s elapsed]
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_app_01["privatelink.database.windows.net"]: Still creating... [10s elapsed]
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_app_01["privatelink.mysql.database.azure.com"]: Still creating... [10s elapsed]
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_app_01["privatelink.file.core.windows.net"]: Still creating... [10s elapsed]
+module.module-02.azurerm_key_vault_access_policy.vm_jumpbox_linux_secrets_get: Creation complete after 7s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.KeyVault/vaults/kv-qugltawzluryuwrf/objectId/829e3ce9-a3c1-4fe5-845b-bfaf7427e2a1]
+module.module-02.azurerm_private_endpoint.storage_account_01_file: Still creating... [40s elapsed]
+module.module-02.azurerm_private_endpoint.storage_account_01_file: Creation complete after 42s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/privateEndpoints/pend-stqugltawzluryuwrf-file]
+module.module-02.azurerm_private_dns_a_record.storage_account_01_file: Creating...
+module.module-02.azurerm_private_dns_a_record.storage_account_01_file: Creation complete after 1s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/privateDnsZones/privatelink.file.core.windows.net/A/stqugltawzluryuwrf]
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_shared_01["privatelink.database.windows.net"]: Still creating... [20s elapsed]
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_app_01["privatelink.database.windows.net"]: Still creating... [20s elapsed]
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_shared_01["privatelink.file.core.windows.net"]: Still creating... [20s elapsed]
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_shared_01["privatelink.mysql.database.azure.com"]: Still creating... [20s elapsed]
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_app_01["privatelink.mysql.database.azure.com"]: Still creating... [20s elapsed]
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_app_01["privatelink.file.core.windows.net"]: Still creating... [20s elapsed]
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_shared_01["privatelink.mysql.database.azure.com"]: Still creating... [30s elapsed]
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_shared_01["privatelink.database.windows.net"]: Still creating... [30s elapsed]
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_app_01["privatelink.mysql.database.azure.com"]: Still creating... [30s elapsed]
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_shared_01["privatelink.file.core.windows.net"]: Still creating... [30s elapsed]
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_app_01["privatelink.database.windows.net"]: Still creating... [30s elapsed]
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_app_01["privatelink.file.core.windows.net"]: Still creating... [30s elapsed]
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_app_01["privatelink.database.windows.net"]: Creation complete after 32s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/privateDnsZones/privatelink.database.windows.net/virtualNetworkLinks/pdnslnk-privatelink.database.windows.net-vnet-app-01]
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_shared_01["privatelink.mysql.database.azure.com"]: Creation complete after 32s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/privateDnsZones/privatelink.mysql.database.azure.com/virtualNetworkLinks/pdnslnk-privatelink.mysql.database.azure.com-vnet-shared-01]
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_shared_01["privatelink.file.core.windows.net"]: Creation complete after 32s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/privateDnsZones/privatelink.file.core.windows.net/virtualNetworkLinks/pdnslnk-privatelink.file.core.windows.net-vnet-shared-01]
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_app_01["privatelink.file.core.windows.net"]: Creation complete after 33s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/privateDnsZones/privatelink.file.core.windows.net/virtualNetworkLinks/pdnslnk-privatelink.file.core.windows.net-vnet-app-01]
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_shared_01["privatelink.database.windows.net"]: Creation complete after 34s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/privateDnsZones/privatelink.database.windows.net/virtualNetworkLinks/pdnslnk-privatelink.database.windows.net-vnet-shared-01]
+module.module-02.azurerm_private_dns_zone_virtual_network_link.private_dns_zone_virtual_network_links_vnet_app_01["privatelink.mysql.database.azure.com"]: Creation complete after 35s [id=/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-EastUS-terraform-1/providers/Microsoft.Network/privateDnsZones/privatelink.mysql.database.azure.com/virtualNetworkLinks/pdnslnk-privatelink.mysql.database.azure.com-vnet-app-01]
+
+Apply complete! Resources: 86 added, 0 changed, 0 destroyed.

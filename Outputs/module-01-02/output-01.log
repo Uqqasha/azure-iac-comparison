@@ -1,0 +1,9 @@
+------------------------- STARTING TESTS ------------------------- 
+
+     Bootstraping deployment with pre-requisites ...
+          Azure Subscription ID:    33f27ac9-52ef-43de-b518-ef0b994e7f1b
+          Azure Subscription:       'Azure subscription 1'...
+          Azure Tenant ID:          c8001d36-ba17-4be2-b907-931bc500e970
+          Azure App ID:             8e1cc064-d4e1-4b2d-a0b4-a9f679a348f9
+          Azure Service Principal:  'terraform-1'...
+Environment variable 'TF_VAR_arm_client_secret' must be set.
