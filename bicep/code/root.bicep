@@ -40,18 +40,18 @@ module module02 'modules/module-02/module-02.bicep' = {
   ]
 }
 
-// module module03 'modules/module-03/module-03.bicep' = {
-//   name: 'module03Deployment'
-//   params: {
-//     location: location
-//     vnetNameM2: module02.outputs.vnetNameM2
-//     adminUsername: adminUsername
-//     adminPassword: keyVault.getSecret('adminpassword')
-//   }
-//   dependsOn: [
-//     module01
-//   ]
-// }
+module module03 'modules/module-03/module-03.bicep' = {
+  name: 'module03Deployment'
+  params: {
+    location: location
+    vnetNameM2: module02.outputs.vnetNameM2
+    adminUsername: adminUsername
+    adminPassword: keyVault.getSecret('adminpassword')
+  }
+  dependsOn: [
+    module01
+  ]
+}
 
 // module module04 'modules/module-04/module-04.bicep' = {
 //   name: 'module04Deployment'

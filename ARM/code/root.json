@@ -96,41 +96,41 @@
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', 'module01')]"
             ]
+        },
+        {
+            "name": "module03",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2022-09-01",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "https://raw.githubusercontent.com/Uqqasha/azure-iac-comparison/main/ARM/code/modules/module-03/module-03.json"
+                },
+                "parameters": {
+                    "location": {
+                        "value": "[parameters('location')]"
+                    },
+                    "vnetNameM2": {
+                        "value": "[reference('module02').outputs.vnetNameM2.value]"
+                    },
+                    "adminUsername": {
+                        "value": "[parameters('adminUsername')]"
+                    },
+                    "adminPassword": {
+                        "reference": {
+                            "keyVault": {
+                                "id": "[concat('/subscriptions/', parameters('subscriptionId'), '/resourceGroups/', parameters('resourceGroupName'), '/providers/', reference('module01').outputs.keyVaultId.value)]"
+                            },
+                            "secretName": "adminpassword"
+                        }
+                    }
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Resources/deployments', 'module01')]",
+                "[resourceId('Microsoft.Resources/deployments', 'module02')]"
+            ]
         }
-        // {
-        //     "name": "module03",
-        //     "type": "Microsoft.Resources/deployments",
-        //     "apiVersion": "2022-09-01",
-        //     "properties": {
-        //         "mode": "Incremental",
-        //         "templateLink": {
-        //             "uri": "https://raw.githubusercontent.com/Uqqasha/azure-iac-comparison/main/ARM/code/modules/module-03/module-03.json"
-        //         },
-        //         "parameters": {
-        //             "location": {
-        //                 "value": "[parameters('location')]"
-        //             },
-        //             "vnetNameM2": {
-        //                 "value": "[reference('module02').outputs.vnetNameM2.value]"
-        //             },
-        //             "adminUsername": {
-        //                 "value": "[parameters('adminUsername')]"
-        //             },
-        //             "adminPassword": {
-        //                 "reference": {
-        //                     "keyVault": {
-        //                         "id": "[concat('/subscriptions/', parameters('subscriptionId'), '/resourceGroups/', parameters('resourceGroupName'), '/providers/', reference('module01').outputs.keyVaultId.value)]"
-        //                     },
-        //                     "secretName": "adminpassword"
-        //                 }
-        //             }
-        //         }
-        //     },
-        //     "dependsOn": [
-        //         "[resourceId('Microsoft.Resources/deployments', 'module01')]",
-        //         "[resourceId('Microsoft.Resources/deployments', 'module02')]"
-        //     ]
-        // },
         // {
         //     "name": "module04",
         //     "type": "Microsoft.Resources/deployments",
