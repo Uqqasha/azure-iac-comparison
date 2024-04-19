@@ -1,0 +1,34 @@
+Starting unprovisioning process
+WARNING: A new Bicep release is available: v0.26.170. Upgrade now by running "az bicep upgrade".
+ERROR: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+INFO: Command ran in 4.887 seconds (init: 0.231, invoke: 4.655)
+Starting unprovisioning process
+WARNING: A new Bicep release is available: v0.26.170. Upgrade now by running "az bicep upgrade".
+INFO: Command ran in 703.219 seconds (init: 0.252, invoke: 702.967)
+{
+  "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Resources/deployments/cleanup",
+  "location": null,
+  "name": "cleanup",
+  "properties": {
+    "correlationId": "b296894e-4a89-48d3-b214-7e1e356d2258",
+    "debugSetting": null,
+    "dependencies": [],
+    "duration": "PT11M9.5242944S",
+    "error": null,
+    "mode": "Complete",
+    "onErrorDeployment": null,
+    "outputResources": [],
+    "outputs": null,
+    "parameters": null,
+    "parametersLink": null,
+    "providers": [],
+    "provisioningState": "Succeeded",
+    "templateHash": "6609161197123188811",
+    "templateLink": null,
+    "timestamp": "2024-04-19T11:57:47.031896+00:00",
+    "validatedResources": null
+  },
+  "resourceGroup": "RG-AustraliaEast-bicep-3",
+  "tags": null,
+  "type": "Microsoft.Resources/deployments"
+}
