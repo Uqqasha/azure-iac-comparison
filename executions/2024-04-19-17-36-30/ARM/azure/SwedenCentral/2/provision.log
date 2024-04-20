@@ -1,0 +1,333 @@
+Starting provisioning process
+{
+  "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Resources/deployments/root",
+  "location": null,
+  "name": "root",
+  "properties": {
+    "correlationId": "93bfefe7-d5f5-4064-b35e-eb02f9f7bd62",
+    "debugSetting": null,
+    "dependencies": [
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Resources/deployments/module01",
+            "resourceGroup": "RG-SwedenCentral-ARM-2",
+            "resourceName": "module01",
+            "resourceType": "Microsoft.Resources/deployments"
+          }
+        ],
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Resources/deployments/module02",
+        "resourceGroup": "RG-SwedenCentral-ARM-2",
+        "resourceName": "module02",
+        "resourceType": "Microsoft.Resources/deployments"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Resources/deployments/module01",
+            "resourceGroup": "RG-SwedenCentral-ARM-2",
+            "resourceName": "module01",
+            "resourceType": "Microsoft.Resources/deployments"
+          },
+          {
+            "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Resources/deployments/module02",
+            "resourceGroup": "RG-SwedenCentral-ARM-2",
+            "resourceName": "module02",
+            "resourceType": "Microsoft.Resources/deployments"
+          }
+        ],
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Resources/deployments/module03",
+        "resourceGroup": "RG-SwedenCentral-ARM-2",
+        "resourceName": "module03",
+        "resourceType": "Microsoft.Resources/deployments"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Resources/deployments/module01",
+            "resourceGroup": "RG-SwedenCentral-ARM-2",
+            "resourceName": "module01",
+            "resourceType": "Microsoft.Resources/deployments"
+          },
+          {
+            "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Resources/deployments/module02",
+            "resourceGroup": "RG-SwedenCentral-ARM-2",
+            "resourceName": "module02",
+            "resourceType": "Microsoft.Resources/deployments"
+          }
+        ],
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Resources/deployments/module04",
+        "resourceGroup": "RG-SwedenCentral-ARM-2",
+        "resourceName": "module04",
+        "resourceType": "Microsoft.Resources/deployments"
+      }
+    ],
+    "duration": "PT16M50.3829676S",
+    "error": null,
+    "mode": "Incremental",
+    "onErrorDeployment": null,
+    "outputResources": [
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Compute/disks/disk-mssqlwin1vol_sqldata_M",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Compute/disks/disk-mssqlwin1vol_sqllog_L",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Compute/virtualMachines/adds1",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Compute/virtualMachines/jumplinux1",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Compute/virtualMachines/mssqlwin1",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.DBforMySQL/flexibleServers/mysql-pl7lxhs3hlncu",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.DBforMySQL/flexibleServers/mysql-pl7lxhs3hlncu/databases/testdb",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.KeyVault/vaults/kv-pl7lxhs3hlncu",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.KeyVault/vaults/kv-pl7lxhs3hlncu/accessPolicies/add",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.KeyVault/vaults/kv-pl7lxhs3hlncu/secrets/adminpassword",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.KeyVault/vaults/kv-pl7lxhs3hlncu/secrets/adminuser",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.KeyVault/vaults/kv-pl7lxhs3hlncu/secrets/log-shared-arm-01-ID",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.KeyVault/vaults/kv-pl7lxhs3hlncu/secrets/stpl7lxhs3hlncu",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/bastionHosts/bst-ARM-01",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/networkInterfaces/nic-adds11",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/networkInterfaces/nic-jumplinux1-1",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/networkInterfaces/nic-jumpwin1-1",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/networkInterfaces/nic-mssqlwin1-1",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-app-01",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-db-01",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-misc-03",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-privatelink-01",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-adds-01",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-01",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-02",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/privateDnsZones/privatelink.database.windows.net",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/privateDnsZones/privatelink.database.windows.net/virtualNetworkLinks/pdnslink-privatelink.database.windows.net-vnet-app-01",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/privateDnsZones/privatelink.database.windows.net/virtualNetworkLinks/pdnslink-privatelink.database.windows.net-vnet-shared-01",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/privateDnsZones/privatelink.file.core.windows.net",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/privateDnsZones/privatelink.file.core.windows.net/A/stpl7lxhs3hlncu",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/privateDnsZones/privatelink.file.core.windows.net/virtualNetworkLinks/pdnslink-privatelink.file.core.windows.net-vnet-app-01",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/privateDnsZones/privatelink.file.core.windows.net/virtualNetworkLinks/pdnslink-privatelink.file.core.windows.net-vnet-shared-01",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/privateDnsZones/privatelink.mysql.database.azure.com",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/privateDnsZones/privatelink.mysql.database.azure.com/A/mysql-pl7lxhs3hlncu",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/privateDnsZones/privatelink.mysql.database.azure.com/virtualNetworkLinks/pdnslink-privatelink.mysql.database.azure.com-vnet-app-01",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/privateDnsZones/privatelink.mysql.database.azure.com/virtualNetworkLinks/pdnslink-privatelink.mysql.database.azure.com-vnet-shared-01",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/privateEndpoints/pend-mysql-pl7lxhs3hlncu",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/privateEndpoints/pend-stpl7lxhs3hlncu-file",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/publicIPAddresses/pip-bst-ARM-01",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/virtualNetworks/vnet-app-01",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/virtualNetworks/vnet-app-01/virtualNetworkPeerings/vnet_app_01_to_vnet_shared_01_peering",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/virtualNetworkPeerings/vnet_shared_01_to_vnet_app_01_peering",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.OperationalInsights/workspaces/log-shared-arm-01",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Storage/storageAccounts/stpl7lxhs3hlncu",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Storage/storageAccounts/stpl7lxhs3hlncu/blobServices/default/containers/scripts",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      },
+      {
+        "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Storage/storageAccounts/stpl7lxhs3hlncu/fileServices/default/shares/myfileshare",
+        "resourceGroup": "RG-SwedenCentral-ARM-2"
+      }
+    ],
+    "outputs": null,
+    "parameters": {
+      "adminUsername": {
+        "type": "String",
+        "value": "bootstrapadmin"
+      },
+      "armClientObjectId": {
+        "type": "String",
+        "value": "c4b9d2d3-0fe4-46e4-a0b0-e8f0ce1bbbde"
+      },
+      "dnsServers": {
+        "type": "Array",
+        "value": [
+          "10.1.1.4",
+          "168.63.129.16"
+        ]
+      },
+      "location": {
+        "type": "String",
+        "value": "swedencentral"
+      },
+      "ownerObjectId": {
+        "type": "String",
+        "value": "5e1a0937-9b34-46ca-adde-41e4a5d58f58"
+      },
+      "resourceGroupName": {
+        "type": "String",
+        "value": "RG-SwedenCentral-ARM-2"
+      },
+      "subscriptionId": {
+        "type": "String",
+        "value": "33f27ac9-52ef-43de-b518-ef0b994e7f1b"
+      }
+    },
+    "parametersLink": null,
+    "providers": [
+      {
+        "id": null,
+        "namespace": "Microsoft.Resources",
+        "providerAuthorizationConsentState": null,
+        "registrationPolicy": null,
+        "registrationState": null,
+        "resourceTypes": [
+          {
+            "aliases": null,
+            "apiProfiles": null,
+            "apiVersions": null,
+            "capabilities": null,
+            "defaultApiVersion": null,
+            "locationMappings": null,
+            "locations": [
+              null
+            ],
+            "properties": null,
+            "resourceType": "deployments",
+            "zoneMappings": null
+          }
+        ]
+      }
+    ],
+    "provisioningState": "Succeeded",
+    "templateHash": "4817322005004378776",
+    "templateLink": null,
+    "timestamp": "2024-04-20T02:14:30.794099+00:00",
+    "validatedResources": null
+  },
+  "resourceGroup": "RG-SwedenCentral-ARM-2",
+  "tags": null,
+  "type": "Microsoft.Resources/deployments"
+}
+INFO: Command ran in 1044.521 seconds (init: 0.272, invoke: 1044.249)
