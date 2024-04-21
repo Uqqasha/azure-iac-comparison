@@ -1,0 +1,29 @@
+Starting unprovisioning process
+INFO: Command ran in 706.273 seconds (init: 0.245, invoke: 706.028)
+{
+  "id": "/subscriptions/33f27ac9-52ef-43de-b518-ef0b994e7f1b/resourceGroups/RG-SwedenCentral-ARM-2/providers/Microsoft.Resources/deployments/cleanup",
+  "location": null,
+  "name": "cleanup",
+  "properties": {
+    "correlationId": "b5bb0d1a-3e85-432e-a135-6a3b794b5cc6",
+    "debugSetting": null,
+    "dependencies": [],
+    "duration": "PT11M11.8243632S",
+    "error": null,
+    "mode": "Complete",
+    "onErrorDeployment": null,
+    "outputResources": [],
+    "outputs": {},
+    "parameters": {},
+    "parametersLink": null,
+    "providers": [],
+    "provisioningState": "Succeeded",
+    "templateHash": "11635883502557795404",
+    "templateLink": null,
+    "timestamp": "2024-04-21T05:21:28.383215+00:00",
+    "validatedResources": null
+  },
+  "resourceGroup": "RG-SwedenCentral-ARM-2",
+  "tags": null,
+  "type": "Microsoft.Resources/deployments"
+}
