@@ -6,98 +6,56 @@
             "type": "string"
         },
         "ownerObjectId": {
-            "type": "string",
-            "metadata": {
-                "description": "The Object ID of Azure CLI signed in User."
-            }
+            "type": "string"
         },
         "armClientObjectId": {
-            "type": "string",
-            "metadata": {
-                "description": "The Object ID for the service principal."
-            }
+            "type": "string"
         },
         "storageAccountSKU": {
             "type": "string",
-            "metadata": {
-                "description": "Defines the Tier to use for this storage account."
-            },
             "defaultValue": "Standard_LRS"
         },
         "storageAccountKind": {
             "type": "string",
-            "metadata": {
-                "description": "Defines the Kind of account. Valid options are BlobStorage, BlockBlobStorage, FileStorage, Storage and StorageV2."
-            },
             "defaultValue": "StorageV2"
         },
         "storageContainerName": {
             "type": "string",
-            "metadata": {
-                "description": "The name of the Container which should be created within the Storage Account."
-            },
             "defaultValue": "scripts"
         },
         "keyVaultSKU": {
             "type": "string",
-            "metadata": {
-                "description": "The Name of the SKU used for this Key Vault. Possible values are standard and premium."
-            },
             "defaultValue": "Standard"
         },
         "logAnalyticsWorkspaceName": {
             "type": "string",
-            "metadata": {
-                "description": "The name of the new Log Analytics Workspace to be provisioned."
-            },
             "defaultValue": "log-shared-arm-01"
         },
         "logAnalyticsWorkspaceSKU": {
             "type": "string",
-            "metadata": {
-                "description": "Specifies the SKU of the Log Analytics Workspace. Possible values are Free, PerNode, Premium, Standard, Standalone, Unlimited, CapacityReservation, and PerGB2018."
-            },
             "defaultValue": "PerGB2018"
         },
         "logAnalyticsWorkspaceRetentionDays": {
             "type": "string",
-            "metadata": {
-                "description": "The workspace data retention in days."
-            },
             "defaultValue": "30"
         },
         "automationAccountSku": {
             "type": "string",
-            "metadata": {
-                "description": "The SKU of the account. Possible values are Basic and Free."
-            },
             "defaultValue": "Basic"
         },
         "adminUsername": {
-            "type": "string",
-            "metadata": {
-                "description": "Username of admin user."
-            }
+            "type": "string"
         },
         "vnetName": {
             "type": "string",
-            "metadata": {
-                "description": "The name of the new virtual network to be provisioned."
-            },
             "defaultValue": "vnet-shared-01"
         },
         "vnetAddressPrefix": {
             "type": "string",
-            "metadata": {
-                "description": "The address space in CIDR notation for the new virtual network."
-            },
             "defaultValue": "10.1.0.0/16"
         },
         "vnetDnsServers": {
-            "type": "array",
-            "metadata": {
-                "description": "The list of DNS servers IP addresses."
-            }
+            "type": "array"
         },
         "subnetsDetails": {
             "type": "object",
@@ -393,86 +351,50 @@
         },
         "bastionName": {
             "type": "string",
-            "metadata": {
-                "description": "The name of Bastion Host."
-            },
             "defaultValue": "bst-ARM-01"
         },
         "bastionPipSKU": {
             "type": "string",
-            "metadata": {
-                "description": "The SKU of the Public IP. Accepted values are Basic and Standard."
-            },
             "defaultValue": "Standard"
         },
         "bastionPipAllocation": {
             "type": "string",
-            "metadata": {
-                "description": "Defines the allocation method for this IP address. Possible values are Static or Dynamic."
-            },
             "defaultValue": "Static"
         },
         "vmAddsName": {
             "type": "string",
-            "metadata": {
-                "description": "The name of the VM."
-            },
             "defaultValue": "adds1"
         },
         "vmAddsNicPrivateIpAllocationMethod": {
             "type": "string",
-            "metadata": {
-                "description": "The private IP address allocation method."
-            },
             "defaultValue": "Dynamic"
         },
         "vmAddsSize": {
             "type": "string",
-            "metadata": {
-                "description": "The size of the virtual machine."
-            },
             "defaultValue": "Standard_B1s"
         },
         "vmAddsImagePublisher": {
             "type": "string",
-            "metadata": {
-                "description": "The offer type of the virtual machine image used to create the VM."
-            },
             "defaultValue": "MicrosoftWindowsServer"
         },
         "vmAddsImageOffer": {
             "type": "string",
-            "metadata": {
-                "description": "The publisher for the virtual machine image used to create the VM."
-            },
             "defaultValue": "WindowsServer"
         },
         "vmAddsImageSku": {
             "type": "string",
-            "metadata": {
-                "description": "The sku of the virtual machine image used to create the VM."
-            },
             "defaultValue": "2022-datacenter-core-g2"
         },
         "vmAddsImageVersion": {
             "type": "string",
-            "metadata": {
-                "description": "The version of the virtual machine image used to create the VM."
-            },
             "defaultValue": "Latest"
         },
         "vmAddsStorageAccountCaching": {
             "type": "string",
-            "metadata": {
-                "description": "The storage replication type to be used for the VMs OS and data disks."
-            },
             "defaultValue": "ReadWrite"
         },
         "vmAddsStorageAccountType": {
             "type": "string",
-            "metadata": {
-                "description": "The storage replication type to be used for the VMs OS and data disks."
-            },
             "defaultValue": "Standard_LRS"
         }
     },
@@ -733,9 +655,9 @@
                     "adminUsername": "[parameters('adminUsername')]",
                     "adminPassword": "[concat('P-', uniqueString(resourceGroup().id, deployment().name))]",
                     "windowsConfiguration": {
-                        "enableAutomaticUpdates": false,
+                        "enableAutomaticUpdates": true,
                         "patchSettings": {
-                            "patchMode": "Manual"
+                            "patchMode": "AutomaticByOS"
                         }
                     }
                 },
