@@ -1,0 +1,159 @@
+Starting provisioning process
+WARNING: A new Bicep release is available: v0.27.1. Upgrade now by running "az bicep upgrade".
+WARNING: /home/deploymentazureuser/Module-01-Test-01/azure-iac-comparison/bicep/code/modules/module-01/module-01.bicep(16,7) : Warning no-unused-params: Parameter "automationAccountSku" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+
+ERROR: {"status":"Failed","error":{"code":"DeploymentFailed","target":"/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Resources/deployments/deployment1","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/arm-deployment-operations for usage details.","details":[{"code":"ResourceDeploymentFailure","target":"/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Resources/deployments/module01Deployment","message":"The resource write operation failed to complete successfully, because it reached terminal provisioning state 'Failed'.","details":[{"code":"DeploymentFailed","target":"/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Resources/deployments/module01Deployment","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/arm-deployment-operations for usage details.","details":[{"code":"ResourceDeploymentFailure","target":"/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Compute/virtualMachines/adds1","message":"The resource write operation failed to complete successfully, because it reached terminal provisioning state 'Failed'.","details":[{"code":"RetryableError","message":"A retryable error occurred."}]}]}]}]}}
+INFO: Command ran in 580.489 seconds (init: 0.185, invoke: 580.304)
+Starting provisioning process
+WARNING: A new Bicep release is available: v0.27.1. Upgrade now by running "az bicep upgrade".
+WARNING: /home/deploymentazureuser/Module-01-Test-01/azure-iac-comparison/bicep/code/modules/module-01/module-01.bicep(16,7) : Warning no-unused-params: Parameter "automationAccountSku" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+
+INFO: Command ran in 490.676 seconds (init: 0.181, invoke: 490.495)
+{
+  "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Resources/deployments/deployment1",
+  "location": null,
+  "name": "deployment1",
+  "properties": {
+    "correlationId": "1ac07f0e-2e04-470a-9dae-96a2702d296c",
+    "debugSetting": null,
+    "dependencies": [],
+    "duration": "PT7M56.9564729S",
+    "error": null,
+    "mode": "Incremental",
+    "onErrorDeployment": null,
+    "outputResources": [
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Compute/virtualMachines/adds1",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.KeyVault/vaults/kv-6lnikerrfxjz6",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.KeyVault/vaults/kv-6lnikerrfxjz6/secrets/adminpassword",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.KeyVault/vaults/kv-6lnikerrfxjz6/secrets/adminuser",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.KeyVault/vaults/kv-6lnikerrfxjz6/secrets/log-shared-bicep-01-ID",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.KeyVault/vaults/kv-6lnikerrfxjz6/secrets/st6lnikerrfxjz6",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/bastionHosts/bst-bicep-01",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/networkInterfaces/nic-adds1-1",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-adds-01",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-01",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-02",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/publicIPAddresses/pip-bst-bicep-01",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Network/virtualNetworks/vnet-shared-01",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.OperationalInsights/workspaces/log-shared-bicep-01",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Storage/storageAccounts/st6lnikerrfxjz6",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Storage/storageAccounts/st6lnikerrfxjz6/blobServices/default",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-bicep-2/providers/Microsoft.Storage/storageAccounts/st6lnikerrfxjz6/blobServices/default/containers/scripts",
+        "resourceGroup": "RG-EastUS-bicep-2"
+      }
+    ],
+    "outputs": null,
+    "parameters": {
+      "adminUsername": {
+        "type": "String",
+        "value": "bootstrapadmin"
+      },
+      "armClientObjectId": {
+        "type": "String",
+        "value": "385d2034-9ca3-4b02-99ca-5edc4654f183"
+      },
+      "dnsServers": {
+        "type": "Array",
+        "value": [
+          "10.1.1.4",
+          "168.63.129.16"
+        ]
+      },
+      "location": {
+        "type": "String",
+        "value": "eastus"
+      },
+      "ownerObjectId": {
+        "type": "String",
+        "value": "d007f379-1e9f-4e5a-8758-5a424f73c1f5"
+      }
+    },
+    "parametersLink": null,
+    "providers": [
+      {
+        "id": null,
+        "namespace": "Microsoft.Resources",
+        "providerAuthorizationConsentState": null,
+        "registrationPolicy": null,
+        "registrationState": null,
+        "resourceTypes": [
+          {
+            "aliases": null,
+            "apiProfiles": null,
+            "apiVersions": null,
+            "capabilities": null,
+            "defaultApiVersion": null,
+            "locationMappings": null,
+            "locations": [
+              null
+            ],
+            "properties": null,
+            "resourceType": "deployments",
+            "zoneMappings": null
+          }
+        ]
+      }
+    ],
+    "provisioningState": "Succeeded",
+    "templateHash": "3739070300430789629",
+    "templateLink": null,
+    "timestamp": "2024-05-14T14:22:48.699988+00:00",
+    "validatedResources": null
+  },
+  "resourceGroup": "RG-EastUS-bicep-2",
+  "tags": null,
+  "type": "Microsoft.Resources/deployments"
+}

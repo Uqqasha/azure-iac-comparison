@@ -1,0 +1,154 @@
+Starting provisioning process
+INFO: Command ran in 511.592 seconds (init: 0.186, invoke: 511.406)
+{
+  "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-ARM-4/providers/Microsoft.Resources/deployments/root",
+  "location": null,
+  "name": "root",
+  "properties": {
+    "correlationId": "1bdbde56-ae60-421d-a7b9-92c8814b5a7a",
+    "debugSetting": null,
+    "dependencies": [],
+    "duration": "PT7M51.4293629S",
+    "error": null,
+    "mode": "Incremental",
+    "onErrorDeployment": null,
+    "outputResources": [
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-ARM-4/providers/Microsoft.Compute/virtualMachines/adds1",
+        "resourceGroup": "RG-AustraliaEast-ARM-4"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-ARM-4/providers/Microsoft.KeyVault/vaults/kv-ttkueew3ipf3y",
+        "resourceGroup": "RG-AustraliaEast-ARM-4"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-ARM-4/providers/Microsoft.KeyVault/vaults/kv-ttkueew3ipf3y/secrets/adminpassword",
+        "resourceGroup": "RG-AustraliaEast-ARM-4"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-ARM-4/providers/Microsoft.KeyVault/vaults/kv-ttkueew3ipf3y/secrets/adminuser",
+        "resourceGroup": "RG-AustraliaEast-ARM-4"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-ARM-4/providers/Microsoft.KeyVault/vaults/kv-ttkueew3ipf3y/secrets/log-shared-arm-01-ID",
+        "resourceGroup": "RG-AustraliaEast-ARM-4"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-ARM-4/providers/Microsoft.KeyVault/vaults/kv-ttkueew3ipf3y/secrets/stttkueew3ipf3y",
+        "resourceGroup": "RG-AustraliaEast-ARM-4"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-ARM-4/providers/Microsoft.Network/bastionHosts/bst-ARM-01",
+        "resourceGroup": "RG-AustraliaEast-ARM-4"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-ARM-4/providers/Microsoft.Network/networkInterfaces/nic-adds11",
+        "resourceGroup": "RG-AustraliaEast-ARM-4"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-ARM-4/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet",
+        "resourceGroup": "RG-AustraliaEast-ARM-4"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-ARM-4/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-adds-01",
+        "resourceGroup": "RG-AustraliaEast-ARM-4"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-ARM-4/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-01",
+        "resourceGroup": "RG-AustraliaEast-ARM-4"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-ARM-4/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-02",
+        "resourceGroup": "RG-AustraliaEast-ARM-4"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-ARM-4/providers/Microsoft.Network/publicIPAddresses/pip-bst-ARM-01",
+        "resourceGroup": "RG-AustraliaEast-ARM-4"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-ARM-4/providers/Microsoft.Network/virtualNetworks/vnet-shared-01",
+        "resourceGroup": "RG-AustraliaEast-ARM-4"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-ARM-4/providers/Microsoft.OperationalInsights/workspaces/log-shared-arm-01",
+        "resourceGroup": "RG-AustraliaEast-ARM-4"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-ARM-4/providers/Microsoft.Storage/storageAccounts/stttkueew3ipf3y",
+        "resourceGroup": "RG-AustraliaEast-ARM-4"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-ARM-4/providers/Microsoft.Storage/storageAccounts/stttkueew3ipf3y/blobServices/default/containers/scripts",
+        "resourceGroup": "RG-AustraliaEast-ARM-4"
+      }
+    ],
+    "outputs": null,
+    "parameters": {
+      "adminUsername": {
+        "type": "String",
+        "value": "bootstrapadmin"
+      },
+      "armClientObjectId": {
+        "type": "String",
+        "value": "385d2034-9ca3-4b02-99ca-5edc4654f183"
+      },
+      "dnsServers": {
+        "type": "Array",
+        "value": [
+          "10.1.1.4",
+          "168.63.129.16"
+        ]
+      },
+      "location": {
+        "type": "String",
+        "value": "australiaeast"
+      },
+      "ownerObjectId": {
+        "type": "String",
+        "value": "d007f379-1e9f-4e5a-8758-5a424f73c1f5"
+      },
+      "resourceGroupName": {
+        "type": "String",
+        "value": "RG-AustraliaEast-ARM-4"
+      },
+      "subscriptionId": {
+        "type": "String",
+        "value": "f0afb0df-9549-4bb4-8af8-683201ed7aaa"
+      }
+    },
+    "parametersLink": null,
+    "providers": [
+      {
+        "id": null,
+        "namespace": "Microsoft.Resources",
+        "providerAuthorizationConsentState": null,
+        "registrationPolicy": null,
+        "registrationState": null,
+        "resourceTypes": [
+          {
+            "aliases": null,
+            "apiProfiles": null,
+            "apiVersions": null,
+            "capabilities": null,
+            "defaultApiVersion": null,
+            "locationMappings": null,
+            "locations": [
+              null
+            ],
+            "properties": null,
+            "resourceType": "deployments",
+            "zoneMappings": null
+          }
+        ]
+      }
+    ],
+    "provisioningState": "Succeeded",
+    "templateHash": "6586550861175567386",
+    "templateLink": null,
+    "timestamp": "2024-05-14T20:51:48.926873+00:00",
+    "validatedResources": null
+  },
+  "resourceGroup": "RG-AustraliaEast-ARM-4",
+  "tags": null,
+  "type": "Microsoft.Resources/deployments"
+}
