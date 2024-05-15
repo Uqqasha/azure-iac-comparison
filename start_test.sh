@@ -17,7 +17,7 @@ mkdir -p ${DIR}/executions/${EXEC_DATE}
 RESULTS=${DIR}/executions/${EXEC_DATE}/results
 echo "| Date                    | Operation       |   Tool        | Provider     | Region            |" > ${RESULTS}
 
-test_executions=3
+test_executions=5
 execution=1
 
 while [ $execution -le $test_executions ]; do

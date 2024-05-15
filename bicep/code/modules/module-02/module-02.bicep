@@ -298,7 +298,6 @@ resource privateDnsZoneARecord 'Microsoft.Network/privateDnsZones/A@2020-06-01' 
   dependsOn: [privateDNSZones]
 }
 
-@description('The details of subnets and NSGs.')
 param subnets object = {
   'snet-app-01': {
     addressPrefix: '10.2.0.0/24'

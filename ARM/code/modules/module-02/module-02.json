@@ -13,9 +13,6 @@
         },
         "vnetNameM2": {
             "type": "string",
-            "metadata": {
-                "description": "The name of the application virtual network."
-            },
             "defaultValue": "vnet-app-01"
         },
         "vnetNameM1": {
@@ -23,16 +20,10 @@
         },
         "vnetAddressPrefixM2": {
             "type": "string",
-            "metadata": {
-                "description": "The address space in CIDR notation for the new application virtual network."
-            },
             "defaultValue": "10.2.0.0/16"
         },
         "subnetsDetails": {
             "type": "object",
-            "metadata": {
-                "description": "The details of application virtual network subnets."
-            },
             "defaultValue": {
                 "subnets": [
                     {
@@ -211,9 +202,6 @@
         },
         "privateDNSZones": {
             "type": "array",
-            "metadata": {
-                "description": "description"
-            },
             "defaultValue": [
                 "privatelink.database.windows.net",
                 "privatelink.file.core.windows.net",
@@ -222,100 +210,58 @@
         },
         "vmJumpboxWinName": {
             "type": "string",
-            "metadata": {
-                "description": "description"
-            },
             "defaultValue": "jumpwin1"
         },
         "vmJumpboxWinSize": {
             "type": "string",
-            "metadata": {
-                "description": "description"
-            },
             "defaultValue": "Standard_B1s"
         },
         "vmJumpboxWinImagePublisher": {
             "type": "string",
-            "metadata": {
-                "description": "description"
-            },
             "defaultValue": "MicrosoftWindowsServer"
         },
         "vmJumpboxWinImageOffer": {
             "type": "string",
-            "metadata": {
-                "description": "description"
-            },
             "defaultValue": "WindowsServer"
         },
         "vmJumpboxWinImageSku": {
             "type": "string",
-            "metadata": {
-                "description": "description"
-            },
             "defaultValue": "2022-datacenter-g2"
         },
         "vmJumpboxWinImageVersion": {
             "type": "string",
-            "metadata": {
-                "description": "description"
-            },
             "defaultValue": "Latest"
         },
         "vmJumpboxWinStorageAccountType": {
             "type": "string",
-            "metadata": {
-                "description": "description"
-            },
             "defaultValue": "Standard_LRS"
         },
         "vmJumpboxLinuxName": {
             "type": "string",
-            "metadata": {
-                "description": "description"
-            },
             "defaultValue": "jumplinux1"
         },
         "vmJumpboxLinuxSize": {
             "type": "string",
-            "metadata": {
-                "description": "description"
-            },
             "defaultValue": "Standard_B1s"
         },
         "vmJumpboxLinuxImagePublisher": {
             "type": "string",
-            "metadata": {
-                "description": "description"
-            },
             "defaultValue": "Canonical"
         },
         "vmJumpboxLinuxImageOffer": {
             "type": "string",
-            "metadata": {
-                "description": "description"
-            },
             "defaultValue": "0001-com-ubuntu-server-jammy"
         },
         "vmJumpboxLinuxImageSku": {
             "type": "string",
-            "metadata": {
-                "description": "description"
-            },
             "defaultValue": "22_04-lts-gen2"
         },
         "vmJumpboxLinuxImageVersion": {
             "type": "string",
-            "metadata": {
-                "description": "description"
-            },
             "defaultValue": "Latest"
         },
         "vmJumpboxLinuxStorageAccountType": {
             "type": "string",
-            "metadata": {
-                "description": "description"
-            },
             "defaultValue": "Standard_LRS"
         },
         "keyVaultId": {
@@ -326,16 +272,10 @@
         },
         "storageShareName": {
             "type": "string",
-            "metadata": {
-                "description": "description"
-            },
             "defaultValue": "myfileshare"
         },
         "storageShareQuota": {
             "type": "int",
-            "metadata": {
-                "description": "description"
-            },
             "defaultValue": 1024
         }
     },
