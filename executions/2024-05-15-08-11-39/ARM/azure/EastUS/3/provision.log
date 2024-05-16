@@ -1,0 +1,261 @@
+Starting provisioning process
+{
+  "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Resources/deployments/root",
+  "location": null,
+  "name": "root",
+  "properties": {
+    "correlationId": "2aa50239-2adc-4984-bd97-3e6a3a85e1b2",
+    "debugSetting": null,
+    "dependencies": [
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Resources/deployments/module01",
+            "resourceGroup": "RG-EastUS-ARM-3",
+            "resourceName": "module01",
+            "resourceType": "Microsoft.Resources/deployments"
+          }
+        ],
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Resources/deployments/module02",
+        "resourceGroup": "RG-EastUS-ARM-3",
+        "resourceName": "module02",
+        "resourceType": "Microsoft.Resources/deployments"
+      }
+    ],
+    "duration": "PT11M50.2823912S",
+    "error": null,
+    "mode": "Incremental",
+    "onErrorDeployment": null,
+    "outputResources": [
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Compute/virtualMachines/adds1",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Compute/virtualMachines/jumplinux1",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.KeyVault/vaults/kv-pytc6tkvg4nos",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.KeyVault/vaults/kv-pytc6tkvg4nos/accessPolicies/add",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.KeyVault/vaults/kv-pytc6tkvg4nos/secrets/adminpassword",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.KeyVault/vaults/kv-pytc6tkvg4nos/secrets/adminuser",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.KeyVault/vaults/kv-pytc6tkvg4nos/secrets/log-shared-arm-01-ID",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.KeyVault/vaults/kv-pytc6tkvg4nos/secrets/stpytc6tkvg4nos",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/bastionHosts/bst-ARM-01",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/networkInterfaces/nic-adds11",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/networkInterfaces/nic-jumplinux1-1",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/networkInterfaces/nic-jumpwin1-1",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-app-01",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-db-01",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-misc-03",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-privatelink-01",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-adds-01",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-01",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-02",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/privateDnsZones/privatelink.database.windows.net",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/privateDnsZones/privatelink.database.windows.net/virtualNetworkLinks/pdnslink-privatelink.database.windows.net-vnet-app-01",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/privateDnsZones/privatelink.database.windows.net/virtualNetworkLinks/pdnslink-privatelink.database.windows.net-vnet-shared-01",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/privateDnsZones/privatelink.file.core.windows.net",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/privateDnsZones/privatelink.file.core.windows.net/A/stpytc6tkvg4nos",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/privateDnsZones/privatelink.file.core.windows.net/virtualNetworkLinks/pdnslink-privatelink.file.core.windows.net-vnet-app-01",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/privateDnsZones/privatelink.file.core.windows.net/virtualNetworkLinks/pdnslink-privatelink.file.core.windows.net-vnet-shared-01",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/privateDnsZones/privatelink.mysql.database.azure.com",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/privateDnsZones/privatelink.mysql.database.azure.com/virtualNetworkLinks/pdnslink-privatelink.mysql.database.azure.com-vnet-app-01",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/privateDnsZones/privatelink.mysql.database.azure.com/virtualNetworkLinks/pdnslink-privatelink.mysql.database.azure.com-vnet-shared-01",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/privateEndpoints/pend-stpytc6tkvg4nos-file",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/publicIPAddresses/pip-bst-ARM-01",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/virtualNetworks/vnet-app-01",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/virtualNetworks/vnet-app-01/virtualNetworkPeerings/vnet_app_01_to_vnet_shared_01_peering",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/virtualNetworks/vnet-shared-01",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/virtualNetworkPeerings/vnet_shared_01_to_vnet_app_01_peering",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.OperationalInsights/workspaces/log-shared-arm-01",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Storage/storageAccounts/stpytc6tkvg4nos",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Storage/storageAccounts/stpytc6tkvg4nos/blobServices/default/containers/scripts",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-ARM-3/providers/Microsoft.Storage/storageAccounts/stpytc6tkvg4nos/fileServices/default/shares/myfileshare",
+        "resourceGroup": "RG-EastUS-ARM-3"
+      }
+    ],
+    "outputs": null,
+    "parameters": {
+      "adminUsername": {
+        "type": "String",
+        "value": "bootstrapadmin"
+      },
+      "armClientObjectId": {
+        "type": "String",
+        "value": "385d2034-9ca3-4b02-99ca-5edc4654f183"
+      },
+      "dnsServers": {
+        "type": "Array",
+        "value": [
+          "10.1.1.4",
+          "168.63.129.16"
+        ]
+      },
+      "location": {
+        "type": "String",
+        "value": "eastus"
+      },
+      "ownerObjectId": {
+        "type": "String",
+        "value": "d007f379-1e9f-4e5a-8758-5a424f73c1f5"
+      },
+      "resourceGroupName": {
+        "type": "String",
+        "value": "RG-EastUS-ARM-3"
+      },
+      "subscriptionId": {
+        "type": "String",
+        "value": "f0afb0df-9549-4bb4-8af8-683201ed7aaa"
+      }
+    },
+    "parametersLink": null,
+    "providers": [
+      {
+        "id": null,
+        "namespace": "Microsoft.Resources",
+        "providerAuthorizationConsentState": null,
+        "registrationPolicy": null,
+        "registrationState": null,
+        "resourceTypes": [
+          {
+            "aliases": null,
+            "apiProfiles": null,
+            "apiVersions": null,
+            "capabilities": null,
+            "defaultApiVersion": null,
+            "locationMappings": null,
+            "locations": [
+              null
+            ],
+            "properties": null,
+            "resourceType": "deployments",
+            "zoneMappings": null
+          }
+        ]
+      }
+    ],
+    "provisioningState": "Succeeded",
+    "templateHash": "12215132700357445030",
+    "templateLink": null,
+    "timestamp": "2024-05-15T17:13:15.159889+00:00",
+    "validatedResources": null
+  },
+  "resourceGroup": "RG-EastUS-ARM-3",
+  "tags": null,
+  "type": "Microsoft.Resources/deployments"
+}
+INFO: Command ran in 728.897 seconds (init: 0.181, invoke: 728.717)
