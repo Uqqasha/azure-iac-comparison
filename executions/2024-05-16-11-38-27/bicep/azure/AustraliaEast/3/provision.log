@@ -1,0 +1,327 @@
+Starting provisioning process
+WARNING: A new Bicep release is available: v0.27.1. Upgrade now by running "az bicep upgrade".
+WARNING: /home/deploymentazureuser/Module-01-02-03-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(13,46) : Warning no-hardcoded-env-urls: Environment URLs should not be hardcoded. Use the environment() function to ensure compatibility across clouds. Found this disallowed host: "database.windows.net" [https://aka.ms/bicep/linter/no-hardcoded-env-urls]
+/home/deploymentazureuser/Module-01-02-03-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(13,87) : Warning no-hardcoded-env-urls: Environment URLs should not be hardcoded. Use the environment() function to ensure compatibility across clouds. Found this disallowed host: "core.windows.net" [https://aka.ms/bicep/linter/no-hardcoded-env-urls]
+/home/deploymentazureuser/Module-01-02-03-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(16,7) : Warning no-unused-params: Parameter "vmJumpboxWinSize" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-03-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(17,7) : Warning no-unused-params: Parameter "vmJumpboxWinPublisher" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-03-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(18,7) : Warning no-unused-params: Parameter "vmJumpboxWinOffer" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-03-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(19,7) : Warning no-unused-params: Parameter "vmJumpboxWinSku" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-03-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(20,7) : Warning no-unused-params: Parameter "vmJumpboxWinVersion" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-03-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(21,7) : Warning no-unused-params: Parameter "vmJumpboxWinStorageAccountType" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/home/deploymentazureuser/Module-01-02-03-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(289,27) : Warning no-hardcoded-env-urls: Environment URLs should not be hardcoded. Use the environment() function to ensure compatibility across clouds. Found this disallowed host: "core.windows.net" [https://aka.ms/bicep/linter/no-hardcoded-env-urls]
+/home/deploymentazureuser/Module-01-02-03-Test-01/azure-iac-comparison/bicep/code/modules/module-02/module-02.bicep(294,83) : Warning BCP318: The value of type "CustomDnsConfigPropertiesFormat | null" may be null at the start of the deployment, which would cause this access expression (and the overall deployment with it) to fail.
+/home/deploymentazureuser/Module-01-02-03-Test-01/azure-iac-comparison/bicep/code/modules/module-01/module-01.bicep(16,7) : Warning no-unused-params: Parameter "automationAccountSku" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+
+{
+  "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Resources/deployments/deployment1",
+  "location": null,
+  "name": "deployment1",
+  "properties": {
+    "correlationId": "7e132740-bba2-443a-ba25-eb6dc2f1aacf",
+    "debugSetting": null,
+    "dependencies": [
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Resources/deployments/module01Deployment",
+            "resourceGroup": "RG-AustraliaEast-bicep-3",
+            "resourceName": "module01Deployment",
+            "resourceType": "Microsoft.Resources/deployments"
+          },
+          {
+            "apiVersion": "2022-09-01",
+            "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Resources/deployments/module01Deployment",
+            "resourceGroup": "RG-AustraliaEast-bicep-3",
+            "resourceName": "module01Deployment",
+            "resourceType": "Microsoft.Resources/deployments"
+          }
+        ],
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Resources/deployments/module02Deployment",
+        "resourceGroup": "RG-AustraliaEast-bicep-3",
+        "resourceName": "module02Deployment",
+        "resourceType": "Microsoft.Resources/deployments"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Resources/deployments/module01Deployment",
+            "resourceGroup": "RG-AustraliaEast-bicep-3",
+            "resourceName": "module01Deployment",
+            "resourceType": "Microsoft.Resources/deployments"
+          },
+          {
+            "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Resources/deployments/module02Deployment",
+            "resourceGroup": "RG-AustraliaEast-bicep-3",
+            "resourceName": "module02Deployment",
+            "resourceType": "Microsoft.Resources/deployments"
+          },
+          {
+            "apiVersion": "2022-09-01",
+            "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Resources/deployments/module02Deployment",
+            "resourceGroup": "RG-AustraliaEast-bicep-3",
+            "resourceName": "module02Deployment",
+            "resourceType": "Microsoft.Resources/deployments"
+          },
+          {
+            "apiVersion": "2022-09-01",
+            "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Resources/deployments/module01Deployment",
+            "resourceGroup": "RG-AustraliaEast-bicep-3",
+            "resourceName": "module01Deployment",
+            "resourceType": "Microsoft.Resources/deployments"
+          }
+        ],
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Resources/deployments/module03Deployment",
+        "resourceGroup": "RG-AustraliaEast-bicep-3",
+        "resourceName": "module03Deployment",
+        "resourceType": "Microsoft.Resources/deployments"
+      }
+    ],
+    "duration": "PT11M10.5262446S",
+    "error": null,
+    "mode": "Incremental",
+    "onErrorDeployment": null,
+    "outputResources": [
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Compute/disks/disk-mssqlwin1-vol_sqldata_M",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Compute/disks/disk-mssqlwin1-vol_sqllog_L",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Compute/virtualMachines/adds1",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Compute/virtualMachines/jumplinux1",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Compute/virtualMachines/mssqlwin1",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.KeyVault/vaults/kv-gphq377ymglbc",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.KeyVault/vaults/kv-gphq377ymglbc/accessPolicies/add",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.KeyVault/vaults/kv-gphq377ymglbc/secrets/adminpassword",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.KeyVault/vaults/kv-gphq377ymglbc/secrets/adminuser",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.KeyVault/vaults/kv-gphq377ymglbc/secrets/log-shared-bicep-01-ID",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.KeyVault/vaults/kv-gphq377ymglbc/secrets/stgphq377ymglbc",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/bastionHosts/bst-bicep-01",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/networkInterfaces/nic-adds1-1",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/networkInterfaces/nic-jumplinux1-1",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/networkInterfaces/nic-jumpwin1-1",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/networkInterfaces/nic-mssqlwin1-1",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-app-01",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-db-01",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-misc-03",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-app-01.snet-privatelink-01",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.AzureBastionSubnet",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-adds-01",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-01",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-shared-01.snet-misc-02",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/privateDnsZones/privatelink.database.windows.net",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/privateDnsZones/privatelink.database.windows.net/virtualNetworkLinks/pdsnlink-privatelink.database.windows.net-vnet-app-01",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/privateDnsZones/privatelink.database.windows.net/virtualNetworkLinks/pdsnlink-privatelink.database.windows.net-vnet-shared-01",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/privateDnsZones/privatelink.file.core.windows.net",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/privateDnsZones/privatelink.file.core.windows.net/A/stgphq377ymglbc",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/privateDnsZones/privatelink.file.core.windows.net/virtualNetworkLinks/pdsnlink-privatelink.file.core.windows.net-vnet-app-01",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/privateDnsZones/privatelink.file.core.windows.net/virtualNetworkLinks/pdsnlink-privatelink.file.core.windows.net-vnet-shared-01",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/privateDnsZones/privatelink.mysql.database.azure.com",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/privateDnsZones/privatelink.mysql.database.azure.com/virtualNetworkLinks/pdsnlink-privatelink.mysql.database.azure.com-vnet-app-01",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/privateDnsZones/privatelink.mysql.database.azure.com/virtualNetworkLinks/pdsnlink-privatelink.mysql.database.azure.com-vnet-shared-01",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/privateEndpoints/pend-stgphq377ymglbc-file",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/publicIPAddresses/pip-bst-bicep-01",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/virtualNetworks/vnet-app-01",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/virtualNetworks/vnet-app-01/virtualNetworkPeerings/vnet_app_01_to_vnet_shared_01_peering",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/virtualNetworks/vnet-shared-01",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Network/virtualNetworks/vnet-shared-01/virtualNetworkPeerings/vnet_shared_01_to_vnet_app_01_peering",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.OperationalInsights/workspaces/log-shared-bicep-01",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Storage/storageAccounts/stgphq377ymglbc",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Storage/storageAccounts/stgphq377ymglbc/blobServices/default",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Storage/storageAccounts/stgphq377ymglbc/blobServices/default/containers/scripts",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      },
+      {
+        "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-AustraliaEast-bicep-3/providers/Microsoft.Storage/storageAccounts/stgphq377ymglbc/fileServices/default/shares/myfileshare",
+        "resourceGroup": "RG-AustraliaEast-bicep-3"
+      }
+    ],
+    "outputs": null,
+    "parameters": {
+      "adminUsername": {
+        "type": "String",
+        "value": "bootstrapadmin"
+      },
+      "armClientObjectId": {
+        "type": "String",
+        "value": "385d2034-9ca3-4b02-99ca-5edc4654f183"
+      },
+      "dnsServers": {
+        "type": "Array",
+        "value": [
+          "10.1.1.4",
+          "168.63.129.16"
+        ]
+      },
+      "location": {
+        "type": "String",
+        "value": "australiaeast"
+      },
+      "ownerObjectId": {
+        "type": "String",
+        "value": "d007f379-1e9f-4e5a-8758-5a424f73c1f5"
+      }
+    },
+    "parametersLink": null,
+    "providers": [
+      {
+        "id": null,
+        "namespace": "Microsoft.Resources",
+        "providerAuthorizationConsentState": null,
+        "registrationPolicy": null,
+        "registrationState": null,
+        "resourceTypes": [
+          {
+            "aliases": null,
+            "apiProfiles": null,
+            "apiVersions": null,
+            "capabilities": null,
+            "defaultApiVersion": null,
+            "locationMappings": null,
+            "locations": [
+              null
+            ],
+            "properties": null,
+            "resourceType": "deployments",
+            "zoneMappings": null
+          }
+        ]
+      }
+    ],
+    "provisioningState": "Succeeded",
+    "templateHash": "1358395105068685540",
+    "templateLink": null,
+    "timestamp": "2024-05-17T00:29:33.485760+00:00",
+    "validatedResources": null
+  },
+  "resourceGroup": "RG-AustraliaEast-bicep-3",
+  "tags": null,
+  "type": "Microsoft.Resources/deployments"
+}
+INFO: Command ran in 709.015 seconds (init: 0.185, invoke: 708.830)
