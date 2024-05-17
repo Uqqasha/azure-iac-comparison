@@ -38,17 +38,17 @@ module "module-03" {
   depends_on = [ module.module-01, module.module-02 ]
 }
 
-# module "module-04" {
-#   source = "./modules/module-04"
+module "module-04" {
+  source = "./modules/module-04"
 
-#   resource_group_name  = var.resource_group_name
-#   location             = var.location
-#   admin_username       = var.admin_username
-#   key_vault_id         = module.module-01.key_vault_id
-#   vnet_app_01_subnets  = module.module-02.vnet_app_01_subnets
+  resource_group_name  = var.resource_group_name
+  location             = var.location
+  admin_username       = var.admin_username
+  key_vault_id         = module.module-01.key_vault_id
+  vnet_app_01_subnets  = module.module-02.vnet_app_01_subnets
 
-#   depends_on = [ module.module-01, module.module-02 ]
-# }
+  depends_on = [ module.module-01, module.module-02 ]
+}
 
 # module "module-05" {
 #   source = "./modules/module-05"
