@@ -1,0 +1,30 @@
+Starting unprovisioning process
+WARNING: A new Bicep release is available: v0.27.1. Upgrade now by running "az bicep upgrade".
+INFO: Command ran in 696.534 seconds (init: 0.185, invoke: 696.349)
+{
+  "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-bicep-1/providers/Microsoft.Resources/deployments/cleanup",
+  "location": null,
+  "name": "cleanup",
+  "properties": {
+    "correlationId": "50bebe77-2d14-4241-b101-cd67e0f688c7",
+    "debugSetting": null,
+    "dependencies": [],
+    "duration": "PT11M3.389195S",
+    "error": null,
+    "mode": "Complete",
+    "onErrorDeployment": null,
+    "outputResources": [],
+    "outputs": null,
+    "parameters": null,
+    "parametersLink": null,
+    "providers": [],
+    "provisioningState": "Succeeded",
+    "templateHash": "6609161197123188811",
+    "templateLink": null,
+    "timestamp": "2024-05-18T03:49:10.405110+00:00",
+    "validatedResources": null
+  },
+  "resourceGroup": "RG-EastUS-bicep-1",
+  "tags": null,
+  "type": "Microsoft.Resources/deployments"
+}
