@@ -1,0 +1,29 @@
+Starting unprovisioning process
+INFO: Command ran in 693.564 seconds (init: 0.187, invoke: 693.377)
+{
+  "id": "/subscriptions/f0afb0df-9549-4bb4-8af8-683201ed7aaa/resourceGroups/RG-EastUS-bicep-1/providers/Microsoft.Resources/deployments/cleanup",
+  "location": null,
+  "name": "cleanup",
+  "properties": {
+    "correlationId": "9aa78097-678b-4518-9059-1582ad417c84",
+    "debugSetting": null,
+    "dependencies": [],
+    "duration": "PT11M3.457412S",
+    "error": null,
+    "mode": "Complete",
+    "onErrorDeployment": null,
+    "outputResources": [],
+    "outputs": {},
+    "parameters": {},
+    "parametersLink": null,
+    "providers": [],
+    "provisioningState": "Succeeded",
+    "templateHash": "11635883502557795404",
+    "templateLink": null,
+    "timestamp": "2024-06-01T12:28:47.556810+00:00",
+    "validatedResources": null
+  },
+  "resourceGroup": "RG-EastUS-bicep-1",
+  "tags": null,
+  "type": "Microsoft.Resources/deployments"
+}
